@@ -1,0 +1,11 @@
+# Music blocklist for fetch_music.py — one entry per line:
+#     Artist — Title
+# (a plain hyphen "-" also works as the separator; matching is
+# case-insensitive on both fields). Lines starting with # are ignored.
+#
+# Add a line here whenever a track triggers a YouTube Content ID claim,
+# then delete the cached music_<mood>.mp3 and re-run fetch_music.py.
+
+# Composition (melody) Content ID claim on the-world-after-the-fall-ch1
+# at 3:15-5:23, claimed 2026-09. Claim type: "Melody or lyrics".
+Pufino — Thoughtful

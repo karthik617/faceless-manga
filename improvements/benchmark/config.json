@@ -1,0 +1,23 @@
+{
+  "golden_project": "output/the-world-after-the-fall-ch2",
+  "baseline_review": "improvements/benchmark/baseline_review.json",
+  "baseline_counts": {"high": 31, "medium": 10, "low": 4},
+  "weights": {"high": 5, "medium": 2, "low": 1},
+  "hard_vetoes": {
+    "new_fault_types": true,
+    "max_duration_drift_pct": 5,
+    "loudness_lufs_range": [-17, -11],
+    "encode_must_succeed": true,
+    "scene_count_must_match_script": true
+  },
+  "stage_scopes": {
+    "script": ["script", "render_review_cut", "review"],
+    "segment": ["segment", "script", "render_review_cut", "review"],
+    "clean": ["clean", "render_review_cut", "review"],
+    "render": ["render_review_cut", "review"],
+    "extras": ["extras"],
+    "short": ["short"]
+  },
+  "full_run_required_before_adoption": true,
+  "notes": "Stage-scoped runs keep experiment rounds cheap (skip TTS/final encode where possible). A --full end-to-end run is mandatory before any adoption is merged. render_review_cut = panel_render with --stop-after review-cut on the pre-branding cut."
+}

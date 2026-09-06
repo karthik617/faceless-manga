@@ -1,0 +1,56 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": [
+    5,
+    11,
+    16,
+    23,
+    30
+  ],
+  "score": {
+    "baseline": 14,
+    "experiment": 10,
+    "delta": -4,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 2,
+      "medium": 2,
+      "low": 0
+    },
+    "experiment": {
+      "high": 1,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "phone_readability": 1,
+      "cropped_content": 1,
+      "irrelevant_panel": 2
+    },
+    "experiment": {
+      "irrelevant_panel": 1,
+      "phone_readability": 1,
+      "unreadable_text": 1,
+      "cropped_content": 1
+    }
+  },
+  "vetoes": [
+    "new fault types introduced: ['unreadable_text']",
+    "fault types worsened (base\u2192now): {'unreadable_text': (0, 1)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/round1-eval/run/stable_Acut.json",
+    "review": "improvements/experiments/round1-eval/run/stable_C2.json",
+    "video": null
+  }
+}

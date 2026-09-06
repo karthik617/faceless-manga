@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="PanelBreak avatar">
+  <title>PanelBreak avatar 800x800</title>
+  <defs>
+    <clipPath id="circ"><circle cx="400" cy="400" r="400"/></clipPath>
+    <pattern id="hal_a" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2.4" fill="#ffffff" fill-opacity="0.06"/>
+    </pattern>
+  </defs>
+  <g clip-path="url(#circ)">
+    <rect width="800" height="800" fill="#131110"/>
+    <rect width="800" height="800" fill="url(#hal_a)"/>
+    <!-- panel + play button, centered and scaled -->
+    <g transform="translate(232,232) scale(3.36)">
+      <rect x="12" y="12" width="76" height="76" rx="16" fill="none" stroke="#F0E9DC" stroke-width="7"/>
+      <path d="M42 32 L73 50 L42 68 Z" fill="#FF3B3B"/>
+    </g>
+  </g>
+</svg>

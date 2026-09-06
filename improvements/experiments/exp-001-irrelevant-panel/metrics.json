@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "scenes_changed": [
+    0,
+    33,
+    35
+  ],
+  "score": {
+    "baseline": 12,
+    "experiment": 5,
+    "delta": -7,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 2,
+      "medium": 1,
+      "low": 0
+    },
+    "experiment": {
+      "high": 1,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "irrelevant_panel": 2,
+      "cropped_content": 1
+    },
+    "experiment": {
+      "irrelevant_panel": 1
+    }
+  },
+  "vetoes": [],
+  "media": {
+    "duration_s": 906.73,
+    "baseline_duration_s": 906.73,
+    "loudness_lufs": -14.02
+  },
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/round1-eval/run/stable_A1.json",
+    "review": "improvements/experiments/round1-eval/run/stable_B.json",
+    "video": "improvements/experiments/round1-eval/run/arm_B.mp4"
+  }
+}

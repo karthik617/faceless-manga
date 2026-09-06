@@ -1,0 +1,663 @@
+<title>PanelBreak Brand Kit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+  :root{
+    --bg:#FAF7F0;
+    --surface:#FFFDF8;
+    --surface-2:#F1ECE1;
+    --text:#16130F;
+    --muted:#6E675C;
+    --border:#16130F;
+    --hair:rgba(22,19,15,.14);
+    --accent:#FF2E2E;
+    --accent-contrast:#FFF7F0;
+    --cyan:#0FB5D6;
+    --dot:rgba(22,19,15,.16);
+    --shadow:#16130F;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --bg:#131110;
+      --surface:#1C1918;
+      --surface-2:#241F1D;
+      --text:#F7F2E9;
+      --muted:#A79E90;
+      --border:#F0E9DC;
+      --hair:rgba(247,242,233,.16);
+      --accent:#FF3B3B;
+      --accent-contrast:#161210;
+      --cyan:#2CC7E9; /* fallback overwritten below */
+      --cyan:#22C7E9;
+      --dot:rgba(247,242,233,.15);
+      --shadow:#000000;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#131110;
+    --surface:#1C1918;
+    --surface-2:#241F1D;
+    --text:#F7F2E9;
+    --muted:#A79E90;
+    --border:#F0E9DC;
+    --hair:rgba(247,242,233,.16);
+    --accent:#FF3B3B;
+    --accent-contrast:#161210;
+    --cyan:#22C7E9;
+    --dot:rgba(247,242,233,.15);
+    --shadow:#000000;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Hanken Grotesk",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px;line-height:1.55;
+    background-image:radial-gradient(var(--dot) 1px,transparent 1.4px);
+    background-size:18px 18px;
+    background-position:0 0;
+  }
+  ::selection{background:var(--accent);color:var(--accent-contrast)}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
+
+  /* ---- shared panel ---- */
+  .panel{
+    background:var(--surface);
+    border:3px solid var(--border);
+    box-shadow:7px 7px 0 var(--shadow);
+    padding:26px;
+    position:relative;
+  }
+  .panel + .panel{margin-top:34px}
+
+  a{color:inherit}
+  h1,h2,h3{margin:0}
+  .display{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.92}
+  .mono{font-family:"Space Mono",ui-monospace,monospace}
+
+  .eyebrow{
+    font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--muted);
+  }
+
+  /* panel number header */
+  .phead{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+  .pnum{
+    font-family:"Anton",sans-serif;font-size:2.6rem;line-height:.8;color:var(--accent);
+    -webkit-text-stroke:0;
+  }
+  .ptitle{font-family:"Anton",sans-serif;font-size:1.9rem;text-transform:uppercase;letter-spacing:.01em}
+  .plede{color:var(--muted);max-width:60ch;margin:6px 0 0}
+
+  /* ============ HERO ============ */
+  .hero{
+    border:3px solid var(--border);
+    box-shadow:9px 9px 0 var(--shadow);
+    background:var(--surface);
+    position:relative;overflow:hidden;
+    padding:clamp(30px,6vw,64px) clamp(22px,5vw,56px) clamp(34px,6vw,60px);
+  }
+  .hero::before{ /* speed lines corner */
+    content:"";position:absolute;inset:-40% -40% auto auto;width:70%;height:180%;
+    background:repeating-linear-gradient(64deg,transparent 0 9px,var(--dot) 9px 11px);
+    transform:rotate(0deg);opacity:.7;pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2}
+  .badge-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+  .badge{
+    font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+    border:2px solid var(--border);padding:5px 10px;background:var(--surface-2);
+  }
+  .badge.solid{background:var(--accent);color:var(--accent-contrast);border-color:var(--accent)}
+
+  .wordmark{
+    font-family:"Anton",sans-serif;text-transform:uppercase;
+    font-size:clamp(3.4rem,15vw,10rem);line-height:.82;letter-spacing:.005em;
+    position:relative;display:inline-block;color:var(--text);
+    text-wrap:balance;
+  }
+  .wordmark::before,.wordmark::after{
+    content:attr(data-text);position:absolute;left:0;top:0;z-index:-1;pointer-events:none;
+  }
+  .wordmark::before{color:var(--accent);transform:translate(-.055em,-.045em);opacity:.92}
+  .wordmark::after{color:var(--cyan);transform:translate(.05em,.05em);opacity:.85}
+
+  .tag{font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:700;margin:18px 0 0;max-width:34ch}
+  .tag .hl{color:var(--accent)}
+  .hero-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:"Space Mono",monospace;font-size:.82rem;color:var(--muted)}
+  .hero-meta b{color:var(--text);font-weight:700}
+
+  /* theme toggle */
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+  .kit-label{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .tbtn{
+    font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+    border:2px solid var(--border);background:var(--surface);color:var(--text);
+    padding:8px 14px;cursor:pointer;box-shadow:3px 3px 0 var(--shadow);
+  }
+  .tbtn:hover{background:var(--surface-2)}
+  .tbtn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--shadow)}
+  .tbtn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+  /* ============ logo lockup ============ */
+  .mark{width:64px;height:64px;flex:0 0 auto}
+  .lockup{display:flex;align-items:center;gap:16px}
+  .lk-word{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:2.1rem;letter-spacing:.01em;line-height:1}
+  .lk-word .k{color:var(--accent)}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .swatchbox{border:2px solid var(--border);background:var(--surface-2);padding:16px}
+  .swatchbox .cap{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .lock-demo{display:flex;flex-direction:column;gap:22px;align-items:flex-start;justify-content:center;min-height:120px}
+  .demo-dark{background:#131110;color:#F7F2E9;border-color:#F7F2E9}
+  .demo-dark .lk-word{color:#F7F2E9}
+  .demo-dark .lk-word .k{color:#FF3B3B}
+
+  .avatarwrap{display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-top:6px}
+  .avatar{
+    width:112px;height:112px;border-radius:50%;overflow:hidden;border:3px solid var(--border);
+    display:flex;align-items:center;justify-content:center;background:var(--accent);
+    box-shadow:5px 5px 0 var(--shadow);
+  }
+  .avatar svg{width:78px;height:78px}
+  .avatar.ink{background:#131110}
+  .caption{font-family:"Space Mono",monospace;font-size:.72rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:8px}
+
+  .rules{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+  .rules li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+  .rules .ok{color:var(--accent);font-weight:800}
+  .rules .no{color:var(--muted);font-weight:800}
+
+  /* ============ palette ============ */
+  .palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border:3px solid var(--border);box-shadow:6px 6px 0 var(--shadow)}
+  .chip{padding:20px 16px;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;border-right:3px solid var(--border)}
+  .chip:last-child{border-right:0}
+  .chip .nm{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:1.05rem;letter-spacing:.02em}
+  .chip .hx{font-family:"Space Mono",monospace;font-size:.78rem;margin-top:2px}
+  .chip .use{font-size:.74rem;margin-top:8px;opacity:.85}
+  @media (max-width:640px){ .chip{border-right:0;border-bottom:3px solid var(--border)} .chip:last-child{border-bottom:0} }
+
+  /* ============ type specimen ============ */
+  .specimen{display:grid;gap:20px}
+  .spec-row{border-top:2px solid var(--hair);padding-top:16px}
+  .spec-row:first-child{border-top:0;padding-top:0}
+  .spec-name{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .aa-anton{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:clamp(2rem,7vw,4rem);line-height:.9}
+  .aa-hanken{font-family:"Hanken Grotesk";font-weight:700;font-size:1.5rem}
+  .aa-mono{font-family:"Space Mono",monospace;font-size:1.1rem}
+  .scale{font-family:"Space Mono",monospace;font-size:.8rem;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap;margin-top:4px}
+
+  /* ============ copy blocks ============ */
+  .copyblock{border:2px solid var(--border);background:var(--surface-2);padding:0;margin-top:14px}
+  .cb-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:2px solid var(--border);background:var(--surface)}
+  .cb-head .t{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .copybtn{
+    font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+    border:2px solid var(--border);background:var(--accent);color:var(--accent-contrast);
+    padding:5px 12px;cursor:pointer;
+  }
+  .copybtn:hover{filter:brightness(1.05)}
+  .copybtn:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+  .cb-body{padding:14px 16px;white-space:pre-wrap;font-size:.95rem}
+  .kw{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .kw span{font-family:"Space Mono",monospace;font-size:.74rem;border:2px solid var(--border);padding:5px 10px;background:var(--surface-2)}
+
+  /* ============ banner mock ============ */
+  .banner{
+    position:relative;width:100%;aspect-ratio:2560/1440;border:3px solid var(--border);
+    background:#131110;color:#F7F2E9;overflow:hidden;box-shadow:6px 6px 0 var(--shadow);
+    background-image:radial-gradient(rgba(247,242,233,.14) 1px,transparent 1.4px);
+    background-size:20px 20px;
+  }
+  .banner .sl{position:absolute;inset:-30% auto -30% -10%;width:55%;
+    background:repeating-linear-gradient(66deg,transparent 0 12px,rgba(255,59,59,.16) 12px 15px);transform:rotate(0)}
+  .safe{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:60.4%;height:29.4%;border:2px dashed var(--cyan);
+    display:flex;align-items:center;justify-content:space-between;gap:4%;padding:0 3%;
+  }
+  .safe .bmark{display:flex;align-items:center;gap:min(2vw,16px)}
+  .safe .bmark svg{width:clamp(30px,5.4vw,64px);height:auto}
+  .safe .bword{font-family:"Anton",sans-serif;text-transform:uppercase;line-height:.82;font-size:clamp(1.1rem,4.6vw,3.4rem)}
+  .safe .bword .k{color:#FF3B3B}
+  .safe .bword small{display:block;font-family:"Space Mono",monospace;font-size:clamp(.42rem,1.15vw,.8rem);letter-spacing:.18em;color:#A79E90;margin-top:.4em;font-weight:400}
+  .safe .bsched{text-align:right;font-family:"Space Mono",monospace;font-size:clamp(.44rem,1.2vw,.86rem);letter-spacing:.1em;line-height:1.5}
+  .safe .bsched b{color:#FF3B3B}
+  .safe-label{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.14em;color:var(--cyan);white-space:nowrap}
+  .banner-note{font-family:"Space Mono",monospace;font-size:.78rem;color:var(--muted);margin-top:12px;display:flex;gap:18px;flex-wrap:wrap}
+
+  /* ============ storyboards ============ */
+  .strip{display:flex;gap:0;overflow-x:auto;border:3px solid var(--border);box-shadow:6px 6px 0 var(--shadow);scrollbar-width:thin}
+  .frame{flex:0 0 clamp(210px,44vw,248px);border-right:3px solid var(--border);background:var(--surface)}
+  .frame:last-child{border-right:0}
+  .fscreen{aspect-ratio:16/9;background:#131110;color:#F7F2E9;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--border);
+    background-image:radial-gradient(rgba(247,242,233,.12) 1px,transparent 1.3px);background-size:14px 14px}
+  .fscreen .tc{position:absolute;top:8px;left:8px;font-family:"Space Mono",monospace;font-size:.66rem;background:#FF3B3B;color:#161210;padding:2px 7px;letter-spacing:.06em}
+  .fscreen .vis{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:1.4rem;text-align:center;padding:0 12px;line-height:.95}
+  .fscreen .vis .k{color:#FF3B3B}
+  .fscreen .dot-exp{width:26px;height:26px;border-radius:50%;background:#F7F2E9}
+  .fscreen .speed{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 8px,rgba(247,242,233,.18) 8px 10px)}
+  .fmeta{padding:12px 13px}
+  .fmeta .beat{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+  .fmeta .desc{font-size:.84rem}
+  .fmeta .aud{font-family:"Space Mono",monospace;font-size:.7rem;color:var(--muted);margin-top:8px;padding-top:8px;border-top:2px solid var(--hair)}
+  .fmeta .aud b{color:var(--text)}
+
+  /* end screen mock */
+  .endscreen{position:relative;width:100%;aspect-ratio:16/9;border:3px solid var(--border);background:#131110;color:#F7F2E9;overflow:hidden;box-shadow:6px 6px 0 var(--shadow);
+    background-image:radial-gradient(rgba(247,242,233,.13) 1px,transparent 1.4px);background-size:22px 22px}
+  .es-pad{position:absolute;inset:8%;display:grid;grid-template-columns:1fr 1fr;gap:4%}
+  .es-left{display:flex;flex-direction:column;justify-content:center;gap:6%}
+  .es-sub{display:flex;align-items:center;gap:min(1.6vw,14px)}
+  .es-sub svg{width:clamp(34px,6vw,64px);height:auto}
+  .es-word{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:clamp(1.2rem,4.4vw,3rem);line-height:.82}
+  .es-word .k{color:#FF3B3B}
+  .es-cta{display:inline-block;font-family:"Space Mono",monospace;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:#FF3B3B;color:#161210;padding:.5em .9em;font-size:clamp(.5rem,1.5vw,1rem);border:2px solid #FF3B3B;width:max-content}
+  .es-hand{font-family:"Space Mono",monospace;font-size:clamp(.5rem,1.3vw,.9rem);color:#A79E90;letter-spacing:.08em}
+  .es-right{display:grid;grid-template-rows:1fr 1fr;gap:8%}
+  .es-slot{border:2px dashed var(--cyan);display:flex;align-items:center;justify-content:center;text-align:center;
+    font-family:"Space Mono",monospace;font-size:clamp(.5rem,1.3vw,.82rem);color:var(--cyan);letter-spacing:.08em;padding:6px}
+
+  .two{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+  @media (max-width:760px){ .two{grid-template-columns:1fr} }
+
+  footer{margin-top:44px;text-align:center;font-family:"Space Mono",monospace;font-size:.74rem;color:var(--muted);letter-spacing:.08em}
+  footer .display{font-size:1rem;color:var(--text);letter-spacing:.04em}
+
+  @media (prefers-reduced-motion:no-preference){
+    .tbtn,.copybtn,.frame{transition:transform .08s ease, background .15s ease}
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="toolbar">
+    <span class="kit-label">Brand Kit · v1.0 · Faceless Manga Channel</span>
+    <button class="tbtn" id="themeBtn" type="button" aria-label="Toggle light and dark theme">◐ Toggle theme</button>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="badge-row">
+        <span class="badge solid">Manga · Recaps · Explained</span>
+        <span class="badge">Faceless narration</span>
+        <span class="badge">Weekly breakdowns</span>
+      </div>
+      <h1 class="wordmark" data-text="PANELBREAK">PANELBREAK</h1>
+      <p class="tag">Every arc, <span class="hl">explained</span> — panel by panel.</p>
+      <div class="hero-meta">
+        <span>HANDLE&nbsp; <b>@PanelBreak</b></span>
+        <span>URL&nbsp; <b>youtube.com/@PanelBreak</b></span>
+        <span>UPLOADS&nbsp; <b>Tue &amp; Fri</b></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 01 NAME ================= -->
+  <section class="panel">
+    <div class="phead">
+      <span class="pnum">01</span>
+      <div>
+        <h2 class="ptitle">The Name</h2>
+        <p class="plede">A short, punchy handle that screams from a thumbnail and reads clean in a URL. Primary pick plus four cleared alternates if the handle is taken.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="swatchbox" style="border-color:var(--accent);border-width:3px">
+        <div class="cap" style="color:var(--accent)">◆ Primary</div>
+        <div class="lk-word" style="font-size:2.6rem">PANEL<span class="k">BREAK</span></div>
+        <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">“Break down” the story + a comic <b>panel</b> + breaking-news urgency. Two syllables, one word, brandable as a verb: <i>“let’s PanelBreak this arc.”</i></p>
+      </div>
+      <div class="swatchbox">
+        <div class="cap">Cleared alternates</div>
+        <ul class="rules" style="gap:12px">
+          <li><span class="ok">▸</span> <b>INKDIVE</b> — deep dives into the ink.</li>
+          <li><span class="ok">▸</span> <b>PANEL RUSH</b> — fast, high-energy recaps.</li>
+          <li><span class="ok">▸</span> <b>RECAP RONIN</b> — the lone faceless narrator.</li>
+          <li><span class="ok">▸</span> <b>SPOILER SENSEI</b> — playful, lesson-led tone.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyblock">
+      <div class="cb-head"><span class="t">Tagline options</span></div>
+      <div class="cb-body">1 · Every arc, explained — panel by panel.
+2 · Manga, decoded. Weekly.
+3 · Big arcs. Bigger breakdowns.</div>
+    </div>
+  </section>
+
+  <!-- ================= 02 MARK ================= -->
+  <section class="panel">
+    <div class="phead">
+      <span class="pnum">02</span>
+      <div>
+        <h2 class="ptitle">The Mark</h2>
+        <p class="plede">A manga panel that’s also a play button — the whole channel in one glyph: read it, then watch it break down. Built for a 98% circular avatar crop and 16px favicon legibility.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="swatchbox">
+        <div class="cap">Primary lockup — light</div>
+        <div class="lock-demo">
+          <div class="lockup">
+            <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="PanelBreak logo">
+              <rect x="9" y="9" width="82" height="82" rx="15" fill="var(--surface)" stroke="var(--border)" stroke-width="7"/>
+              <path d="M23 83 L23 96 L37 83 Z" fill="var(--surface)" stroke="var(--border)" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M40 33 L71 50 L40 67 Z" fill="var(--accent)"/>
+              <circle cx="70" cy="24" r="3.4" fill="var(--accent)"/>
+              <circle cx="79" cy="30" r="2.4" fill="var(--accent)"/>
+            </svg>
+            <span class="lk-word">PANEL<span class="k">BREAK</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatchbox demo-dark">
+        <div class="cap" style="color:#A79E90">Primary lockup — ink</div>
+        <div class="lock-demo">
+          <div class="lockup">
+            <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="PanelBreak logo on dark">
+              <rect x="9" y="9" width="82" height="82" rx="15" fill="#131110" stroke="#F0E9DC" stroke-width="7"/>
+              <path d="M23 83 L23 96 L37 83 Z" fill="#131110" stroke="#F0E9DC" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M40 33 L71 50 L40 67 Z" fill="#FF3B3B"/>
+              <circle cx="70" cy="24" r="3.4" fill="#FF3B3B"/>
+              <circle cx="79" cy="30" r="2.4" fill="#FF3B3B"/>
+            </svg>
+            <span class="lk-word">PANEL<span class="k">BREAK</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="avatarwrap">
+      <div>
+        <div class="avatar ink">
+          <svg viewBox="0 0 100 100" role="img" aria-label="Avatar icon">
+            <rect x="12" y="12" width="76" height="76" rx="16" fill="none" stroke="#F0E9DC" stroke-width="7"/>
+            <path d="M42 32 L73 50 L42 68 Z" fill="#FF3B3B"/>
+          </svg>
+        </div>
+        <div class="caption">Avatar · 800×800</div>
+      </div>
+      <div>
+        <div class="avatar">
+          <svg viewBox="0 0 100 100" role="img" aria-label="Avatar icon accent">
+            <rect x="12" y="12" width="76" height="76" rx="16" fill="none" stroke="#161210" stroke-width="7"/>
+            <path d="M42 32 L73 50 L42 68 Z" fill="#161210"/>
+          </svg>
+        </div>
+        <div class="caption">Alt · accent fill</div>
+      </div>
+      <ul class="rules" style="margin-top:0">
+        <li><span class="ok">✔</span> Keep clear space of one “panel corner” radius on all sides.</li>
+        <li><span class="ok">✔</span> Mark works solo as favicon, watermark, and end-screen bug.</li>
+        <li><span class="no">✕</span> Don’t recolor the play triangle anything but ink or vermilion.</li>
+        <li><span class="no">✕</span> Don’t add gradients, bevels, or drop the panel outline.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 03 PALETTE ================= -->
+  <section class="panel">
+    <div class="phead">
+      <span class="pnum">03</span>
+      <div>
+        <h2 class="ptitle">Ink &amp; Paper</h2>
+        <p class="plede">Black ink, newsprint paper, one screaming vermilion, and a whisper of print-cyan borrowed from a misregistered CMYK press. Vermilion is the only loud color — everything else stays quiet.</p>
+      </div>
+    </div>
+    <div class="palette">
+      <div class="chip" style="background:#16130F;color:#FAF7F0">
+        <span class="nm">Ink Black</span><span class="hx">#16130F</span><span class="use">Text · panel gutters · outlines</span>
+      </div>
+      <div class="chip" style="background:#FAF7F0;color:#16130F">
+        <span class="nm">Paper</span><span class="hx">#FAF7F0</span><span class="use">Backgrounds · surfaces</span>
+      </div>
+      <div class="chip" style="background:#FF2E2E;color:#FFF7F0">
+        <span class="nm">Vermilion</span><span class="hx">#FF2E2E</span><span class="use">Accent · CTAs · the scream</span>
+      </div>
+      <div class="chip" style="background:#0FB5D6;color:#08252B">
+        <span class="nm">Print Cyan</span><span class="hx">#0FB5D6</span><span class="use">Misregister · tags · sparingly</span>
+      </div>
+      <div class="chip" style="background:#CFC8BA;color:#16130F">
+        <span class="nm">Halftone</span><span class="hx">#CFC8BA</span><span class="use">Dots · shading · dividers</span>
+      </div>
+    </div>
+    <p class="banner-note"><span>Contrast: ink/paper ≈ 15:1</span><span>vermilion on ink passes AA for large text</span><span>Dark mode swaps ink ⇄ paper</span></p>
+  </section>
+
+  <!-- ================= 04 TYPE ================= -->
+  <section class="panel">
+    <div class="phead">
+      <span class="pnum">04</span>
+      <div>
+        <h2 class="ptitle">Lettering</h2>
+        <p class="plede">One poster-scream display face, one workhorse body, one technical mono. That’s the whole system — resist adding a fourth.</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="spec-row">
+        <div class="spec-name">Display — Anton</div>
+        <div class="aa-anton">Break The Panel</div>
+        <div class="scale"><span>Wordmark</span><span>Thumbnail titles</span><span>Panel numbers</span><span>ABCDEFG · 0123456789</span></div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">Body / UI — Hanken Grotesk</div>
+        <div class="aa-hanken">Recaps, lore, and theories that actually hold up.</div>
+        <div class="scale"><span>Regular 400</span><span>Medium 500</span><span>Semibold 600</span><span>Bold 700</span><span>Extrabold 800</span></div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">Technical — Space Mono</div>
+        <div class="aa-mono">00:00 — 00:06 · 2560×1440 · @PanelBreak</div>
+        <div class="scale"><span>Timecodes</span><span>Specs</span><span>Handles &amp; metadata</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 CHANNEL COPY ================= -->
+  <section class="panel">
+    <div class="phead">
+      <span class="pnum">05</span>
+      <div>
+        <h2 class="ptitle">Channel Copy</h2>
+        <p class="plede">Drop-in text for the YouTube <b>About</b> tab, the channel header, and video descriptions. Copy buttons write straight to your clipboard.</p>
+      </div>
+    </div>
+
+    <div class="copyblock">
+      <div class="cb-head"><span class="t">Channel description — “About” tab</span>
+        <button class="copybtn" type="button" data-copy="c-about" data-label="Copy">Copy</button></div>
+      <div class="cb-body" id="c-about">PanelBreak breaks down the biggest manga arcs panel by panel — full recaps, lore explained, and theories that actually hold up.
+
+No talking heads, no filler. Just the story, decoded: what happened, why it hits, and what it sets up next. New breakdowns every Tuesday and Friday.
+
+▶ Recaps &amp; arc explainers
+▶ Lore, power systems &amp; timelines
+▶ Theories grounded in the source
+
+New here? Start with the pinned arc breakdown, then subscribe so you never miss a chapter.
+
+📩 Business: hello@panelbreak.tv</div>
+    </div>
+
+    <div class="copyblock">
+      <div class="cb-head"><span class="t">Short bio — header / 150 chars</span>
+        <button class="copybtn" type="button" data-copy="c-bio" data-label="Copy">Copy</button></div>
+      <div class="cb-body" id="c-bio">Manga arcs, explained panel by panel. Recaps · lore · theories that hold up. New breakdowns Tue &amp; Fri. ▶ Subscribe.</div>
+    </div>
+
+    <div class="copyblock">
+      <div class="cb-head"><span class="t">Video description template</span>
+        <button class="copybtn" type="button" data-copy="c-vid" data-label="Copy">Copy</button></div>
+      <div class="cb-body" id="c-vid">[SERIES] — [ARC] fully explained. Everything you need to know, panel by panel.
+
+In this breakdown: what happens, the lore behind it, and what it sets up next.
+
+⏱ Chapters
+00:00 — Cold open
+00:xx — The setup
+00:xx — The turning point
+00:xx — What it means
+
+🔔 Subscribe for new manga breakdowns every Tue &amp; Fri: youtube.com/@PanelBreak
+
+#manga #anime #[series] #recap #explained</div>
+    </div>
+
+    <div class="kw" aria-label="Channel keywords">
+      <span>manga recap</span><span>manga explained</span><span>anime breakdown</span><span>arc explained</span><span>manga lore</span><span>chapter recap</span><span>faceless manga</span><span>manga theory</span><span>weekly manga</span>
+    </div>
+  </section>
+
+  <!-- ================= 06 BANNER ================= -->
+  <section class="panel">
+    <div class="phead">
+      <span class="pnum">06</span>
+      <div>
+        <h2 class="ptitle">Channel Banner</h2>
+        <p class="plede">Upload at 2560×1440. Everything that must always be visible lives inside the 1546×423 TV-safe box (dashed cyan) — it’s the only region shown on phones.</p>
+      </div>
+    </div>
+
+    <div class="banner" role="img" aria-label="Channel banner mockup with TV-safe area">
+      <div class="sl"></div>
+      <div class="safe">
+        <div class="bmark">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <rect x="9" y="9" width="82" height="82" rx="15" fill="#131110" stroke="#F0E9DC" stroke-width="7"/>
+            <path d="M40 33 L71 50 L40 67 Z" fill="#FF3B3B"/>
+          </svg>
+          <div class="bword">PANEL<span class="k">BREAK</span><small>Every arc, explained</small></div>
+        </div>
+        <div class="bsched">NEW BREAKDOWNS<br><b>TUE &amp; FRI</b><br>@PanelBreak</div>
+      </div>
+      <div class="safe-label">◄ 1546 × 423 TV / mobile-safe area ►</div>
+    </div>
+    <p class="banner-note"><span>FULL CANVAS · 2560×1440</span><span>SAFE · 1546×423</span><span>MAX FILE · 6MB</span><span>Keep text out of the outer margins</span></p>
+  </section>
+
+  <!-- ================= 07 INTRO ================= -->
+  <section class="panel">
+    <div class="phead">
+      <span class="pnum">07</span>
+      <div>
+        <h2 class="ptitle">Intro · 6s</h2>
+        <p class="plede">A reusable cold-open sting that front-loads energy without stealing watch-time. Full 6s for the channel trailer; trim to the 2.4s wordmark slam for regular uploads.</p>
+      </div>
+    </div>
+
+    <div class="strip" aria-label="Intro storyboard, 5 frames">
+      <div class="frame">
+        <div class="fscreen"><span class="tc">00:00</span><span class="dot-exp"></span></div>
+        <div class="fmeta"><div class="beat">Beat 01 · Ignite</div><div class="desc">Black. A single halftone dot pulses at center and snaps open.</div><div class="aud"><b>SFX:</b> low sub rumble</div></div>
+      </div>
+      <div class="frame">
+        <div class="fscreen"><span class="tc">00:01</span><span class="speed"></span></div>
+        <div class="fmeta"><div class="beat">Beat 02 · Rush</div><div class="desc">Speed lines streak inward from all four edges toward the core.</div><div class="aud"><b>SFX:</b> rising whoosh</div></div>
+      </div>
+      <div class="frame">
+        <div class="fscreen"><span class="tc">00:02</span><span class="vis">PANEL<span class="k">BREAK</span></span></div>
+        <div class="fmeta"><div class="beat">Beat 03 · Impact</div><div class="desc">Wordmark slams in with CMYK split &amp; a 3-frame shake.</div><div class="aud"><b>SFX:</b> bass hit + ink splat</div></div>
+      </div>
+      <div class="frame">
+        <div class="fscreen"><span class="tc">00:04</span><span class="vis" style="font-size:.86rem;font-family:'Space Mono',monospace">every arc,<br>explained_</span></div>
+        <div class="fmeta"><div class="beat">Beat 04 · Line</div><div class="desc">Tagline types on in mono beneath the mark.</div><div class="aud"><b>SFX:</b> page-flip · key clicks</div></div>
+      </div>
+      <div class="frame">
+        <div class="fscreen"><span class="tc">00:05</span>
+          <svg viewBox="0 0 100 100" style="width:46px;height:46px" aria-hidden="true"><rect x="12" y="12" width="76" height="76" rx="16" fill="none" stroke="#F0E9DC" stroke-width="7"/><path d="M42 32 L73 50 L42 68 Z" fill="#FF3B3B"/></svg>
+        </div>
+        <div class="fmeta"><div class="beat">Beat 05 · Settle</div><div class="desc">Everything collapses into the icon bug; vermilion flash, cut to content.</div><div class="aud"><b>SFX:</b> snap · tail reverb</div></div>
+      </div>
+    </div>
+    <p class="banner-note"><span>1920×1080 · 30fps</span><span>Loudness ≈ −14 LUFS</span><span>End on hard cut, not fade</span></p>
+  </section>
+
+  <!-- ================= 08 OUTRO ================= -->
+  <section class="panel">
+    <div class="phead">
+      <span class="pnum">08</span>
+      <div>
+        <h2 class="ptitle">Outro · End Screen · 20s</h2>
+        <p class="plede">A reusable 20-second end card built around YouTube’s end-screen zones: a subscribe bug on the left, two suggested-video slots on the right, safely inside the margins.</p>
+      </div>
+    </div>
+
+    <div class="two">
+      <div class="endscreen" role="img" aria-label="End screen layout mockup">
+        <div class="es-pad">
+          <div class="es-left">
+            <div class="es-sub">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="12" y="12" width="76" height="76" rx="16" fill="none" stroke="#F0E9DC" stroke-width="7"/><path d="M42 32 L73 50 L42 68 Z" fill="#FF3B3B"/></svg>
+              <span class="es-word">PANEL<span class="k">BREAK</span></span>
+            </div>
+            <span class="es-cta">▶ Subscribe</span>
+            <span class="es-hand">@PanelBreak · new breakdowns Tue &amp; Fri</span>
+          </div>
+          <div class="es-right">
+            <div class="es-slot">▶ WATCH NEXT<br>video slot 1</div>
+            <div class="es-slot">◆ MORE ARCS<br>video slot 2</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <ul class="rules" style="margin-top:0">
+          <li><span class="ok">▸</span> Runs over the last <b>5–20s</b>; hold a beat of content behind it.</li>
+          <li><span class="ok">▸</span> Left: subscribe element snapped to the channel bug.</li>
+          <li><span class="ok">▸</span> Right: “best for viewer” + a specific next arc.</li>
+          <li><span class="ok">▸</span> Keep all elements inside the dashed safe margins.</li>
+          <li><span class="ok">▸</span> Music: outro loop resolves on the final beat, no fade-under-talk.</li>
+        </ul>
+        <div class="copyblock">
+          <div class="cb-head"><span class="t">Spoken outro line</span>
+            <button class="copybtn" type="button" data-copy="c-outro" data-label="Copy">Copy</button></div>
+          <div class="cb-body" id="c-outro">“That’s the arc — broken down. Tap subscribe, and I’ll see you in the next panel.”</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="display">PANELBREAK — BRAND KIT v1.0</div>
+    <div style="margin-top:6px">Prepared for Karthik · Faceless manga recaps · Reuse across every upload</div>
+  </footer>
+
+</div>
+
+<script>
+  // Theme toggle (cycles paper ↔ ink; defaults to system)
+  (function(){
+    var btn = document.getElementById('themeBtn');
+    var root = document.documentElement;
+    btn.addEventListener('click', function(){
+      var cur = root.getAttribute('data-theme');
+      if(!cur){
+        var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        cur = sysDark ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+    });
+  })();
+
+  // Copy-to-clipboard
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.getAttribute('data-copy'));
+      var text = el ? el.innerText : '';
+      var done = function(msg){ var o=btn.textContent; btn.textContent=msg; setTimeout(function(){btn.textContent=btn.getAttribute('data-label')||'Copy';},1500); };
+      try{
+        navigator.clipboard.writeText(text).then(function(){done('Copied ✓');}, function(){done('Select manually');});
+      }catch(e){ done('Select manually'); }
+    });
+  });
+</script>

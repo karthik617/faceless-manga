@@ -1,0 +1,14 @@
+venv/
+output/
+pipeline/athena_token.txt
+pipeline/freesound_key.txt
+pipeline/pip_install.log
+__pycache__/
+*.pyc
+_work/
+channel_state.json
+# improve-train heavy experiment artifacts (reports/metrics/research stay tracked)
+improvements/experiments/*/run/
+improvements/experiments/*/samples/*.mp4
+.playwright-mcp/
+node_modules/

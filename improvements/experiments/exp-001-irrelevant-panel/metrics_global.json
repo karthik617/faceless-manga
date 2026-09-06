@@ -1,0 +1,61 @@
+{
+  "verdict": "PASS",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 174,
+    "experiment": 158,
+    "delta": -16,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 28,
+      "medium": 16,
+      "low": 2
+    },
+    "experiment": {
+      "high": 26,
+      "medium": 13,
+      "low": 2
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "irrelevant_panel": 22,
+      "watermark": 5,
+      "phone_readability": 1,
+      "cropped_content": 9,
+      "empty_screen": 5,
+      "blank_frame": 1,
+      "static_scene": 1,
+      "unreadable_text": 2
+    },
+    "experiment": {
+      "review_error": 1,
+      "irrelevant_panel": 21,
+      "phone_readability": 1,
+      "cropped_content": 7,
+      "blank_frame": 1,
+      "empty_screen": 4,
+      "static_scene": 1,
+      "unreadable_text": 1,
+      "watermark": 4
+    }
+  },
+  "vetoes": [],
+  "media": {
+    "duration_s": 906.73,
+    "baseline_duration_s": 906.73,
+    "loudness_lufs": -14.02
+  },
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/round1-eval/run/stable_A1.json",
+    "review": "improvements/experiments/round1-eval/run/stable_B.json",
+    "video": "improvements/experiments/round1-eval/run/arm_B.mp4"
+  }
+}

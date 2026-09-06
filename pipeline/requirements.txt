@@ -1,0 +1,8 @@
+edge-tts>=6.1
+requests>=2.28
+opencv-python-headless>=4.8
+numpy>=1.24
+Pillow>=10.0
+faster-whisper>=1.0
+gallery-dl>=1.26
+mangadex-downloader>=2.9

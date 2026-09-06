@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "updated": "2026-09-06",
+  "notes": "Single source of truth for the /improve-train loop. Every round reads this first, skips adopted/rejected gaps, and escalates stubborn ones. Statuses: proposed -> researching -> prototyped -> tested -> adopted | rejected | escalated.",
+  "benchmark": {
+    "golden_project": "output/the-world-after-the-fall-ch2",
+    "baseline_review": "improvements/benchmark/baseline_review.json",
+    "config": "improvements/benchmark/config.json"
+  },
+  "gaps": [
+    {
+      "id": "gap-001-irrelevant-panel",
+      "title": "Panel-narration relevance verification (CLIP/SigLIP)",
+      "stage": "script",
+      "fault_types": [
+        "irrelevant_panel",
+        "weak_hook"
+      ],
+      "status": "adopted",
+      "priority": 1,
+      "card": "improvements/gaps/gap-001-irrelevant-panel.md",
+      "experiments": [
+        "exp-001-irrelevant-panel"
+      ],
+      "rejected_candidates": [],
+      "last_verdict": {
+        "exp": "exp-001-irrelevant-panel",
+        "verdict": "PASS (full run)",
+        "global_score": "174 -> 158 (stable 3-pass review)",
+        "scene_scoped": "12 -> 5 on scenes 0,33,35",
+        "media": "0.00% duration drift, -14.0 LUFS both arms",
+        "note": "Adopted as DEFAULT in manga.py step_script (opt-out: --no-verify-panels / MANGA_VERIFY_PANELS=0). Zero new deps. README updated."
+      },
+      "decision": "iterate-after-gap-011",
+      "adopted": {
+        "date": "2026-09-06",
+        "flag_default": "on",
+        "opt_out": "--no-verify-panels",
+        "files": [
+          "pipeline/verify_panels.py",
+          "manga.py",
+          "README.md"
+        ],
+        "deps_added": []
+      }
+    },
+    {
+      "id": "gap-002-multipanel-layout",
+      "title": "Creative multi-panel layout compositor (narration-beat-synced reveals)",
+      "stage": "render",
+      "fault_types": [
+        "irrelevant_panel",
+        "static_scene",
+        "weak_hook"
+      ],
+      "status": "adopted",
+      "priority": 2,
+      "card": "improvements/gaps/gap-002-multipanel-layout.md",
+      "experiments": [
+        "exp-002-multipanel-layout"
+      ],
+      "rejected_candidates": [],
+      "last_verdict": {
+        "exp": "exp-002-multipanel-layout",
+        "verdict": "v2 criteria MET (formal FAIL = 1 LOW vote-noise re-label present in both arms)",
+        "scene_scoped": "14 -> 10 (-50% high) on 5 smart scenes",
+        "v1_regressions": "static_scene 0 new (was +8), phone_readability baseline-held (was +6)",
+        "note": "ADOPTED AS OPT-IN (default seq). --layout smart on manga.py/panel_render.py. Promote to default after surviving one production chapter. Small n=5 scenes."
+      },
+      "decision": "iterate: per-cell motion, text-aware sizing, 2-3 panel cap",
+      "adopted": {
+        "date": "2026-09-06",
+        "flag_default": "off",
+        "opt_in": "--layout smart",
+        "files": [
+          "pipeline/layout_smart.py",
+          "pipeline/panel_render.py",
+          "manga.py",
+          "README.md"
+        ],
+        "deps_added": [],
+        "promotion_condition": "one production chapter with --layout smart and no smart-scene HIGH faults"
+      }
+    },
+    {
+      "id": "gap-003-watermark-removal",
+      "title": "Scanlation watermark detect + inpaint",
+      "stage": "clean",
+      "fault_types": [
+        "watermark"
+      ],
+      "status": "proposed",
+      "priority": 3,
+      "card": "improvements/gaps/gap-003-watermark-removal.md",
+      "experiments": [],
+      "rejected_candidates": []
+    },
+    {
+      "id": "gap-004-segmentation",
+      "title": "Bubble/art-aware webtoon segmentation (stop blind splits through art)",
+      "stage": "segment",
+      "fault_types": [
+        "cropped_content",
+        "empty_screen",
+        "unreadable_text"
+      ],
+      "status": "proposed",
+      "priority": 4,
+      "card": "improvements/gaps/gap-004-segmentation.md",
+      "experiments": [],
+      "rejected_candidates": []
+    },
+    {
+      "id": "gap-005-missing-payoff",
+      "title": "Quote-to-panel OCR cross-check at script time",
+      "stage": "script",
+      "fault_types": [
+        "missing_payoff"
+      ],
+      "status": "proposed",
+      "priority": 5,
+      "card": "improvements/gaps/gap-005-missing-payoff.md",
+      "experiments": [],
+      "rejected_candidates": []
+    },
+    {
+      "id": "gap-006-saliency-kenburns",
+      "title": "Saliency-guided Ken Burns focal points (honor motion intent)",
+      "stage": "render",
+      "fault_types": [
+        "cropped_content",
+        "irrelevant_panel"
+      ],
+      "status": "proposed",
+      "priority": 6,
+      "card": "improvements/gaps/gap-006-saliency-kenburns.md",
+      "experiments": [],
+      "rejected_candidates": []
+    },
+    {
+      "id": "gap-007-ocr-verifier",
+      "title": "Local manga-ocr as verifier/fallback for vision-LLM reads",
+      "stage": "script",
+      "fault_types": [
+        "missing_payoff",
+        "irrelevant_panel"
+      ],
+      "status": "proposed",
+      "priority": 7,
+      "card": "improvements/gaps/gap-007-ocr-verifier.md",
+      "experiments": [],
+      "rejected_candidates": []
+    },
+    {
+      "id": "gap-008-music-seams",
+      "title": "Key/BPM-compatible music section picks + beat-aligned crossfades",
+      "stage": "render",
+      "fault_types": [
+        "music_seam"
+      ],
+      "status": "proposed",
+      "priority": 8,
+      "card": "improvements/gaps/gap-008-music-seams.md",
+      "experiments": [],
+      "rejected_candidates": []
+    },
+    {
+      "id": "gap-009-phone-readability",
+      "title": "Min text-height check + auto punch-in on small UI/system boxes",
+      "stage": "render",
+      "fault_types": [
+        "phone_readability",
+        "unreadable_text"
+      ],
+      "status": "proposed",
+      "priority": 9,
+      "card": "improvements/gaps/gap-009-phone-readability.md",
+      "experiments": [],
+      "rejected_candidates": []
+    },
+    {
+      "id": "gap-010-thumbnail-ctr",
+      "title": "Thumbnail CTR heuristics + A/B variants + saliency scoring",
+      "stage": "extras",
+      "fault_types": [],
+      "status": "proposed",
+      "priority": 10,
+      "card": "improvements/gaps/gap-010-thumbnail-ctr.md",
+      "experiments": [],
+      "rejected_candidates": []
+    },
+    {
+      "id": "gap-011-reviewer-variance",
+      "title": "Review measurement noise: +-12 faults on byte-identical video (blocks certifying small improvements)",
+      "stage": "review",
+      "fault_types": [],
+      "status": "adopted",
+      "priority": 0,
+      "card": "improvements/gaps/gap-011-reviewer-variance.md",
+      "experiments": [
+        "inline-round1"
+      ],
+      "rejected_candidates": [],
+      "last_verdict": {
+        "verdict": "PASS",
+        "spread_stable": 6,
+        "spread_single_pass": 72,
+        "note": "Bar relaxed 5->7 with measurement evidence (user-approved). review_stable.py (majority-of-3) + benchmark.py --scenes-changed + review_error exempt from type vetoes. Evaluators must use review_stable.py for all future experiment scoring."
+      },
+      "adopted": {
+        "date": "2026-09-06",
+        "files": [
+          "pipeline/review_stable.py",
+          "pipeline/benchmark.py"
+        ],
+        "deps_added": []
+      }
+    },
+    {
+      "id": "gap-012-tts-timeout",
+      "title": "edge-tts stream has no socket timeout - render hung ~55min mid-stream",
+      "stage": "render",
+      "fault_types": [],
+      "status": "proposed",
+      "priority": 11,
+      "card": "improvements/gaps/gap-012-tts-timeout.md",
+      "experiments": [],
+      "rejected_candidates": []
+    }
+  ]
+}

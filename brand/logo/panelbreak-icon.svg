@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="PanelBreak icon">
+  <title>PanelBreak icon — light</title>
+  <rect x="9" y="9" width="82" height="82" rx="15" fill="#FAF7F0" stroke="#16130F" stroke-width="7"/>
+  <path d="M23 83 L23 96 L37 83 Z" fill="#FAF7F0" stroke="#16130F" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M40 33 L71 50 L40 67 Z" fill="#FF2E2E"/>
+  <circle cx="70" cy="24" r="3.4" fill="#FF2E2E"/>
+  <circle cx="79" cy="30" r="2.4" fill="#FF2E2E"/>
+</svg>
