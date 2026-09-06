@@ -227,5 +227,25 @@
       "experiments": [],
       "rejected_candidates": []
     }
-  ]
+  ],
+  "evidence": {
+    "the-world-after-the-fall-ch2": {
+      "date": "2026-09-06",
+      "total": 45,
+      "high": 31,
+      "medium": 10,
+      "low": 4,
+      "by_type": {
+        "weak_hook": 1,
+        "irrelevant_panel": 21,
+        "watermark": 5,
+        "missing_payoff": 4,
+        "cropped_content": 6,
+        "phone_readability": 1,
+        "empty_screen": 3,
+        "panel_reuse": 1,
+        "unreadable_text": 3
+      }
+    }
+  }
 }

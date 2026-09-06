@@ -681,6 +681,15 @@ def main():
         except Exception as e:
             print(f"  [channel] could not record progress: {e}")
 
+    # feed this run's surviving faults into the improve-train evidence pool
+    # and nudge when a training round looks worthwhile (recurring fault types
+    # or several highs the fix loop couldn't clear). Never fails the run.
+    try:
+        import improve_nudge
+        improve_nudge.run(str(proj))
+    except Exception as e:
+        print(f"  [improve] nudge skipped: {e}")
+
     print(f"\nALL DONE -> {proj}")
     print(f"  long : {proj/(slug+'.mp4')}")
     sp = proj / (slug + "_short.mp4")
