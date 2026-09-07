@@ -538,10 +538,13 @@ def main():
                          "Epic, Cinematic, Sad) instead of deriving it from the "
                          "script. Passed to fetch_music.py before render.")
     ap.add_argument("--no-branding", action="store_true")
-    ap.add_argument("--layout", choices=["seq", "smart"], default="seq",
-                    help="panel_render layout mode: 'smart' composites 3+ "
-                         "panel scenes into narration-synced grids/stacks "
-                         "(experimental). Default 'seq'.")
+    ap.add_argument("--layout", choices=["seq", "smart"], default="smart",
+                    help="panel_render layout mode: 'smart' (default) "
+                         "composites 3+ panel scenes into narration-synced "
+                         "grids/stacks; 'seq' = one panel at a time. Promoted "
+                         "to default after the ch3 production trial (0 HIGH "
+                         "faults on smart scenes; improvements/ledger.json "
+                         "gap-002).")
     ap.add_argument("--freesound-key", default=None,
                     help="Freesound API token for auto-fetching content SFX "
                          "(door slams, gasps, etc.) tagged in the script. Falls "

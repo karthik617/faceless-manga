@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-06",
+  "updated": "2026-09-07",
   "notes": "Single source of truth for the /improve-train loop. Every round reads this first, skips adopted/rejected gaps, and escalates stubborn ones. Statuses: proposed -> researching -> prototyped -> tested -> adopted | rejected | escalated.",
   "benchmark": {
     "golden_project": "output/the-world-after-the-fall-ch2",
@@ -65,12 +65,12 @@
         "verdict": "v2 criteria MET (formal FAIL = 1 LOW vote-noise re-label present in both arms)",
         "scene_scoped": "14 -> 10 (-50% high) on 5 smart scenes",
         "v1_regressions": "static_scene 0 new (was +8), phone_readability baseline-held (was +6)",
-        "note": "ADOPTED AS OPT-IN (default seq). --layout smart on manga.py/panel_render.py. Promote to default after surviving one production chapter. Small n=5 scenes."
+        "note": "PROMOTED TO DEFAULT after ch3 production trial (6 smart scenes, 0 HIGH faults). Opt-out: --layout seq. panel_render.py module default stays seq (orchestrator passes the flag)."
       },
       "decision": "iterate: per-cell motion, text-aware sizing, 2-3 panel cap",
       "adopted": {
         "date": "2026-09-06",
-        "flag_default": "off",
+        "flag_default": "on",
         "opt_in": "--layout smart",
         "files": [
           "pipeline/layout_smart.py",
@@ -79,7 +79,24 @@
           "README.md"
         ],
         "deps_added": [],
-        "promotion_condition": "one production chapter with --layout smart and no smart-scene HIGH faults"
+        "promotion_condition": "one production chapter with --layout smart and no smart-scene HIGH faults",
+        "production_trial": {
+          "chapter": "the-world-after-the-fall-ch3",
+          "date": "2026-09-07",
+          "smart_scenes": [
+            5,
+            7,
+            9,
+            13,
+            15,
+            17
+          ],
+          "high_faults_on_smart_scenes": 0,
+          "medium_faults_on_smart_scenes": 3,
+          "note": "Promotion condition MET (zero smart-scene HIGH faults). 3 MEDIUM phone_readability on smart scenes 7/15 - right-column text cells small; overlaps gap-009. Recommend promoting --layout smart to default; keep 55% text guard review in gap-009 round."
+        },
+        "promoted": "2026-09-07",
+        "opt_out": "--layout seq"
       }
     },
     {
@@ -245,6 +262,23 @@
         "empty_screen": 3,
         "panel_reuse": 1,
         "unreadable_text": 3
+      }
+    },
+    "the-world-after-the-fall-ch3": {
+      "date": "2026-09-07",
+      "total": 32,
+      "high": 14,
+      "medium": 16,
+      "low": 2,
+      "by_type": {
+        "irrelevant_panel": 9,
+        "watermark": 4,
+        "missing_payoff": 1,
+        "phone_readability": 13,
+        "static_scene": 2,
+        "cropped_content": 1,
+        "panel_reuse": 1,
+        "unreadable_text": 1
       }
     }
   }

@@ -129,7 +129,7 @@ Superset of make_video's schema. Each scene points at real panel files:
 | `pipeline/verify_panels.py` | script | panel↔narration relevance gate (OCR rules + lexical + vision tiers); on by default, `--no-verify-panels` to skip |
 | `pipeline/clean_bubbles.py` | clean | CV inpaint (default) or Gemini inpaint |
 | `pipeline/panel_render.py` | render | imports make_video; `render_panel_scene` |
-| `pipeline/layout_smart.py` | render | opt-in `--layout smart`: 3-panel grid composites with beat-synced reveals + guided-view punch-ins for multi-panel scenes (default `seq` = one panel at a time) |
+| `pipeline/layout_smart.py` | render | `--layout smart` (manga.py default): 3-panel grid composites with beat-synced reveals + guided-view punch-ins for multi-panel scenes; `--layout seq` = one panel at a time |
 | `pipeline/make_thumbs.py` | extras | real-panel background + text overlay |
 | `pipeline/make_short.py` | short | cuts a 9:16 Short (best hook clip) from the long mp4; blur-fill + ASS captions + "full video" card |
 | `manga.py` | all | resumable orchestrator (`STEPS`, `--from`) |
