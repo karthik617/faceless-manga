@@ -1,0 +1,1616 @@
+[
+  {
+    "panel": "p0001.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A credits page showing FlameScans scanlation staff and chapter title 'Chapter 2: The World After the Fall' with an illustration of a character.",
+    "kind": "credits",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0002.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "HUFF..."
+      },
+      {
+        "speaker": "unknown",
+        "text": "HUU..."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "An injured character lying on the ground among rubble and flames, breathing heavily.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0003.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "COUGH..."
+      },
+      {
+        "speaker": "unknown",
+        "text": "JUST WHERE..."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Close-up of the character's bloodied face coughing, then looking around at their surroundings amidst flames and destruction.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0004.png",
+    "dialogue": [],
+    "narration_text": "DID IT ALL GO WRONG?",
+    "sfx": "",
+    "scene_beat": "Flames swirl around broken rubble as the narration questions what went wrong.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0005.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "An aerial view of a devastated urban landscape with cracked streets and destruction.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0006.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "KUAHH!!"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A hand grabs a dark object forcefully as the character cries out in pain or effort.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0007.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "THIS WAY, YOU MONSTER!"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "WHOOSH",
+    "scene_beat": "A shadowy monster with glowing yellow eyes swoops down toward someone below with speed lines radiating outward.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0008.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "CLASH",
+    "scene_beat": "Large sound effect letters appear against a black background.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0009.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "JAEHWAN! NOW!!"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "SLASH",
+    "scene_beat": "A man with facial hair lies on the ground looking upward urgently while shouting.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0010.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "DON'T WORRY!"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "SWOOSH",
+    "scene_beat": "A figure in black with a flowing cape swoops through the air with motion lines.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0011.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "LEAP",
+    "scene_beat": "A tall imposing dark silhouette stands against a light background with dramatic speed lines.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0012.png",
+    "dialogue": [
+      {
+        "speaker": "Jaehwan",
+        "text": "NOW JUST..."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "DASH",
+    "scene_beat": "Jaehwan grits his teeth in determination while rushing forward with intense motion lines.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0013.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A gloved hand grips a white surface with visible strain.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0014.png",
+    "dialogue": [],
+    "narration_text": "DIE!!",
+    "sfx": "",
+    "scene_beat": "The word 'DIE!!' appears in bold black text inside a jagged speech bubble.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0015.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A dark cross-shaped pendant or dog tag is shown hanging on a chain.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0016.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A figure in dark clothing is violently struck with blood spraying from the impact.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0017.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A masked figure in dark clothing falls amid blood splatter.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0018.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "HOW MANY DIED...?"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Damaged pillars are shown in a dark scene as someone asks how many died.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0019.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "FORTUNATELY, IT SEEMS NO ONE DID."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A character with brown hair and a scarf speaks while another character with black hair is visible in silhouette.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0020.png",
+    "dialogue": [
+      {
+        "speaker": "black-haired character",
+        "text": "AND THE ONES WHO WERE INJURED CAN RECOVER IF THEY REST."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The black-haired character speaks while the brown-haired character with a scarf listens in the background.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0021.png",
+    "dialogue": [
+      {
+        "speaker": "brown-haired character",
+        "text": "IF WE CONTINUE LIKE THIS, WE MIGHT BE ABLE TO REACH THE LAST FLOOR."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A group of five people stand together; one blonde character is being healed with blue magical energy while the brown-haired character speaks.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0022.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The blonde character and another character smile and give OK hand gestures as the healing continues with blue light.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0023.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "HMM?"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The black-haired character notices something while the brown-haired character stands beside him.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0024.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "THAT'S..."
+      }
+    ],
+    "narration_text": "A SWORD THAT HAS BEEN ON THE B5TH FLOOR FOR A THOUSAND DAYS AND NIGHTS, WAITING FOR ITS OWNER TO FIND IT. IT HAS THE ENERGY OF THE SUN AND MOON.",
+    "sfx": "THDD",
+    "scene_beat": "A black sword lies on the ground with an info card appearing showing it is the True Dragon Sword.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0025.png",
+    "dialogue": [],
+    "narration_text": "TIME A STRONG WEAPON LIKE THIS APPEARED...",
+    "sfx": "",
+    "scene_beat": "A character holds up a long sword while looking at it.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0026.png",
+    "dialogue": [],
+    "narration_text": "JUST LIKE YOONHWAN SAID,",
+    "sfx": "",
+    "scene_beat": "Close-up of the character's face showing a confident expression.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0027.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "WE JUST MIGHT BE ABLE TO REACH THE LAST FLOOR."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The character speaks while holding the sword, shown from a lower angle.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0028.png",
+    "dialogue": [],
+    "narration_text": "I THOUGHT EVERYTHING WAS GOING TO GO SMOOTHLY.",
+    "sfx": "",
+    "scene_beat": "A black panel with white text narration appears.",
+    "kind": "textonly",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0029.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Close-up of the character's face showing a shocked or distressed expression with wide eyes.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0030.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The character is shown in distress with torn clothing against an orange fiery background.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0031.png",
+    "dialogue": [],
+    "narration_text": "98TH FLOOR <THE ROOM OF FLAMES>",
+    "sfx": "SWOOSH",
+    "scene_beat": "A massive dark creature with glowing red eyes emerges amid swirling flames.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0032.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "DOOM",
+    "scene_beat": "The monster's enormous fanged mouth opens wide, breathing fire toward a small human figure below.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0033.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "SLASH",
+    "scene_beat": "A person in dark clothing moves quickly across the ground, weapon in hand, evading the creature.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0034.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "SHHH",
+    "scene_beat": "The figure continues running through the fiery environment as debris falls around them.",
+    "kind": "story",
+    "quality": "cut"
+  },
+  {
+    "panel": "p0035.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "HUFF..."
+      },
+      {
+        "speaker": "unknown",
+        "text": "HUU..."
+      },
+      {
+        "speaker": "unknown",
+        "text": "HUFF..."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "SIZZLE",
+    "scene_beat": "Split panels show the monster's severed head and the warrior breathing heavily, injured and bloodied.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0036.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "COUGH..."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A hooded figure lies exhausted among the debris and flames of the defeated monster.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0037.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "WISH",
+    "scene_beat": "A close-up of a character's face showing intense emotion with wide eyes and gritted teeth.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0038.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "THUD THUD",
+    "scene_beat": "Dynamic motion lines showing a violent impact or movement from an aerial perspective.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0039.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "CRASH",
+    "scene_beat": "An explosive impact effect shown with dramatic speed lines radiating outward.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0040.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "KWGH...!!",
+    "scene_beat": "A character screaming with their mouth wide open, showing visible blood and distress.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0041.png",
+    "dialogue": [],
+    "narration_text": "HOW FUTILE.",
+    "sfx": "",
+    "scene_beat": "A close-up of a character's face partially obscured in shadow with a single visible eye.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0042.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Blue ice crystals or shards falling through the air as two figures stand below.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0043.png",
+    "dialogue": [],
+    "narration_text": "ALL THE VICTORIES WE SHARED TOGETHER.",
+    "sfx": "",
+    "scene_beat": "Two figures stand triumphantly with raised hands amidst blue ice crystals and frozen structures.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0044.png",
+    "dialogue": [],
+    "narration_text": "ALL THE TIME WE SPENT.",
+    "sfx": "",
+    "scene_beat": "A character with blonde hair smiles while surrounded by blue ice shards.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0045.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Blue ice crystals float and dissolve against a stark white background with speed lines.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0046.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A character with dark hair looks down with an expression of despair and tears.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0047.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A menacing dark creature with red glowing eyes and sharp teeth looms over a person.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0048.png",
+    "dialogue": [],
+    "narration_text": "WAS IT ALL TO FACE A DOG'S DEATH LIKE THIS?",
+    "sfx": "BLUR",
+    "scene_beat": "A close-up of an eye with the reflection of a monstrous creature with flames in its pupil.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0049.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A large dark creature with a glowing red eye looms menacingly with a dragon-like silhouette in the background.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0050.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "\u30b7\u30e3",
+    "scene_beat": "Dynamic motion lines in red and cyan slash across a bright background.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0051.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A young man with spiky hair grips a sword with dark gloved hands, shown from a low angle with cyan and purple energy effects.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0052.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "\u30b7\u30e3 \u30b7\u30e3",
+    "scene_beat": "A figure attacks downward through explosive debris and flames with intense speed lines.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0053.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "KIIIEEEEEK",
+    "scene_beat": "A dark winged creature appears with dramatic lettering across the panel.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0054.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "\u30c9\u30b7\u30e5\u30eb CRASH",
+    "scene_beat": "The armored creature shatters into pieces surrounded by flames with dramatic X-shaped panel composition.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0055.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "JAEHWAN! SNAP OUT OF IT!!"
+      },
+      {
+        "speaker": "unknown",
+        "text": "YOONHWAN..."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "WHIP",
+    "scene_beat": "A dark-haired character surrounded by flames appears distressed while someone calls out to them.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0056.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "SPIN",
+    "scene_beat": "A figure spins through the air with motion lines showing rapid movement.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0057.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "TING",
+    "scene_beat": "The figure continues spinning through space with dynamic motion effects.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0058.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "VVV",
+    "scene_beat": "The character is shown from a different angle mid-spin with orange and white motion effects.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0059.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "VVV",
+    "scene_beat": "Close-up detail of the spinning motion with orange gradient effects.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0060.png",
+    "dialogue": [
+      {
+        "speaker": "Jaehwan",
+        "text": "ARE YOU GOING TO LEAVE ME TO BEAT THIS MONSTER ALO~?!"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "SWING",
+    "scene_beat": "Jaehwan shouts while in motion, appearing distressed and calling out to someone.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0061.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "KWAASH",
+    "scene_beat": "An explosion or impact occurs with debris flying and speed lines radiating outward.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0062.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A glowing red energy orb with a beam shoots through motion-blurred surroundings.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0063.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Large red stylized sound effect text appears with blood splatter effects.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0064.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A dark-haired character lies wounded among rubble and debris.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0065.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A dark armored gauntlet or claw is shown in detail against a reddish background.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0066.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Blood drops fall through the air below the armored hand.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0067.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "Blood splatter visual effect",
+    "scene_beat": "A dark armored figure with spiky hair stands amid falling blood petals with large red calligraphy above.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0068.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Close-up view of the armored figure's torso showing dark plated armor with red glowing veins and a sword, surrounded by falling blood petals.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0069.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "YOONHWAN!!!"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Extreme close-up of a man's face showing intense emotion with gritted teeth and wide eye, yelling someone's name.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0070.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "CRASH",
+    "scene_beat": "A powerful impact scene with motion blur and debris flying, showing dynamic action movement.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0071.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "THUMP THUMP",
+    "scene_beat": "Two fists or impacts are shown with speed lines indicating rapid successive strikes.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0072.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "THWAP THWAP",
+    "scene_beat": "A monstrous creature with a dark scaled face and glowing features lunges forward with aggressive motion.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0073.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A close-up of a dark figure with glowing red eyes surrounded by black streaks and speed lines.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0074.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "KUOOOH",
+    "scene_beat": "Large dramatic sound effect text appears against a black splatter background.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0075.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "An explosive impact scene with radial motion lines and intense energy effects engulfing a figure.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0076.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "KUUM",
+    "scene_beat": "Large stylized sound effect letters appear over a background of streaming energy or flames.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0077.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A character with dark messy hair grits their teeth in pain or exertion, surrounded by falling rocks.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0078.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The same character continues to grimace with blood visible on their face, debris still falling around them.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0079.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A boot strikes down forcefully onto a wooden floor, scattering debris and leaves.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0080.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A figure in dark clothing crouches low, pressing their hand against the wooden floor with motion lines indicating rapid movement.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0081.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A figure wearing dark armor with red accents charges forward in a dynamic attacking motion across a wooden floor.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0082.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A figure in dark clothing and wrappings is shown from a low angle, standing on a wooden floor with debris falling around them.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0083.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A close-up of a wide-eyed face shows surprise or shock, with speed lines and glowing text effects.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0084.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A dark armored figure with segmented plating and glowing orange cracks or energy emanates a bright white aura.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0085.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A small caped figure stands at the bottom of a massive dark dragon-like creature as a bright sword-like beam of light cuts through the darkness.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0086.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "WHAT'S THAT?"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A speech bubble with spiky borders questions what is being observed.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0087.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "THAT LIGHT...?"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A glowing orange molten figure or form is wrapped in spiraling white light energy against rocky terrain.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0088.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "DON'T TELL ME..."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A speech bubble with spiky borders expresses growing realization.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0089.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "LGAP",
+    "scene_beat": "A massive explosion erupts with debris and molten material flying outward in all directions with dynamic motion lines.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0090.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A close-up of an intense face with one glowing eye visible, hair flowing dramatically, showing shock or alarm.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0091.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "VASH",
+    "scene_beat": "A dark creature with a glowing red eye lunges forward with intense speed lines radiating outward.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0092.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A bright beam of light or energy shoots downward with intense white and yellow rays.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0093.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The energy beam continues downward illuminating a dark creature's head and body from above.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0094.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Dark feathered or shadowy forms fill the frame as the light continues to cascade down.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0095.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The panel shows the FLAMESCANS.ORG logo watermark over dark atmospheric imagery.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0096.png",
+    "dialogue": [],
+    "narration_text": "Art - UNDEAD POTATO | Story - S-CYAN\nOriginal - SHINGSHONG | Translation - FLAME SCANS\n\nCHAPTER 2",
+    "sfx": "",
+    "scene_beat": "A title card displays the series logo 'THE WORLD AFTER THE FALL' along with credits for the creative team and chapter number.",
+    "kind": "cover",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0097.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "\uc528\uc775\uc775\uc775",
+    "scene_beat": "A massive creature with glowing orange segments and segmented armor is shown from below in a dark environment with embers falling.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0098.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "COUGH."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "\uc528\uc775\uc775\uc775 KWUUSH",
+    "scene_beat": "The creature's body writhes and shifts with glowing orange energy emanating from within its form.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0099.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "COUGH."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "KWUUSH",
+    "scene_beat": "A close-up shows the creature's segmented body with intense orange glow concentrated in its core area.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0100.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "COUGH."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The view shows the creature lying on cracked ground with orange energy spreading across the surface.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0101.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "LET'S GO, YOONHWAN!"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A bloodied character with dark hair grits their teeth and appears to be exerting effort, with large wings or appendages visible behind them.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0102.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A dark panel showing what appears to be movement or action in shadow.",
+    "kind": "story",
+    "quality": "cut"
+  },
+  {
+    "panel": "p0103.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A close-up shows a cracked stone or armored surface with blood dripping from it and glowing red light emanating from within the cracks.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0104.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A figure wrapped in a cloak kneels in a destroyed area with cracked ground and debris, illuminated by embers floating in the air, with a large shadow looming behind them.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0105.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A cracked mask or armored helmet is shown with blood streaks running down its surface.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0106.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A close-up reveals a single wide eye with glowing iris staring intensely through dark hair.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0107.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "...I'M SORRY,"
+      },
+      {
+        "speaker": "unknown",
+        "text": "JAEHWAN..."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A bloodied person with light hair and glowing eyes apologizes while looking down, tears and blood on their face, surrounded by floating embers.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0108.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A dark-haired figure in a cape stands with their back turned while the bloodied person sits on the ground nearby in the debris-filled area.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0109.png",
+    "dialogue": [],
+    "narration_text": "KIM YOONHWAN.",
+    "sfx": "",
+    "scene_beat": "A close-up shows a character with light brown hair from behind.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0110.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Kim Yoonhwan is shown in the foreground with two smiling companions in the background.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0111.png",
+    "dialogue": [],
+    "narration_text": "IN THIS DESOLATE AND BRUTAL TOWER, HE NEVER LOST HIS SMILE.",
+    "sfx": "",
+    "scene_beat": "Three figures in cloaks are shown together, one holding a white creature with a knife.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0112.png",
+    "dialogue": [],
+    "narration_text": "THE WALKERS GAVE HIM THE NICKNAME, 'SMILE KNIGHT.'",
+    "sfx": "",
+    "scene_beat": "Kim Yoonhwan smiles brightly with leaves falling around him.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0113.png",
+    "dialogue": [],
+    "narration_text": "AND THUS, THE 'SMILE KNIGHT'",
+    "sfx": "",
+    "scene_beat": "A black text box appears against a gray gradient background.",
+    "kind": "textonly",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0114.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A close-up shows strands of brown hair in detail.",
+    "kind": "story",
+    "quality": "cut"
+  },
+  {
+    "panel": "p0115.png",
+    "dialogue": [],
+    "narration_text": "LOST HIS SMILE FOR THE FIRST TIME.",
+    "sfx": "",
+    "scene_beat": "A close-up shows a character's face from below, with a pained or serious expression.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0116.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "GO."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A silhouetted figure with dark hair turns their head slightly.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0117.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The character turns and begins to walk away, shown from behind.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0118.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "GET LOST."
+      },
+      {
+        "speaker": "unknown",
+        "text": "BEFORE I CHANGE MY MIND."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The cloaked figure stands facing away, looking toward a bright horizon.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0119.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A blank white panel separates the scenes.",
+    "kind": "story",
+    "quality": "sparse"
+  },
+  {
+    "panel": "p0120.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A dramatic shot shows a large stone or crystalline structure cracking and breaking apart with embers floating around it, while a figure in shadow stands below.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0121.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A dark atmospheric shot shows silhouettes of flying creatures against a misty background with a large shadowy form in the foreground.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0122.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "JAEHWAN, YOU PUNK... SO YOU NOTICED."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A close-up of a character's face with white hair looking downward, with a bloodied object visible below.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0123.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "THIS STONE... LOOKS KIND OF DIRTY, DOESN'T IT?"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A bloodied white stone or crystal object is shown being held in a dark clawed hand.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0124.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "STEP",
+    "scene_beat": "A foot steps onto stairs, leaving a trail of blood.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0125.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "JAEHWAN... YOU ARE A MUCH STRONGER PERSON THAN I HAD THOUGHT."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The narration appears above the scene as a character climbs stairs.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0126.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "COUGH!"
+      }
+    ],
+    "narration_text": "THANKS TO YOU, I'M SURE.",
+    "sfx": "",
+    "scene_beat": "A wounded character with blonde hair continues climbing the stairs while coughing, leaving a blood trail behind.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0127.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "TAP",
+    "scene_beat": "A figure in dark armor lies collapsed on the ground with armored legs visible.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0128.png",
+    "dialogue": [],
+    "narration_text": "YOU'LL DEFINITELY BE ABLE TO CLIMB TO THE TOP OF THIS TOWER.",
+    "sfx": "",
+    "scene_beat": "A cloaked figure stands small in a tall tower archway with warm light behind them.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0129.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "IF IT'S YOU."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Close-up of a male character's face from below showing his jaw and stubble.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0130.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "IT'S REALLY SUCH A RELIEF THAT YOU'RE IN THIS WORLD,"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Close-up of the same male character's lower face and jaw in profile.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0131.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A cloaked figure in dark robes is shown from behind with ornate leg armor visible.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0132.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "JAEHWAN."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A large white speech bubble containing the name Jaehwan appears on a mostly blank panel.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0133.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "BOOM",
+    "scene_beat": "A large arched doorway glows with intense golden and orange light emanating outward.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0134.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "WHOOSH",
+    "scene_beat": "Bright light floods across a wooden floor as leaves scatter through the air.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0135.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "SLASH",
+    "scene_beat": "Sharp angular light effects cut across the dark scene with falling leaves.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0136.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "WHOOSH",
+    "scene_beat": "A cloaked figure is thrown backward against a wall with hands raised, illuminated by intense light.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0137.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "THUD",
+    "scene_beat": "A close-up shows a gloved hand gripping something against wooden planks with a bracelet visible on the wrist.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0138.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Multiple masked figures loom menacingly over a person lying on the ground, with blood droplets visible.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0139.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "LET'S GO"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A speech bubble with the text 'LET'S GO' appears against a white background.",
+    "kind": "textonly",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0140.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A large creature or dragon with brown scales and glowing yellow eyes is shown in a dramatic angle.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0141.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "The view continues showing the brown-scaled creature from a different angle, revealing more of its textured surface and glowing features.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0142.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "AHEAD."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A speech bubble with the text 'AHEAD.' appears against a white background.",
+    "kind": "textonly",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0143.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "CLAK",
+    "scene_beat": "A bright blue blade or sword appears with a slashing motion, with a dark silhouette visible on the left side.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0144.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "Stylized blue angular lines appear against a white background, suggesting an impact or energy effect.",
+    "kind": "story",
+    "quality": "cut"
+  },
+  {
+    "panel": "p0145.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A bright blue energy or light effect fills the panel with glowing radiance.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0146.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A close-up shows a character's shocked face looking upward with wide eyes.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0147.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "IS THIS A..."
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A long vertical view shows glowing blue energy streaming downward between dark surfaces.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0148.png",
+    "dialogue": [
+      {
+        "speaker": "unknown",
+        "text": "A SNOWFIELD...?"
+      }
+    ],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A vast white snowy landscape is revealed with particles falling from above.",
+    "kind": "story",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0149.png",
+    "dialogue": [],
+    "narration_text": "",
+    "sfx": "",
+    "scene_beat": "A black panel displays the stylized white title logo THE WORLD AFTER THE FALL.",
+    "kind": "cover",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0150.png",
+    "dialogue": [],
+    "narration_text": "TO BE CONTINUED...",
+    "sfx": "",
+    "scene_beat": "A credits and footnotes page lists the art, story, and original creators along with publisher logos.",
+    "kind": "endmatter",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0151.png",
+    "dialogue": [],
+    "narration_text": "His best friend would have noticed the stone he was holding wasn't a [Stone of Regression] immediately. Yoonhwan tightly held onto the stone. He felt the cold, rough edges. It was something he could only feel in this world.",
+    "sfx": "",
+    "scene_beat": "Narration describes Yoonhwan holding a stone and reflecting on its physical properties.",
+    "kind": "textonly",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0152.png",
+    "dialogue": [],
+    "narration_text": "He had learned this from Jaehwan.\n\nHe had learned how to clutch this rough, worthless life and never let it go.",
+    "sfx": "",
+    "scene_beat": "Narration explains that Yoonhwan learned from Jaehwan how to hold onto life.",
+    "kind": "textonly",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0153.png",
+    "dialogue": [],
+    "narration_text": "Yoonhwan walked to the edge of the tower and stood there.",
+    "sfx": "",
+    "scene_beat": "Narration states Yoonhwan walked to the tower's edge and stood there.",
+    "kind": "textonly",
+    "quality": "ok"
+  },
+  {
+    "panel": "p0154.png",
+    "dialogue": [],
+    "narration_text": "Then his body disappeared off to the clouds and Jaehwan stopped as he opened the gate to the 99th floor. He used his right hand to wipe off his face. He waited until he stopped shivering and started to calmly breathe again. But he did not look back. He walked up toward the 99th floor alone.",
+    "sfx": "",
+    "scene_beat": "Narration describes Yoonhwan disappearing into the clouds while Jaehwan composes himself at the 99th floor gate without looking back.",
+    "kind": "textonly",
+    "quality": "ok"
+  }
+]

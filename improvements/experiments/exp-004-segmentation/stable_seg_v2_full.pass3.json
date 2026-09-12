@@ -1,0 +1,198 @@
+[
+  {
+    "scene": 1,
+    "t": 36.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Generic title card with 'HUFF...' does not depict the devastation scene described"
+  },
+  {
+    "scene": 1,
+    "t": 51.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card with question while narration describes scene imagery"
+  },
+  {
+    "scene": 4,
+    "t": 97.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only a knife prop/keychain, not the action scene described in narration."
+  },
+  {
+    "scene": 4,
+    "t": 101.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same static knife prop, does not depict the combat action described."
+  },
+  {
+    "scene": 4,
+    "t": 111.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Returns to static knife prop, not depicting the described boss battle."
+  },
+  {
+    "scene": 7,
+    "t": 163.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows two characters standing together, not Jaehwan noticing/discovering the sword."
+  },
+  {
+    "scene": 7,
+    "t": 169.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same unrelated character interaction scene, does not depict the sword discovery."
+  },
+  {
+    "scene": 9,
+    "t": 202.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card with text unrelated to the narration about Jaehwan and the tower"
+  },
+  {
+    "scene": 9,
+    "t": 213.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same title card repeating, not depicting the narrated content"
+  },
+  {
+    "scene": 9,
+    "t": 218.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card shown again instead of depicting Jaehwan or the tower events"
+  },
+  {
+    "scene": 13,
+    "t": 287.0,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"How futile.\""
+  },
+  {
+    "scene": 18,
+    "t": 416.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows stylized sound effect text and inset panel, not the described action of blood spray and Jaehwan's shocked face"
+  },
+  {
+    "scene": 20,
+    "t": 472.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only stylized text KUUOOHHH, not the described creature or action scene"
+  },
+  {
+    "scene": 20,
+    "t": 479.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only stylized text KUUOOHHH, not the described creature or action scene"
+  },
+  {
+    "scene": 20,
+    "t": 486.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only stylized text KUUOOHHH, not the described creature or action scene"
+  },
+  {
+    "scene": 22,
+    "t": 520.7,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner."
+  },
+  {
+    "scene": 23,
+    "t": 563.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Decorative text bubble with narration text only, no manga imagery"
+  },
+  {
+    "scene": 24,
+    "t": 571.1,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Ahead.\""
+  },
+  {
+    "scene": 25,
+    "t": 604.4,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Watermark visible at bottom of left panel (FLAMESCANS.ORG)"
+  },
+  {
+    "scene": 29,
+    "t": 699.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows a boot and title logo; narration describes Yoonhwan in robes with starry background and door"
+  },
+  {
+    "scene": 34,
+    "t": 863.5,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Channel watermark/subscribe button visible in bottom left corner"
+  },
+  {
+    "scene": 0,
+    "t": 6.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Character's eyes/forehead cropped at top, but dramatic reaction face fits hook mood."
+  },
+  {
+    "scene": 4,
+    "t": 106.6,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Combat scene with blood is relevant but visibly cropped at top and bottom mid-action."
+  },
+  {
+    "scene": 7,
+    "t": 157.8,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Description text on the sword info box is too small to read on phone."
+  },
+  {
+    "scene": 7,
+    "t": 174.8,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Description text is cut off mid-sentence and too small to read."
+  },
+  {
+    "scene": 28,
+    "t": 692.9,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Speech bubble is cut off at the top edge of the frame."
+  },
+  {
+    "t": 722.5,
+    "t_end": 734.5,
+    "type": "static_scene",
+    "severity": "medium",
+    "detail": "visuals unchanged for 12s"
+  },
+  {
+    "scene": 7,
+    "t": 174.8,
+    "type": "unreadable_text",
+    "severity": "low",
+    "detail": "Description text is cut off mid-sentence and too small to read."
+  }
+]

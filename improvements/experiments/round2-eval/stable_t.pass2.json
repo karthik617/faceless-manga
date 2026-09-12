@@ -1,0 +1,359 @@
+[
+  {
+    "scene": 0,
+    "t": 5.6,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible at bottom right."
+  },
+  {
+    "scene": 0,
+    "t": 12.5,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible at bottom right."
+  },
+  {
+    "scene": 0,
+    "t": 19.5,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible at bottom right."
+  },
+  {
+    "scene": 0,
+    "t": 26.4,
+    "type": "weak_hook",
+    "severity": "high",
+    "detail": "Comic panels with speech bubbles cut off at edges, text too small to read on phone."
+  },
+  {
+    "scene": 0,
+    "t": 26.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Comic panels with speech bubbles cut off at edges, text too small to read on phone."
+  },
+  {
+    "scene": 1,
+    "t": 35.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card with 'JUST WHERE...' not depicting the described action"
+  },
+  {
+    "scene": 1,
+    "t": 39.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card with 'DID IT ALL GO WRONG?' and visible watermark"
+  },
+  {
+    "scene": 1,
+    "t": 39.9,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Title card with 'DID IT ALL GO WRONG?' and visible watermark"
+  },
+  {
+    "scene": 1,
+    "t": 44.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same title card repeated with watermark visible"
+  },
+  {
+    "scene": 1,
+    "t": 44.3,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Same title card repeated with watermark visible"
+  },
+  {
+    "scene": 2,
+    "t": 50.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Speech bubble with sound effect, not depicting the narrated scene of city devastation or character action."
+  },
+  {
+    "scene": 2,
+    "t": 57.2,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same speech bubble sound effect, does not show the described city, monster, or Jaehwan."
+  },
+  {
+    "scene": 2,
+    "t": 64.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Identical speech bubble frame, completely unrelated to narrated devastation and action scene."
+  },
+  {
+    "scene": 2,
+    "t": 70.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Stylized text/logo cropped at edges, not depicting the Room of Flames, character, or monster described."
+  },
+  {
+    "scene": 3,
+    "t": 94.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only a cropped silhouette of weapon/tag, no action or characters visible"
+  },
+  {
+    "scene": 6,
+    "t": 175.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Face and content cropped at top, does not show the shocked expression described."
+  },
+  {
+    "scene": 7,
+    "t": 182.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card showing location name, not the action being narrated"
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Mostly black screen with cropped orange text/graphic at top"
+  },
+  {
+    "scene": 7,
+    "t": 197.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same as previous frame, mostly empty with cropped element"
+  },
+  {
+    "scene": 7,
+    "t": 204.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Repeats empty black screen with cropped orange element"
+  },
+  {
+    "scene": 8,
+    "t": 212.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows unrelated battle scene, not the described aftermath with severed head in flames."
+  },
+  {
+    "scene": 10,
+    "t": 281.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only the text question without depicting the scene described in narration"
+  },
+  {
+    "scene": 11,
+    "t": 324.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows dialogue panel with speech bubble, not the action described in narration"
+  },
+  {
+    "scene": 11,
+    "t": 333.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows dialogue panel with speech bubble, not the action described in narration"
+  },
+  {
+    "scene": 12,
+    "t": 347.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only large stylized sound effect text, not depicting the described action"
+  },
+  {
+    "scene": 13,
+    "t": 361.8,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Yoonhwan!!!\""
+  },
+  {
+    "scene": 13,
+    "t": 368.5,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible on the frame."
+  },
+  {
+    "scene": 15,
+    "t": 439.7,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner"
+  },
+  {
+    "scene": 17,
+    "t": 510.5,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Let's go, Yoonhwan!\""
+  },
+  {
+    "scene": 19,
+    "t": 584.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card showing only character name, not depicting narrated scene"
+  },
+  {
+    "scene": 20,
+    "t": 613.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows tally marks on wall with FLAMESCANS.ORG watermark, not the narrated scene."
+  },
+  {
+    "scene": 20,
+    "t": 613.7,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Shows tally marks on wall with FLAMESCANS.ORG watermark, not the narrated scene."
+  },
+  {
+    "scene": 21,
+    "t": 637.4,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?\""
+  },
+  {
+    "scene": 22,
+    "t": 665.5,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"It's really such a relief that you're in this world, Jaehwan.\""
+  },
+  {
+    "scene": 22,
+    "t": 688.0,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in top right corner"
+  },
+  {
+    "scene": 24,
+    "t": 748.2,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows character apologizing, not depicting narrated scene about stone or tower edge"
+  },
+  {
+    "scene": 24,
+    "t": 769.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same apologizing dialogue repeated, not matching narration content"
+  },
+  {
+    "scene": 0,
+    "t": 26.4,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Comic panels with speech bubbles cut off at edges, text too small to read on phone."
+  },
+  {
+    "scene": 0,
+    "t": 26.4,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Comic panels with speech bubbles cut off at edges, text too small to read on phone."
+  },
+  {
+    "scene": 2,
+    "t": 70.7,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Stylized text/logo cropped at edges, not depicting the Room of Flames, character, or monster described."
+  },
+  {
+    "scene": 3,
+    "t": 94.3,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows only a cropped silhouette of weapon/tag, no action or characters visible"
+  },
+  {
+    "scene": 6,
+    "t": 175.8,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Face and content cropped at top, does not show the shocked expression described."
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Mostly black screen with cropped orange text/graphic at top"
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Mostly black screen with cropped orange text/graphic at top"
+  },
+  {
+    "scene": 7,
+    "t": 197.4,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Same as previous frame, mostly empty with cropped element"
+  },
+  {
+    "scene": 7,
+    "t": 197.4,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Same as previous frame, mostly empty with cropped element"
+  },
+  {
+    "scene": 7,
+    "t": 204.7,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Repeats empty black screen with cropped orange element"
+  },
+  {
+    "scene": 7,
+    "t": 204.7,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Repeats empty black screen with cropped orange element"
+  },
+  {
+    "scene": 14,
+    "t": 429.9,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Character's face and head are cut off at the top of frame."
+  },
+  {
+    "scene": 20,
+    "t": 628.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Shows dialogue 'Jaehwan, you punk... so you noticed' but speech bubble is cut off at top."
+  },
+  {
+    "scene": 24,
+    "t": 0.0,
+    "type": "panel_reuse",
+    "severity": "low",
+    "detail": "p0107.png appears in 3 scenes ([0, 18, 24]) \u2014 repetition reads as lazy"
+  }
+]

@@ -1,0 +1,178 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": [
+    0,
+    4,
+    7,
+    9,
+    13,
+    15,
+    17,
+    20,
+    22
+  ],
+  "score": {
+    "baseline": 64,
+    "experiment": 58,
+    "delta": -6,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 11,
+      "medium": 4,
+      "low": 1
+    },
+    "experiment": {
+      "high": 9,
+      "medium": 5,
+      "low": 3
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "cropped_content": 2,
+      "irrelevant_panel": 2,
+      "phone_readability": 1,
+      "weak_hook": 1,
+      "missing_payoff": 4,
+      "empty_screen": 1,
+      "unreadable_text": 1,
+      "watermark": 4
+    },
+    "experiment": {
+      "cropped_content": 3,
+      "irrelevant_panel": 3,
+      "phone_readability": 1,
+      "unreadable_text": 3,
+      "watermark": 1,
+      "weak_hook": 1,
+      "missing_payoff": 4,
+      "empty_screen": 1
+    }
+  },
+  "vetoes": [
+    "fault types worsened (base\u2192now, matched-pair net): {'unreadable_text': (1, 3)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/stable_base.json",
+    "review": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/stable_w2.json",
+    "video": null
+  },
+  "matched_vetoes": {
+    "pass_counts": {
+      "baseline": 3,
+      "experiment": 3
+    },
+    "consensus_fraction": 0.6667,
+    "consensus_dropped": {
+      "baseline": [],
+      "experiment": []
+    },
+    "frame_hash": {
+      "enabled": true,
+      "window_s": 3.0,
+      "video": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/_work_w2/ambed.mp4",
+      "baseline_video": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/_work_base/ambed.mp4"
+    },
+    "annotated_vetoes": [
+      {
+        "type": "cropped_content",
+        "count": {
+          "baseline": 2,
+          "experiment": 3
+        },
+        "pairs_added": [
+          {
+            "scene": 20,
+            "t": 635.2,
+            "votes": "3/3",
+            "severity": "medium",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "ba2343d5d6c4f0612930f67d46eb6278",
+              "t": 635.2,
+              "baseline_window": [
+                632.2,
+                638.2
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 0,
+        "suppressed": true,
+        "reason": "frame-hash exemption + matched-pair netting"
+      },
+      {
+        "type": "irrelevant_panel",
+        "count": {
+          "baseline": 2,
+          "experiment": 3
+        },
+        "pairs_added": [
+          {
+            "scene": 20,
+            "t": 635.2,
+            "votes": "3/3",
+            "severity": "high",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "ba2343d5d6c4f0612930f67d46eb6278",
+              "t": 635.2,
+              "baseline_window": [
+                632.2,
+                638.2
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 0,
+        "suppressed": true,
+        "reason": "frame-hash exemption + matched-pair netting"
+      },
+      {
+        "type": "unreadable_text",
+        "count": {
+          "baseline": 1,
+          "experiment": 3
+        },
+        "pairs_added": [
+          {
+            "scene": 0,
+            "t": 26.4,
+            "votes": "2/3",
+            "severity": "low",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 20,
+            "t": 635.2,
+            "votes": "2/3",
+            "severity": "low",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "ba2343d5d6c4f0612930f67d46eb6278",
+              "t": 635.2,
+              "baseline_window": [
+                632.2,
+                638.2
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 1,
+        "suppressed": false
+      }
+    ]
+  }
+}

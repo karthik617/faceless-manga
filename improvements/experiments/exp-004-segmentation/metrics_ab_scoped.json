@@ -1,0 +1,70 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": [
+    0,
+    1,
+    3,
+    4,
+    10,
+    13,
+    14,
+    15,
+    16,
+    18,
+    19,
+    20,
+    21,
+    23,
+    24,
+    26
+  ],
+  "score": {
+    "baseline": 65,
+    "experiment": 61,
+    "delta": -4,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 10,
+      "medium": 7,
+      "low": 1
+    },
+    "experiment": {
+      "high": 10,
+      "medium": 4,
+      "low": 3
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "empty_screen": 2,
+      "irrelevant_panel": 8,
+      "cropped_content": 4,
+      "phone_readability": 1,
+      "missing_payoff": 2,
+      "unreadable_text": 1
+    },
+    "experiment": {
+      "cropped_content": 4,
+      "irrelevant_panel": 8,
+      "unreadable_text": 2,
+      "missing_payoff": 2,
+      "review_error": 1
+    }
+  },
+  "vetoes": [
+    "fault types worsened (base\u2192now): {'unreadable_text': (1, 2)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/exp-004-segmentation/stable_seg.json",
+    "review": "/tmp/opencode/exp004_bench_v2/review.json",
+    "video": null
+  }
+}

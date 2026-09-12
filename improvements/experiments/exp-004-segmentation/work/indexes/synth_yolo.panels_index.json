@@ -1,0 +1,25 @@
+[
+  {
+    "panel": "p0001.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      0,
+      690,
+      2146
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0002.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      2146,
+      690,
+      1854
+    ],
+    "mode": "webtoon",
+    "note": "beat"
+  }
+]

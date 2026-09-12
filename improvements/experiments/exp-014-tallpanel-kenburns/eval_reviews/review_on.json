@@ -1,0 +1,224 @@
+[
+  {
+    "scene": 24,
+    "t": 0.0,
+    "type": "panel_reuse",
+    "severity": "low",
+    "detail": "p0107.png appears in 3 scenes ([0, 18, 24]) \u2014 repetition reads as lazy",
+    "votes": "3/3"
+  },
+  {
+    "t": 0.0,
+    "type": "ambience_absent",
+    "severity": "low",
+    "detail": "12 scenes request ambience but no ambience layer was rendered",
+    "votes": "3/3"
+  },
+  {
+    "t": 0.0,
+    "type": "sfx_absent",
+    "severity": "low",
+    "detail": "script tags 19 sfx_events but no SFX layer was rendered (missing Freesound key or no CC0 matches)",
+    "votes": "3/3"
+  },
+  {
+    "scene": 1,
+    "t": 36.2,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card showing 'JUST WHERE...' instead of depicting the narrated scene",
+    "votes": "2/3"
+  },
+  {
+    "scene": 1,
+    "t": 40.5,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Title card with 'DID IT ALL GO WRONG?' text and visible FLAMESCANS.ORG watermark",
+    "votes": "2/3"
+  },
+  {
+    "scene": 2,
+    "t": 70.9,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Cropped stylized text only, does not depict narrated action or character.",
+    "votes": "3/3"
+  },
+  {
+    "scene": 2,
+    "t": 70.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Cropped stylized text only, does not depict narrated action or character.",
+    "votes": "3/3"
+  },
+  {
+    "scene": 3,
+    "t": 94.8,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Shows only a cropped weapon silhouette, does not depict Jaehwan gripping weapon with determination as narrated",
+    "votes": "2/3"
+  },
+  {
+    "scene": 3,
+    "t": 94.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only a cropped weapon silhouette, does not depict Jaehwan gripping weapon with determination as narrated",
+    "votes": "2/3"
+  },
+  {
+    "scene": 5,
+    "t": 143.2,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "System description text on the orange card is too small to read on phone",
+    "votes": "3/3"
+  },
+  {
+    "scene": 6,
+    "t": 157.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows speech bubble with unrelated dialogue instead of Jaehwan examining blade",
+    "votes": "3/3"
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows only partial sound effect text against mostly black screen, not depicting the described action",
+    "votes": "3/3"
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Frame shows only partial sound effect text against mostly black screen, not depicting the described action",
+    "votes": "3/3"
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only partial sound effect text against mostly black screen, not depicting the described action",
+    "votes": "3/3"
+  },
+  {
+    "scene": 11,
+    "t": 324.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows dialogue panel with speech bubbles but narration describes action scene, not dialogue moment",
+    "votes": "3/3"
+  },
+  {
+    "scene": 12,
+    "t": 347.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound-effect text, not the action described",
+    "votes": "2/3"
+  },
+  {
+    "scene": 13,
+    "t": 363.1,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Yoonhwan!!!\"",
+    "votes": "3/3"
+  },
+  {
+    "scene": 13,
+    "t": 369.9,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in corner",
+    "votes": "3/3"
+  },
+  {
+    "scene": 14,
+    "t": 422.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows partial text/logo cut off at top, not depicting the narrated monster or action clearly",
+    "votes": "3/3"
+  },
+  {
+    "scene": 14,
+    "t": 422.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows partial text/logo cut off at top, not depicting the narrated monster or action clearly",
+    "votes": "3/3"
+  },
+  {
+    "scene": 15,
+    "t": 441.3,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner",
+    "votes": "3/3"
+  },
+  {
+    "scene": 17,
+    "t": 512.3,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Let's go, Yoonhwan!\"",
+    "votes": "3/3"
+  },
+  {
+    "scene": 20,
+    "t": 613.8,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom left corner.",
+    "votes": "3/3"
+  },
+  {
+    "scene": 20,
+    "t": 636.1,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Shows only dialogue text bubble while narration describes Yoonhwan holding bloodied stone.",
+    "votes": "2/3"
+  },
+  {
+    "scene": 20,
+    "t": 636.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only dialogue text bubble while narration describes Yoonhwan holding bloodied stone.",
+    "votes": "2/3"
+  },
+  {
+    "scene": 21,
+    "t": 637.6,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?\"",
+    "votes": "3/3"
+  },
+  {
+    "scene": 22,
+    "t": 665.8,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"It's really such a relief that you're in this world, Jaehwan.\"",
+    "votes": "3/3"
+  },
+  {
+    "scene": 23,
+    "t": 716.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows abstract purple shape overlay with minimal manga content visible",
+    "votes": "3/3"
+  }
+]

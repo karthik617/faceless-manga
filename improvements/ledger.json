@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-07",
+  "updated": "2026-09-12",
   "notes": "Single source of truth for the /improve-train loop. Every round reads this first, skips adopted/rejected gaps, and escalates stubborn ones. Statuses: proposed -> researching -> prototyped -> tested -> adopted | rejected | escalated.",
   "benchmark": {
     "golden_project": "output/the-world-after-the-fall-ch2",
@@ -106,11 +106,26 @@
       "fault_types": [
         "watermark"
       ],
-      "status": "proposed",
+      "status": "rejected",
       "priority": 3,
       "card": "improvements/gaps/gap-003-watermark-removal.md",
-      "experiments": [],
-      "rejected_candidates": []
+      "experiments": [
+        "exp-003-watermark-removal"
+      ],
+      "rejected_candidates": [
+        {
+          "candidate": "cv2 template-match + crop/reflect/inpaint removal (clean_watermarks.py v1+v2)",
+          "reason": "User-rejected after 2 failed evals. v2 fixed p0117 border + p0066 miss but inpaint-border leaves residual ghost (p0017 grey box) -> veto. Next candidate per escalation: gateway image_edit tier or build-ourselves LaMa-class inpaint; revisit in a future round.",
+          "date": "2026-09-07"
+        }
+      ],
+      "last_verdict": {
+        "exp": "exp-003-watermark-removal",
+        "verdict": "v2 FAIL (veto) - iterate",
+        "score": "126->118 global, 64->58 scoped (improved), vetoed",
+        "note": "v1 defects FIXED (p0117 border via inpaint-border route; p0066 via tier-2 full scan 0.914). Watermarks 4->1; remaining 1 is NEW: p0017 inpaint-border residual ghost (grey box). v3: post-removal residual self-check + gateway image_edit escalation."
+      },
+      "decision": "iterate: border-adjacent reflect + relax band restriction (user-approved)"
     },
     {
       "id": "gap-004-segmentation",
@@ -121,11 +136,63 @@
         "empty_screen",
         "unreadable_text"
       ],
-      "status": "proposed",
+      "status": "adopted",
       "priority": 4,
       "card": "improvements/gaps/gap-004-segmentation.md",
-      "experiments": [],
-      "rejected_candidates": []
+      "experiments": [
+        "exp-004-segmentation"
+      ],
+      "rejected_candidates": [],
+      "notes": "2026-09-07 round: user supplied research paper https://www.cs.cityu.edu.hk/~rynson/papers/mm14a.pdf (panel extraction) as candidate seed. | 2026-09-07 v2 guard extensions prototyped: ink-density ceiling (INK_CEIL=0.55) + soft-cap escape + gutter-edge snapping (yolo body/face rejected empirically - zero detections at fault sites). All 3 sites fixed in smoke; wall 2.14x; byte-identical off. Re-benchmark pending (reuse bench script/OCR/TTS).",
+      "last_verdict": {
+        "exp": "exp-004-segmentation",
+        "verdict": "PASS on full-run gate remit (2026-09-09); formal per-type benchmark FAILs recorded, attributed to gap-011 reviewer noise + out-of-scope render-framing/script-pick classes per report.md; human sign-off 2026-09-09",
+        "full_run_gate": "media vetoes all PASS (encode OK, -14.1 LUFS, +0.014% duration drift, 35/35 scenes); zero faults in branding windows; zero deterministic faults on final pixels; segmentation-attributable cropped_content 0 at all v2-healed sites (scenes 15/16/21 absent)",
+        "formal_fails": "benchmark.py FAIL on all A/B scoreboards (per-type vetoes: weak_hook/empty_screen/phone_readability churn) - every count-increase traced to pre-existing script-pick items or reviewer churn, cross-checked against the 5-pass review of the identical cut; scene-10 veto item confirmed 1/5 noise via tie-break",
+        "deterministic_gate": "check_splits.py exit 0: forced-cuts-through-text 0, art 0, gutter 0; re-verified post-adoption on the in-process detector (7 forced cuts, 20 text boxes, 0/0/0)",
+        "score": "weighted 126 -> 94 global (-25%); seg-attributable cropped_content 3 -> 0",
+        "note": "Adopted as DEFAULT in manga.py step_segment (--split-guard yolo; opt-out --split-guard none). Auto-mode majority vote guard-gated in segment_panels.py (cover page can no longer disable tile stitching). yolo detector moved in-process (pipeline/yolo_detect.py) per IMPLEMENTATION.md deviation 3; boxes diff-verified identical to the experiment subprocess detector, and the adopted default run reproduces the exp venv yolo run byte-identically on the ch2 raw copy."
+      },
+      "decision": "adopted as production default 2026-09-09 (human-approved; formal benchmark FAILs recorded and attributed to reviewer noise / out-of-scope render framing per report.md)",
+      "adopted": {
+        "date": "2026-09-09",
+        "flag_default": "on",
+        "opt_out": "--split-guard none",
+        "files": [
+          "pipeline/segment_panels.py",
+          "pipeline/yolo_detect.py",
+          "pipeline/requirements.txt",
+          "manga.py",
+          "README.md"
+        ],
+        "deps_added": [
+          {
+            "name": "onnxruntime",
+            "pin": "==1.29.0",
+            "license": "MIT",
+            "note": "already present in venv via faster-whisper; now a direct pinned requirement"
+          },
+          {
+            "name": "huggingface-hub",
+            "pin": ">=1.29",
+            "license": "Apache-2.0",
+            "note": "already present in venv via faster-whisper; now a direct requirement"
+          },
+          {
+            "name": "dghs-imgutils (vendored slice only)",
+            "pin": "code adapted from 0.19.0",
+            "license": "MIT",
+            "note": "NOT pip-installed: full package requires numpy<2 (conflicts with faster-whisper) and opencv-contrib-python (cv2 collision with opencv-python-headless); yolo pre/postprocess glue vendored into pipeline/yolo_detect.py instead, output diff-verified identical"
+          },
+          {
+            "name": "deepghs/manga109_yolo v2021.12.30_n_yv11 (model weights)",
+            "pin": "runtime download, ~10MB ONNX",
+            "license": "AGPL-3.0 (Ultralytics, per embedded model metadata)",
+            "note": "downloaded to ~/.cache/huggingface at first use, not redistributed in-repo; recorded in README module table"
+          }
+        ],
+        "last_verdict": "Full-run gate PASS on its remit (media vetoes clean, zero branding-window faults, zero deterministic faults, seg-attributable crops 0); formal per-type benchmark FAILs recorded and attributed to reviewer noise (gap-011) and out-of-scope render-framing/script classes per report.md; human sign-off 2026-09-09."
+      }
     },
     {
       "id": "gap-005-missing-payoff",
@@ -134,11 +201,30 @@
       "fault_types": [
         "missing_payoff"
       ],
-      "status": "proposed",
+      "status": "adopted",
       "priority": 5,
       "card": "improvements/gaps/gap-005-missing-payoff.md",
-      "experiments": [],
-      "rejected_candidates": []
+      "experiments": [
+        "exp-005-missing-payoff"
+      ],
+      "rejected_candidates": [],
+      "last_verdict": {
+        "exp": "exp-005-missing-payoff",
+        "verdict": "PASS scoped / FAIL global (noise veto on byte-identical scenes)",
+        "note": "Scene 21: 5->0 clean. 14 payoff actions, 0 LLM calls. Remaining missing_payoff faults are reviewer/render-visibility issues (quote IS on kept panel at 1.00) - separate gap. Global veto = watermark+unreadable noise on unchanged scenes. | GATE CLEARED 2026-09-07: paraphrase path verified (action-deterministic, meaning-preserving rewrites), fresh-draft vacuously safe (no anchored quotes -> pass-through). Evaluator recommends GO. | Adopted as DEFAULT in manga.py step_script (opt-out: --no-payoff-check / MANGA_VERIFY_PAYOFF=0; --no-verify-panels disables the whole verifier incl. payoff). Module CLI keeps --payoff opt-in (gap-002 convention). Zero new deps. README updated."
+      },
+      "decision": "adopted as default 2026-09-07 (user-approved); revisit reviewer/render-visibility misses under gap-011",
+      "adopted": {
+        "date": "2026-09-07",
+        "flag_default": "on",
+        "opt_out": "--no-payoff-check",
+        "files": [
+          "pipeline/verify_panels.py",
+          "manga.py",
+          "README.md"
+        ],
+        "deps_added": []
+      }
     },
     {
       "id": "gap-006-saliency-kenburns",
@@ -148,11 +234,19 @@
         "cropped_content",
         "irrelevant_panel"
       ],
-      "status": "proposed",
+      "status": "tested",
       "priority": 6,
       "card": "improvements/gaps/gap-006-saliency-kenburns.md",
-      "experiments": [],
-      "rejected_candidates": []
+      "experiments": [
+        "exp-014-tallpanel-kenburns"
+      ],
+      "rejected_candidates": [],
+      "notes": "Worked jointly with gap-014 in exp-014 (2026-09-11 round) per merge recommendation in both cards.",
+      "last_verdict": {
+        "exp": "exp-014-tallpanel-kenburns",
+        "verdict": "FAIL both arithmetics (default: score 107->107 delta 0 with cropped_content veto 4->5; matched-vetoes: veto correctly netted/exempted but delta 0 fails score gate) - evaluator recommends ITERATE",
+        "note": "Real heal: s6 t175.7 face-crop (3/3) gone. Real regression: s14 t422.5 SFX tall panel scrolled fit-to-width shows cut-off glyphs (tiny 76x76 text box misleads planner). Chapter-wide containment gate 95 violations BOTH arms (p0002/p0024 ~1800px text unions infeasible, planner falls back to violating center). Gap-014 scenes-15/21/28 criterion not measurable (belongs to deleted exp-004 v2 bench; needs card amendment or rebuilt bench). Gap-006 >=50% drop NOT MET (4->5). Wall 1.043x OK. Fix path: (1) gate scroll on text coverage for low-text tall panels, (2) handle infeasible-geometry panels instead of violating center fallback."
+      }
     },
     {
       "id": "gap-007-ocr-verifier",
@@ -189,11 +283,19 @@
         "phone_readability",
         "unreadable_text"
       ],
-      "status": "proposed",
+      "status": "tested",
       "priority": 9,
       "card": "improvements/gaps/gap-009-phone-readability.md",
-      "experiments": [],
-      "rejected_candidates": []
+      "experiments": [
+        "exp-009-phone-readability"
+      ],
+      "rejected_candidates": [],
+      "last_verdict": {
+        "exp": "exp-009-phone-readability",
+        "verdict": "gap-015 re-score (mv+hash, 2026-09-12): ch3 global FAIL 77->78 with ZERO vetoes (fails only on +1 score from hash-exempt noise faults still counting weighted); ch3 scoped FAIL 30->22 (-8) with s18 phone_readability veto surviving on genuinely changed pixels; full e2e PASS 127->108 zero vetoes remains valid. Evaluator: FAIL-leaning-iterate, NOT adoption-eligible",
+        "note": "Frame-hash exemption fully suppressed the global irrelevant_panel veto: (s6,t151.4) byte-identical frames MAD 0.000, (s24,t642.1) within +-3s window MAD 1.44 \u2014 confirms 100% reviewer relabeling noise. Surviving s18 (t481.7, 3/3) is the p0062 punch-in: text now 3.9x larger and legible but flagged for prominence \u2014 real pixels, debatable fault. Decision paths: (a) new gap for score-side frame-hash exemption (would flip global to -9 PASS), or (b) human adjudication of s18 + explicit adoption-bar ruling."
+      },
+      "decision": "awaiting human gate 2026-09-12: mv+hash re-score done; global veto proven 100% noise but score gate (+1) and scoped s18 prominence veto still block; user must pick: score-side hash exemption gap / adjudicate s18 / reject"
     },
     {
       "id": "gap-010-thumbnail-ctr",
@@ -243,6 +345,108 @@
       "card": "improvements/gaps/gap-012-tts-timeout.md",
       "experiments": [],
       "rejected_candidates": []
+    },
+    {
+      "id": "gap-013-smart-layout-v2",
+      "title": "Smart layout v2: magazine-style content-weighted templates (user reference samples)",
+      "stage": "render",
+      "fault_types": [
+        "phone_readability",
+        "static_scene",
+        "irrelevant_panel"
+      ],
+      "status": "tested",
+      "priority": 2,
+      "card": "improvements/gaps/gap-013-smart-layout-v2.md",
+      "experiments": [
+        "exp-013-smart-layout-v2"
+      ],
+      "rejected_candidates": [],
+      "notes": "2026-09-07 round: user provided 6 reference layout samples (copied to exp dir). Iterate follow-up of adopted gap-002.",
+      "last_verdict": {
+        "exp": "exp-013-smart-layout-v2",
+        "verdict": "FAIL (no strict improvement) - iterate",
+        "score": "global 3->3, scoped 0->0, no vetoes",
+        "note": "0/25 scenes fired a v2 template: min-height infeasible on tall webtoon-strip panels at 16:9; near-miss killed by too-small-panel substitution. Arms framemd5-identical 24/25. Fix: crop-aware template feasibility (reuse exp-009 text-aware crop in cell fitting). Side-find: v1 grid ffmpeg render fails at 1440p on scene 19 (pre-existing, own gap card)."
+      },
+      "decision": "deferred to next round: crop-aware template feasibility after exp-009 lands (exp-009 itself now deferred on gap-015)"
+    },
+    {
+      "id": "gap-014-tallpanel-kenburns",
+      "title": "Tall-panel Ken Burns framing crops (center-anchored zoompan crops faces/bubbles on extreme aspect ratios)",
+      "stage": "render",
+      "fault_types": [
+        "cropped_content"
+      ],
+      "status": "tested",
+      "priority": 3,
+      "card": "improvements/gaps/gap-014-tallpanel-kenburns.md",
+      "experiments": [
+        "exp-014-tallpanel-kenburns"
+      ],
+      "rejected_candidates": [],
+      "notes": "Filed 2026-09-07 from exp-004 evaluator follow-up: after v2 seg guard, ALL residual golden-chapter cropped_content is render framing (bench scenes 15/21 residuals, scene 28 graze, scene 4 3122px merged panel). Overlaps gap-006 (saliency-kenburns) - recommend merging the work; one experiment should cite both cards.",
+      "last_verdict": {
+        "exp": "exp-014-tallpanel-kenburns",
+        "verdict": "FAIL both arithmetics (default: score 107->107 delta 0 with cropped_content veto 4->5; matched-vetoes: veto correctly netted/exempted but delta 0 fails score gate) - evaluator recommends ITERATE",
+        "note": "Real heal: s6 t175.7 face-crop (3/3) gone. Real regression: s14 t422.5 SFX tall panel scrolled fit-to-width shows cut-off glyphs (tiny 76x76 text box misleads planner). Chapter-wide containment gate 95 violations BOTH arms (p0002/p0024 ~1800px text unions infeasible, planner falls back to violating center). Gap-014 scenes-15/21/28 criterion not measurable (belongs to deleted exp-004 v2 bench; needs card amendment or rebuilt bench). Gap-006 >=50% drop NOT MET (4->5). Wall 1.043x OK. Fix path: (1) gate scroll on text coverage for low-text tall panels, (2) handle infeasible-geometry panels instead of violating center fallback."
+      }
+    },
+    {
+      "id": "gap-015-benchmark-matched-vetoes",
+      "title": "Benchmark per-type count vetoes fire on unmatched reviewer noise (gap-011 follow-up; blocks certifying small improvements)",
+      "stage": "review",
+      "fault_types": [],
+      "status": "adopted",
+      "priority": 1,
+      "card": "improvements/gaps/gap-015-benchmark-matched-vetoes.md",
+      "experiments": [
+        "exp-015-benchmark-matched-vetoes"
+      ],
+      "rejected_candidates": [],
+      "notes": "Filed 2026-09-07 per exp-004 tie-break addendum + exp-009 v3/v4 (3 consecutive rounds vetoed on md5-identical frames). Scope: benchmark.py veto arithmetic ONLY - matched (scene,type) pairs at fixed consensus and/or frame-hash exemption; fault definitions in review_video.py must not change. Deterministic replay acceptance over archived review pairs.",
+      "decision": "ADOPTED 2026-09-12 (user-approved, sidecar path b): --matched-vetoes is the documented opt-in standard for experiment scoring (fixed-consensus renormalization + matched (scene,type) netting + frame-hash exemption via videos or benchmark-hash-sidecar/v1). Default benchmark path proven byte-identical (flagless diff empty on 2 archived pairs). Pre-adoption gate: replay acceptance 15/15 exit 0, orchestrator-verified, zero /tmp dependency after fixture restoration + sidecar reconstruction (provenance documented). No new deps -> no requirements.txt change.",
+      "last_verdict": {
+        "exp": "exp-015-benchmark-matched-vetoes",
+        "verdict": "ADOPTED: replay acceptance 15/15 PASS (post sidecar restoration, orchestrator-verified exit 0, eviction-proof)",
+        "note": "Opt-in --matched-vetoes in pipeline/benchmark.py: fixed-consensus renormalization + matched (scene,type) netting + framemd5 frame-hash exemption (+-3s window). Known-noise vetoes flipped (exp-009 v4, exp-004 5-pass churn); known-real regressions still FAIL (exp-009 v1, gap-003 v2 ghost). Default path diff-verified byte-identical. C5 control substituted (round1-eval inputs deleted). 2026-09-12 addendum: /tmp bench videos evicted -> 11/15; fixtures made eviction-proof via --hash-sidecar/--write-hash-sidecar (benchmark-hash-sidecar/v1, ~200KB vs 0.5GB video); c1/c3/c4 sidecar-vs-video metrics byte-identical; c2/c5 reconstructed from archived_pass_2026-09-11 proofs (decision-complete, conservative). BINDING ARCHIVAL RULE: every future hash-exemption experiment must export sidecars at eval time (--write-hash-sidecar)."
+      }
+    },
+    {
+      "id": "gap-016-grid-1440p-render",
+      "title": "v1 smart-layout grid ffmpeg render fails at 1440p (silent sequential fallback loses the composite)",
+      "stage": "render",
+      "fault_types": [
+        "static_scene",
+        "irrelevant_panel"
+      ],
+      "status": "proposed",
+      "priority": 12,
+      "card": "improvements/gaps/gap-016-grid-1440p-render.md",
+      "experiments": [],
+      "rejected_candidates": [],
+      "notes": "Filed 2026-09-07 from exp-013 side-find: scene 19 grid plan builds 5088x2880 canvas at 1440p, ffmpeg fails, silent seq fallback identically in both arms (pre-existing v1 bug). Repro: exp-013 run/render_A.log:186 has the failing command; inputs on disk in run/work_A. Contained bug with deterministic repro."
+    },
+    {
+      "id": "gap-017-textonly-panel-filter",
+      "title": "Text-only / SFX-only / cover-fragment panels slip the gap-001 verifier (OCR kind tags wrong, lexical score rewards quoted bubbles)",
+      "stage": "script",
+      "fault_types": [
+        "irrelevant_panel"
+      ],
+      "status": "tested",
+      "priority": 3,
+      "card": "improvements/gaps/gap-017-textonly-panel-filter.md",
+      "experiments": [
+        "exp-017-textonly-panel-filter"
+      ],
+      "rejected_candidates": [],
+      "notes": "Filed 2026-09-11 from ch4 manual-pass resolution log (review.md:15-29): 11 panels manually dropped/replaced across 2 fix rounds, all bubble-only/SFX-only/text-box cutouts or a cover card, ALL tagged kind=story quality=ok in the OCR so tier-1 never fires; tier-2 lexical score REWARDS them (quoted text = high overlap, e.g. p0021 0.467) so tier-3 vision never inspects. Same pattern in ch2 (scenes 2/7/12, 4+ HIGH) and ch3 (scenes 6/24 title cards, 5 HIGH). Secondary find: ch4 OCR reads misaligned +-1 vs panel images near p0074-p0076 (cover tag on wrong panel). Needs new deterministic metric: per-panel text-coverage ratio via pipeline/text_boxes.py. Deterministic replay acceptance on ch4 pre_verify script.",
+      "last_verdict": {
+        "exp": "exp-017-textonly-panel-filter",
+        "verdict": "FAIL both arithmetics (global 126->132 +6; scoped 20->24 +4) - evaluator recommends ITERATE",
+        "note": "ch4 replay confirmed 11/12, 0/73 false drops; scene-12 SFX-only HIGH cleanly fixed. FAIL is ~70% real: tier-3 vision dropped p0086 (payoff carrier, new missing_payoff) and p0101 (vision false negative on molten-terrain art -> new cropped_content + static_scene). scenes-2/7 residuals proven render-framing (byte-identical clips), not pick errors. Fix path: (1) never vision-drop narration-quoted panels, (2) single-image confirmation before any vision drop."
+      }
     }
   ],
   "evidence": {
@@ -278,6 +482,54 @@
         "static_scene": 2,
         "cropped_content": 1,
         "panel_reuse": 1,
+        "unreadable_text": 1
+      }
+    },
+    "the-world-after-the-fall-ch4": {
+      "date": "2026-09-10",
+      "total": 40,
+      "high": 18,
+      "medium": 19,
+      "low": 3,
+      "by_type": {
+        "irrelevant_panel": 18,
+        "phone_readability": 9,
+        "cropped_content": 7,
+        "static_scene": 3,
+        "unreadable_text": 3
+      }
+    },
+    "the-world-after-the-fall-ch5": {
+      "date": "2026-09-11",
+      "total": 29,
+      "high": 7,
+      "medium": 18,
+      "low": 4,
+      "by_type": {
+        "irrelevant_panel": 7,
+        "static_scene": 9,
+        "cropped_content": 4,
+        "phone_readability": 5,
+        "panel_reuse": 1,
+        "unreadable_text": 3
+      }
+    },
+    "the-world-after-the-fall-ch6": {
+      "date": "2026-09-11",
+      "total": 50,
+      "high": 0,
+      "medium": 25,
+      "low": 1,
+      "by_type": {
+        "weak_hook": 3,
+        "irrelevant_panel": 16,
+        "missing_payoff": 2,
+        "blank_frame": 2,
+        "watermark": 1,
+        "static_scene": 2,
+        "empty_screen": 4,
+        "phone_readability": 13,
+        "cropped_content": 6,
         "unreadable_text": 1
       }
     }

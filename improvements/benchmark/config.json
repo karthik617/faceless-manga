@@ -1,23 +1,58 @@
 {
   "golden_project": "output/the-world-after-the-fall-ch2",
   "baseline_review": "improvements/benchmark/baseline_review.json",
-  "baseline_counts": {"high": 31, "medium": 10, "low": 4},
-  "weights": {"high": 5, "medium": 2, "low": 1},
+  "baseline_counts": {
+    "high": 31,
+    "medium": 10,
+    "low": 4
+  },
+  "weights": {
+    "high": 5,
+    "medium": 2,
+    "low": 1
+  },
   "hard_vetoes": {
     "new_fault_types": true,
     "max_duration_drift_pct": 5,
-    "loudness_lufs_range": [-17, -11],
+    "loudness_lufs_range": [
+      -17,
+      -11
+    ],
     "encode_must_succeed": true,
     "scene_count_must_match_script": true
   },
   "stage_scopes": {
-    "script": ["script", "render_review_cut", "review"],
-    "segment": ["segment", "script", "render_review_cut", "review"],
-    "clean": ["clean", "render_review_cut", "review"],
-    "render": ["render_review_cut", "review"],
-    "extras": ["extras"],
-    "short": ["short"]
+    "script": [
+      "script",
+      "render_review_cut",
+      "review"
+    ],
+    "segment": [
+      "segment",
+      "script",
+      "render_review_cut",
+      "review"
+    ],
+    "clean": [
+      "clean",
+      "render_review_cut",
+      "review"
+    ],
+    "render": [
+      "render_review_cut",
+      "review"
+    ],
+    "extras": [
+      "extras"
+    ],
+    "short": [
+      "short"
+    ]
   },
   "full_run_required_before_adoption": true,
-  "notes": "Stage-scoped runs keep experiment rounds cheap (skip TTS/final encode where possible). A --full end-to-end run is mandatory before any adoption is merged. render_review_cut = panel_render with --stop-after review-cut on the pre-branding cut."
+  "notes": "Stage-scoped runs keep experiment rounds cheap (skip TTS/final encode where possible). A --full end-to-end run is mandatory before any adoption is merged. render_review_cut = panel_render with --stop-after review-cut on the pre-branding cut.",
+  "matched_vetoes": {
+    "standard": true,
+    "note": "gap-015 adopted 2026-09-12: evaluators must score every arm with --matched-vetoes in addition to default arithmetic (dual scoring). Matched result governs type-count veto disagreements; matched FAIL is final. Hash videos when both mp4s exist, else --hash-sidecar, else netting-only. Binding: hashed evals must --write-hash-sidecar into <exp-dir>/replay/sidecars/."
+  }
 }

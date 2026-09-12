@@ -1,0 +1,76 @@
+/home/kmyadav/faceless-manga/venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+Rendering 25 scenes -> improvements/experiments/round2-eval/arm_p.mp4  (workdir /home/kmyadav/faceless-manga/improvements/experiments/round2-eval/_work_p)
+[1/25] (cached)
+[2/25] (cached)
+[3/25] (cached)
+[4/25] (cached)
+[5/25] (cached)
+[6/25] (cached)
+[7/25] (cached)
+[8/25] (cached)
+[9/25] (cached)
+[10/25] (cached)
+[11/25] (cached)
+[12/25] (cached)
+[13/25] (cached)
+[14/25] (cached)
+[15/25] (cached)
+[16/25] (cached)
+[17/25] (cached)
+[18/25] (cached)
+[19/25] (cached)
+[20/25] (cached)
+[21/25] (cached)
+[22/25] (cached)
+[23/25] (cached)
+[24/25] (cached)
+[25/25] (cached)
+Fetching 15 content SFX from Freesound...
+  cached 'cough' -> cue_cough.wav
+  cached 'whoosh' -> cue_whoosh.wav
+  cached 'sword slash' -> cue_sword_slash.wav
+  cached 'blood spray' -> cue_blood_spray.wav
+  cached 'roar' -> cue_roar.wav
+  cached 'fire breath' -> cue_fire_breath.wav
+  cached 'crash impact' -> cue_crash_impact.wav
+  cached 'scream' -> cue_scream.wav
+  cached 'explosion' -> cue_explosion.wav
+  cached 'shatter' -> cue_shatter.wav
+  cached 'thump thump' -> cue_thump_thump.wav
+  cached 'monster roar' -> cue_monster_roar.wav
+  cached 'boot slam' -> cue_boot_slam.wav
+  cached 'massive explosion' -> cue_massive_explosion.wav
+  cached 'footstep' -> cue_footstep.wav
+    skip SFX 'whoosh' (scene 3): cue does not match the narration
+    skip SFX 'sword slash' (scene 4): cue does not match the narration
+Adding 17 content SFX:
+     35.80s  cough  (-13dB)
+     99.67s  blood_spray  (-13dB)
+    181.73s  roar  (-13dB)
+    195.73s  fire_breath  (-13dB)
+    231.05s  crash_impact  (-13dB)
+    235.93s  scream  (-13dB)
+    319.18s  explosion  (-13dB)
+    324.32s  shatter  (-13dB)
+    351.52s  explosion  (-13dB)
+    393.78s  scream  (-13dB)
+    400.48s  thump_thump  (-13dB)
+    413.28s  monster_roar  (-13dB)
+    432.59s  boot_slam  (-13dB)
+    484.02s  massive_explosion  (-13dB)
+    524.69s  cough  (-13dB)
+    645.28s  footstep  (-13dB)
+    719.71s  sword_slash  (-13dB)
+Fetching 1 ambience loop(s)...
+  cached 'fire crackle' -> cue_fire_crackle.wav
+Adding 3 ambience span(s):
+      27.8s-  95.5s  fire crackle
+     177.0s- 235.4s  fire crackle
+     298.9s- 543.4s  fire crackle
+Adding channel pop-up (PanelBreak) at 773.6s...
+Adding title card (The World After the Fall — Chapter 2) at 8.0s for 4s...
+Final encode (CRF 18 slow, loudnorm -14 LUFS)...
+
+Done: improvements/experiments/round2-eval/arm_p.mp4
+  781.6s, 1920x1080, video 3.2 Mbps, measured -14.0 LUFS

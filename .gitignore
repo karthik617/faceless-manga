@@ -7,8 +7,16 @@ __pycache__/
 *.pyc
 _work/
 channel_state.json
-# improve-train heavy experiment artifacts (reports/metrics/research stay tracked)
+# improve-train heavy experiment artifacts (reports/metrics/research/sidecars stay tracked)
 improvements/experiments/*/run/
-improvements/experiments/*/samples/*.mp4
+improvements/experiments/*/samples/
+improvements/experiments/*/_work*/
+improvements/experiments/*/inputs/
+improvements/experiments/*/ch3_eval/
+improvements/experiments/**/*.mp4
+improvements/experiments/**/*.mp3
+improvements/experiments/**/*.wav
+improvements/experiments/**/*.png
+improvements/experiments/**/*.jpg
 .playwright-mcp/
 node_modules/

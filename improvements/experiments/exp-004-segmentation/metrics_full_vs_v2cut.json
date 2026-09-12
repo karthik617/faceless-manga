@@ -1,0 +1,64 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 99,
+    "experiment": 94,
+    "delta": -5,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 16,
+      "medium": 8,
+      "low": 3
+    },
+    "experiment": {
+      "high": 15,
+      "medium": 9,
+      "low": 1
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "cropped_content": 5,
+      "irrelevant_panel": 12,
+      "phone_readability": 2,
+      "unreadable_text": 2,
+      "missing_payoff": 2,
+      "review_error": 1,
+      "watermark": 2,
+      "static_scene": 1
+    },
+    "experiment": {
+      "cropped_content": 4,
+      "irrelevant_panel": 10,
+      "weak_hook": 1,
+      "empty_screen": 1,
+      "phone_readability": 3,
+      "unreadable_text": 1,
+      "missing_payoff": 2,
+      "watermark": 2,
+      "static_scene": 1
+    }
+  },
+  "vetoes": [
+    "new fault types introduced: ['empty_screen', 'weak_hook']",
+    "fault types worsened (base\u2192now): {'weak_hook': (0, 1), 'empty_screen': (0, 1), 'phone_readability': (2, 3)}"
+  ],
+  "media": {
+    "duration_s": 865.472,
+    "baseline_duration_s": null,
+    "loudness_lufs": -14.12
+  },
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/exp-004-segmentation/stable_seg_v2.json",
+    "review": "/tmp/opencode/exp004_full/stable_seg_v2_full.json",
+    "video": "/tmp/opencode/exp004_full/proj/the-world-after-the-fall-ch2.mp4"
+  }
+}

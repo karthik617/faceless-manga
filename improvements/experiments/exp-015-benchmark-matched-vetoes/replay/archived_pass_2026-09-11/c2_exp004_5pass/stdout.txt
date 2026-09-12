@@ -1,0 +1,2 @@
+[benchmark] FAIL  score 55 -> 76 (delta +21)
+[benchmark] wrote /home/kmyadav/faceless-manga/improvements/experiments/exp-015-benchmark-matched-vetoes/replay/c2_exp004_5pass/metrics.json

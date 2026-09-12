@@ -1,0 +1,98 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": [
+    0,
+    3,
+    8,
+    18,
+    19,
+    25
+  ],
+  "score": {
+    "baseline": 30,
+    "experiment": 22,
+    "delta": -8,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    },
+    "experiment": {
+      "high": 4,
+      "medium": 1,
+      "low": 0
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "irrelevant_panel": 2,
+      "weak_hook": 1,
+      "cropped_content": 2,
+      "unreadable_text": 1,
+      "watermark": 2
+    },
+    "experiment": {
+      "irrelevant_panel": 1,
+      "weak_hook": 1,
+      "watermark": 2,
+      "phone_readability": 1
+    }
+  },
+  "vetoes": [
+    "new fault types introduced: ['phone_readability']",
+    "fault types worsened (base\u2192now, matched-pair net): {'phone_readability': (0, 1)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/exp-009-phone-readability/ch3_eval/stable_ch3_base.json",
+    "review": "improvements/experiments/exp-009-phone-readability/ch3_eval/stable_ch3_arm.json",
+    "video": null
+  },
+  "matched_vetoes": {
+    "pass_counts": {
+      "baseline": 3,
+      "experiment": 3
+    },
+    "consensus_fraction": 0.6667,
+    "consensus_dropped": {
+      "baseline": [],
+      "experiment": []
+    },
+    "frame_hash": {
+      "enabled": true,
+      "window_s": 3.0,
+      "video": "/tmp/opencode/exp009_rescore/_work_arm/ambed.mp4",
+      "baseline_video": "/tmp/opencode/exp009_rescore/_work_base/ambed.mp4"
+    },
+    "annotated_vetoes": [
+      {
+        "type": "phone_readability",
+        "count": {
+          "baseline": 0,
+          "experiment": 1
+        },
+        "pairs_added": [
+          {
+            "scene": 18,
+            "t": 481.7,
+            "votes": "3/3",
+            "severity": "medium",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 1,
+        "suppressed": false
+      }
+    ]
+  }
+}

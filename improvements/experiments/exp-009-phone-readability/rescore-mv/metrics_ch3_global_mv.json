@@ -1,0 +1,113 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 77,
+    "experiment": 78,
+    "delta": 1,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 12,
+      "medium": 7,
+      "low": 3
+    },
+    "experiment": {
+      "high": 13,
+      "medium": 5,
+      "low": 3
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "irrelevant_panel": 6,
+      "weak_hook": 1,
+      "cropped_content": 4,
+      "unreadable_text": 2,
+      "static_scene": 1,
+      "phone_readability": 2,
+      "watermark": 4,
+      "missing_payoff": 1
+    },
+    "experiment": {
+      "panel_reuse": 1,
+      "irrelevant_panel": 7,
+      "weak_hook": 1,
+      "static_scene": 1,
+      "phone_readability": 2,
+      "watermark": 4,
+      "missing_payoff": 1,
+      "cropped_content": 2,
+      "unreadable_text": 2
+    }
+  },
+  "vetoes": [
+    "fault types worsened (base\u2192now, matched-pair net): {'irrelevant_panel': (6, 7)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/exp-009-phone-readability/ch3_eval/stable_ch3_base.json",
+    "review": "improvements/experiments/exp-009-phone-readability/ch3_eval/stable_ch3_arm.json",
+    "video": null
+  },
+  "matched_vetoes": {
+    "pass_counts": {
+      "baseline": 3,
+      "experiment": 3
+    },
+    "consensus_fraction": 0.6667,
+    "consensus_dropped": {
+      "baseline": [],
+      "experiment": []
+    },
+    "frame_hash": {
+      "enabled": false,
+      "window_s": 3.0,
+      "video": null,
+      "baseline_video": null
+    },
+    "annotated_vetoes": [
+      {
+        "type": "irrelevant_panel",
+        "count": {
+          "baseline": 6,
+          "experiment": 7
+        },
+        "pairs_added": [
+          {
+            "scene": 24,
+            "t": 642.1,
+            "votes": "3/3",
+            "severity": "high",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 6,
+            "t": 151.4,
+            "votes": "2/3",
+            "severity": "high",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          }
+        ],
+        "pairs_removed": [
+          {
+            "scene": 8,
+            "t": 216.8,
+            "votes": "2/3"
+          }
+        ],
+        "net_after_exemptions": 1,
+        "suppressed": false
+      }
+    ]
+  }
+}

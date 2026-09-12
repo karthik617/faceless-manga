@@ -1,0 +1,4 @@
+[benchmark] FAIL  score 99 -> 116 (delta +17)
+[benchmark] VETO: new fault types introduced: ['empty_screen', 'weak_hook']
+[benchmark] VETO: fault types worsened (base→now): {'cropped_content': (5, 6), 'irrelevant_panel': (12, 13), 'weak_hook': (0, 1), 'empty_screen': (0, 3), 'phone_readability': (2, 3)}
+[benchmark] wrote /home/kmyadav/faceless-manga/improvements/experiments/exp-015-benchmark-matched-vetoes/replay/c5_default/metrics.json

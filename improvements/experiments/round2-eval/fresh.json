@@ -1,0 +1,717 @@
+{
+  "title": "The World After the Fall Chapter 2 \u2013 The Price of Victory | Epic Analysis",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "tts_rate": "+4%",
+  "tts_pitch": "-4Hz",
+  "music": true,
+  "hook_scenes": 1,
+  "music_plan": [
+    {
+      "mood": "Suspense",
+      "from_scene": 0
+    },
+    {
+      "mood": "Emotional",
+      "from_scene": 8
+    },
+    {
+      "mood": "Dark",
+      "from_scene": 14
+    },
+    {
+      "mood": "Sad",
+      "from_scene": 20
+    }
+  ],
+  "source": {
+    "series": "The World After the Fall",
+    "chapter": "2",
+    "mode": "webtoon"
+  },
+  "thumbnails": [
+    {
+      "name": "thumb1",
+      "text": [
+        "THE SMILE DIES"
+      ],
+      "highlight": "DIES",
+      "panel": "panels/p0115.png",
+      "emotion": "somber"
+    },
+    {
+      "name": "thumb2",
+      "text": [
+        "SACRIFICE FOR SURVIVAL"
+      ],
+      "highlight": "SACRIFICE",
+      "panel": "panels/p0069.png",
+      "emotion": "rage"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Jaehwan and his party stood on the brink of victory, floor ninety-eight conquered, the final level within reach. They had the True Dragon Sword, they had momentum, they had hope. But in The World After the Fall, hope is always the cruelest lie. Because what nobody saw coming was this: that the man who never stopped smiling would lose everything in a single floor, and the cost of survival would be a choice so brutal it would haunt Jaehwan for the rest of his climb. And without further ado, let's get into it.",
+      "panels": [
+        "panels/p0069.png",
+        "panels/p0107.png",
+        "panels/p0115.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "VICTORY",
+        "BRUTAL",
+        "CHOICE"
+      ],
+      "motion": "fast punch-in",
+      "caption": "The Price of Hope",
+      "cta": false,
+      "emphasis": true,
+      "blur_bg": true
+    },
+    {
+      "narration": "The chapter opens on devastation. Jaehwan lies broken in the rubble, flames swirling around cracked streets, blood on his face. He's coughing, gasping, barely able to move. And through the pain, a single question echoes: where did it all go wrong?",
+      "panels": [
+        "panels/p0002.png",
+        "panels/p0003.png",
+        "panels/p0004.png",
+        "panels/p0005.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "DEVASTATION",
+        "WRONG"
+      ],
+      "motion": "slow push-in",
+      "caption": "Where It Broke",
+      "cta": false,
+      "emphasis": false,
+      "ambience": "fire crackling"
+    },
+    {
+      "narration": "To understand how badly things fell apart, we need to rewind. Just floors ago, Jaehwan's party was riding high. After a brutal fight with a monster, they regroup. Someone asks: how many died? The answer comes back clean. Fortunately, no one. The injured can recover with rest.",
+      "panels": [
+        "panels/p0018.png",
+        "panels/p0019.png",
+        "panels/p0020.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "NO ONE",
+        "RECOVER"
+      ],
+      "motion": "pan right",
+      "caption": "Before the Fall",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "The mood is cautiously optimistic. A blonde party member is being healed with blue magical energy while the brown-haired strategist speaks up. If we continue like this, we might be able to reach the last floor. You can see it on their faces: they're smiling, giving OK gestures. For people trapped in a death tower, this is as close to joy as it gets.",
+      "panels": [
+        "panels/p0021.png",
+        "panels/p0022.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom out",
+      "caption": "Hope Rising",
+      "cta": false,
+      "emphasis": false,
+      "ambience": "wind"
+    },
+    {
+      "narration": "And then Jaehwan notices something. A sword lying on the ground. The narration reveals its identity: the True Dragon Sword, a weapon that's been waiting on the eighty-fifth floor for a thousand days and nights, carrying the energy of the sun and moon. Jaehwan picks it up, and you can see the shift in his expression. It's been a long time since a weapon this strong appeared.",
+      "panels": [
+        "panels/p0023.png",
+        "panels/p0024.png",
+        "panels/p0025.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "TRUE DRAGON SWORD",
+        "STRONG"
+      ],
+      "motion": "slow push-in",
+      "caption": "A Legendary Drop",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "He looks at the blade with something like awe. Just like Yoonhwan said, we just might be able to reach the last floor. The narration admits: I thought everything was going to go smoothly. And right there, right in that moment of confidence, we know. We KNOW the tower is about to make them pay.",
+      "panels": [
+        "panels/p0026.png",
+        "panels/p0027.png",
+        "panels/p0028.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "SMOOTHLY"
+      ],
+      "motion": "slow zoom in",
+      "caption": "Famous Last Words",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "Cut to the ninety-eighth floor. The Room of Flames. And the expression on Jaehwan's face tells you everything you need to know about how wrong he was. He's in shock, eyes wide, clothing torn, surrounded by an inferno. Because emerging from the flames is a creature unlike anything they've faced before.",
+      "panels": [
+        "panels/p0029.png",
+        "panels/p0030.png",
+        "panels/p0031.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "ROOM OF FLAMES",
+        "CREATURE"
+      ],
+      "motion": "fast punch-in",
+      "caption": "Floor Ninety-Eight",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "monster roar",
+          "word": "creature"
+        }
+      ],
+      "ambience": "fire crackling"
+    },
+    {
+      "narration": "A massive dark beast with glowing red eyes, fangs the size of a human body, breathing fire down on tiny human figures below. The scale is terrifying. Jaehwan moves, weapon in hand, evading the flames as debris falls around him. He's not running. He's fighting. And somehow, impossibly, he wins.",
+      "panels": [
+        "panels/p0032.png",
+        "panels/p0033.png",
+        "panels/p0035.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "MASSIVE",
+        "FIGHTING"
+      ],
+      "motion": "fast pan",
+      "caption": "Against the Beast",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "sword slash",
+          "word": "weapon"
+        }
+      ]
+    },
+    {
+      "narration": "The split panel shows it: the monster's severed head on one side, Jaehwan on the other, breathing heavily, injured and bloodied but alive. He collapses among the debris, exhausted. For a moment, you think maybe they pulled it off. Maybe the nightmare is over.",
+      "panels": [
+        "panels/p0036.png",
+        "panels/p0037.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow push-in",
+      "caption": "Victory, Briefly",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "But then the tower reveals its true cruelty. Motion lines explode across the panel. A violent impact from an aerial perspective. Something crashes down with devastating force. And Jaehwan screams, mouth wide, blood visible, the sound ripped from his throat. Because the real fight hasn't even started.",
+      "panels": [
+        "panels/p0038.png",
+        "panels/p0039.png",
+        "panels/p0040.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "IMPACT",
+        "SCREAMS"
+      ],
+      "motion": "fast punch-in",
+      "caption": "The Real Threat",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "explosion boom",
+          "word": "crashes"
+        },
+        {
+          "cue": "scream",
+          "word": "screams"
+        }
+      ]
+    },
+    {
+      "narration": "The narration is just two words: How futile. And we see Jaehwan's face in shadow, a single eye visible, the weight of realization crushing him. Because everything they've achieved, all the victories they've shared together, all the time they've spent climbing this tower, is about to be rendered meaningless.",
+      "panels": [
+        "panels/p0041.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom in",
+      "caption": "Futile Struggle",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "The chapter takes us into memory. Blue ice crystals fall through the air. Two figures stand triumphant below frozen structures, hands raised in victory. One of them is blonde, smiling bright even as ice shards dissolve around him. All the victories we shared together. All the time we spent. These aren't just party members. These are brothers.",
+      "panels": [
+        "panels/p0042.png",
+        "panels/p0043.png",
+        "panels/p0044.png",
+        "panels/p0045.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow pan left",
+      "caption": "Shared Victories",
+      "cta": false,
+      "emphasis": false,
+      "ambience": "wind"
+    },
+    {
+      "narration": "And then we're back. Jaehwan's face, tears streaming down, looking down in despair. A menacing dark creature with red glowing eyes looms over him. The narration asks the question that breaks him: Was it all to face a dog's death like this? In his eye's reflection, we see the monster, flames burning in its pupil.",
+      "panels": [
+        "panels/p0046.png",
+        "panels/p0047.png",
+        "panels/p0048.png",
+        "panels/p0049.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "DOG'S DEATH"
+      ],
+      "motion": "slow push-in",
+      "caption": "The Question",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "But Jaehwan doesn't quit. Energy slashes across the screen in red and cyan. A young man with spiky hair grips his sword with dark gloved hands, power radiating off him in purple and cyan waves. He attacks downward through explosive debris and flames, speed lines everywhere. A dark winged creature appears and he doesn't hesitate.",
+      "panels": [
+        "panels/p0050.png",
+        "panels/p0051.png",
+        "panels/p0052.png",
+        "panels/p0053.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "ENERGY",
+        "ATTACKS"
+      ],
+      "motion": "fast zoom in",
+      "caption": "Jaehwan Unleashed",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "energy blast",
+          "word": "Energy"
+        },
+        {
+          "cue": "sword slash",
+          "word": "attacks"
+        }
+      ]
+    },
+    {
+      "narration": "The armored creature shatters into pieces in an X-shaped panel composition, surrounded by flames and the sound of impact echoing. For a split second, you think he's done it. But then someone calls out: Jaehwan! Snap out of it! It's Yoonhwan, the brown-haired strategist, and his voice cuts through the chaos.",
+      "panels": [
+        "panels/p0054.png",
+        "panels/p0055.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "SHATTERS",
+        "SNAP OUT"
+      ],
+      "motion": "fast punch-in",
+      "caption": "Not Over Yet",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "glass shatter",
+          "word": "shatters"
+        }
+      ]
+    },
+    {
+      "narration": "Yoonhwan spins through the air with motion lines showing rapid movement, dynamic angles capturing his desperate attempt to reach Jaehwan. Are you going to leave me to beat this monster alone?! he shouts, and you can hear the fear beneath the bravado. An explosion occurs, debris flying everywhere, a glowing red energy orb with a beam shooting through the blur.",
+      "panels": [
+        "panels/p0056.png",
+        "panels/p0057.png",
+        "panels/p0058.png",
+        "panels/p0059.png",
+        "panels/p0060.png",
+        "panels/p0061.png",
+        "panels/p0062.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "ALONE",
+        "EXPLOSION"
+      ],
+      "motion": "fast pan",
+      "caption": "Desperate Attack",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "explosion boom",
+          "word": "explosion"
+        }
+      ]
+    },
+    {
+      "narration": "And then the hit lands. Large red sound effect text with blood splatter. Yoonhwan lies wounded among the rubble. A dark armored gauntlet is shown in detail, blood dripping from it, drops falling through the air. The armored figure stands amid falling blood petals, dark plated armor with red glowing veins, a sword in hand.",
+      "panels": [
+        "panels/p0063.png",
+        "panels/p0064.png",
+        "panels/p0065.png",
+        "panels/p0066.png",
+        "panels/p0067.png",
+        "panels/p0068.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom out",
+      "caption": "The Fatal Strike",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "blood drip",
+          "word": "dripping"
+        }
+      ]
+    },
+    {
+      "narration": "Jaehwan's face fills the screen. Extreme close-up, gritted teeth, wide eye, pure rage and horror. YOONHWAN!!! he screams, and the sound tears through everything. He crashes forward with motion blur, fists striking in rapid succession. A monstrous creature lunges back with glowing features and the two collide.",
+      "panels": [
+        "panels/p0069.png",
+        "panels/p0070.png",
+        "panels/p0071.png",
+        "panels/p0072.png",
+        "panels/p0073.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "YOONHWAN",
+        "RAGE"
+      ],
+      "motion": "fast punch-in",
+      "caption": "Jaehwan's Fury",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "scream",
+          "word": "screams"
+        },
+        {
+          "cue": "punch impact",
+          "word": "striking"
+        }
+      ]
+    },
+    {
+      "narration": "Explosive impact. Radial motion lines. Intense energy engulfing everything. Large stylized letters over streaming flames. Jaehwan grits his teeth in pain, surrounded by falling rocks, blood on his face, but he doesn't stop. His boot strikes down onto the wooden floor, scattering debris. He charges in dark armor with red accents, attacking across the battlefield.",
+      "panels": [
+        "panels/p0074.png",
+        "panels/p0075.png",
+        "panels/p0076.png",
+        "panels/p0077.png",
+        "panels/p0078.png",
+        "panels/p0079.png",
+        "panels/p0080.png",
+        "panels/p0081.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "EXPLOSIVE",
+        "CHARGES"
+      ],
+      "motion": "fast pan",
+      "caption": "Relentless Assault",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "footstep heavy",
+          "word": "strikes"
+        }
+      ]
+    },
+    {
+      "narration": "The creature notices something. Its eyes go wide with shock. Because Jaehwan's dark armor begins to glow with orange cracks, bright white aura emanating from him. He stands at the bottom of a massive dragon-like form as a bright beam of light cuts through the darkness like a sword. Someone asks: What's that? That light?",
+      "panels": [
+        "panels/p0082.png",
+        "panels/p0083.png",
+        "panels/p0084.png",
+        "panels/p0085.png",
+        "panels/p0086.png",
+        "panels/p0087.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "LIGHT",
+        "GLOW"
+      ],
+      "motion": "slow zoom out",
+      "caption": "The Awakening",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "Don't tell me. And then it happens. A massive explosion erupts, debris and molten material flying in all directions, dynamic motion lines everywhere. Jaehwan's face shows one glowing eye, hair flowing, shock and power radiating. The dark creature lunges with its red eye blazing but the beam of energy shoots downward with intense white and yellow rays.",
+      "panels": [
+        "panels/p0088.png",
+        "panels/p0089.png",
+        "panels/p0090.png",
+        "panels/p0091.png",
+        "panels/p0092.png",
+        "panels/p0093.png",
+        "panels/p0094.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "EXPLOSION",
+        "BEAM"
+      ],
+      "motion": "fast punch-in",
+      "caption": "Unleashed Power",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "explosion massive",
+          "word": "explosion"
+        },
+        {
+          "cue": "energy beam",
+          "word": "beam"
+        }
+      ]
+    },
+    {
+      "narration": "The aftermath is devastation. A massive creature with glowing orange segments lies broken, its body writhes with energy emanating from within. It coughs, the sound echoing across cracked ground as orange light spreads across the surface. And Jaehwan, bloodied with dark hair and wings behind him, grits his teeth. Let's go, Yoonhwan! he calls out.",
+      "panels": [
+        "panels/p0097.png",
+        "panels/p0098.png",
+        "panels/p0099.png",
+        "panels/p0100.png",
+        "panels/p0101.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "AFTERMATH",
+        "YOONHWAN"
+      ],
+      "motion": "slow pan right",
+      "caption": "Victory's Cost",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "monster death",
+          "word": "coughs"
+        }
+      ]
+    },
+    {
+      "narration": "But there's no answer. A cracked stone surface with blood dripping, glowing red light in the cracks. A figure wrapped in a cloak kneels in the destroyed area, illuminated by embers, a large shadow looming. A cracked mask with blood streaks. And then we see it: a single wide eye staring through dark hair, and the face of Yoonhwan, bloodied, glowing eyes, tears and blood mixing.",
+      "panels": [
+        "panels/p0103.png",
+        "panels/p0104.png",
+        "panels/p0105.png",
+        "panels/p0106.png",
+        "panels/p0107.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow push-in",
+      "caption": "The Truth Revealed",
+      "cta": false,
+      "emphasis": true
+    },
+    {
+      "narration": "I'm sorry, Jaehwan, Yoonhwan says, and those three words carry the weight of everything. The dark-haired figure stands with his back turned while Yoonhwan sits on the ground. And here's where the chapter gives us the context we need. Kim Yoonhwan. In this desolate and brutal tower, he never lost his smile. The Walkers gave him a nickname: Smile Knight.",
+      "panels": [
+        "panels/p0108.png",
+        "panels/p0109.png",
+        "panels/p0110.png",
+        "panels/p0111.png",
+        "panels/p0112.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom out",
+      "caption": "The Smile Knight",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "We see him in memories: smiling brightly with leaves falling around him, standing with companions, holding a white creature. That smile was his shield against the darkness. And thus, the narration tells us, the Smile Knight lost his smile for the first time. The image shows his face from below, expression pained, serious, broken.",
+      "panels": [
+        "panels/p0113.png",
+        "panels/p0115.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow push-in",
+      "caption": "Smile No More",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "Jaehwan turns slightly, silhouetted. Go, he says. One word, flat, emotionless. Get lost. Before I change my mind. He's looking toward a bright horizon, and you can feel the gulf opening between them. Because Jaehwan knows. His best friend would have noticed immediately that the stone Yoonhwan was holding wasn't a Stone of Regression.",
+      "panels": [
+        "panels/p0116.png",
+        "panels/p0117.png",
+        "panels/p0118.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom in",
+      "caption": "The Choice Made",
+      "cta": false,
+      "emphasis": false,
+      "ambience": "wind"
+    },
+    {
+      "narration": "The narration slows, becomes reflective. Yoonhwan tightly held onto the stone, felt the cold, rough edges, something he could only feel in this world. He had learned this from Jaehwan. Learned how to clutch this rough, worthless life and never let it go. That's what makes this moment so devastating. Because Yoonhwan is choosing to let go.",
+      "panels": [
+        "panels/p0122.png",
+        "panels/p0123.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow push-in",
+      "caption": "Letting Go",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "A dramatic shot shows a large crystalline structure cracking and breaking apart, embers floating, a figure in shadow standing below. Dark atmospheric imagery with silhouettes of flying creatures against mist. Yoonhwan speaks one last time. Jaehwan, you punk, so you noticed. This stone looks kind of dirty, doesn't it? The false stone sits bloodied in a dark clawed hand.",
+      "panels": [
+        "panels/p0120.png",
+        "panels/p0121.png",
+        "panels/p0123.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom out",
+      "caption": "The Deception",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "A foot steps onto stairs, leaving a trail of blood. Jaehwan, Yoonhwan says as he climbs, you are a much stronger person than I had thought. He's coughing, wounded, but still moving forward, the blood trail marking every step. Thanks to you, I'm sure. A collapsed figure in dark armor lies at the base of the stairs as Yoonhwan reaches a tall archway, warm light behind him.",
+      "panels": [
+        "panels/p0124.png",
+        "panels/p0125.png",
+        "panels/p0126.png",
+        "panels/p0127.png",
+        "panels/p0128.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow pan up",
+      "caption": "The Final Climb",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "footstep slow",
+          "word": "steps"
+        }
+      ]
+    },
+    {
+      "narration": "You'll definitely be able to climb to the top of this tower. If it's you. Close-ups of his face, jaw set with determination. It's really such a relief that you're in this world, Jaehwan. The cloaked figure in ornate armor is shown from behind, and then a large white speech bubble: Jaehwan. Just his name. That's all that needs to be said.",
+      "panels": [
+        "panels/p0129.png",
+        "panels/p0130.png",
+        "panels/p0131.png",
+        "panels/p0132.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow push-in",
+      "caption": "Final Words",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "An arched doorway glows with intense golden and orange light. Bright light floods across the wooden floor as leaves scatter. Sharp angular light effects cut across darkness. A cloaked figure is thrown backward against a wall, hands raised, illuminated by the blast. A gloved hand grips the wooden planks. Multiple masked figures loom over a person on the ground, blood droplets visible.",
+      "panels": [
+        "panels/p0133.png",
+        "panels/p0134.png",
+        "panels/p0135.png",
+        "panels/p0136.png",
+        "panels/p0137.png",
+        "panels/p0138.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "LIGHT",
+        "BLAST"
+      ],
+      "motion": "fast zoom in",
+      "caption": "Through the Door",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "explosion boom",
+          "word": "blast"
+        }
+      ]
+    },
+    {
+      "narration": "Let's go. Ahead. A bright blue blade appears with a slashing motion. Blue energy fills the panel with glowing radiance. The character's shocked face looks upward. Long vertical view of blue energy streaming downward. And then the reveal: a vast white snowy landscape, particles falling from above. Is this a snowfield? The question hangs in the air, unanswered.",
+      "panels": [
+        "panels/p0139.png",
+        "panels/p0142.png",
+        "panels/p0143.png",
+        "panels/p0145.png",
+        "panels/p0146.png",
+        "panels/p0147.png",
+        "panels/p0148.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "SNOWFIELD"
+      ],
+      "motion": "slow zoom out",
+      "caption": "Beyond the Door",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "The final narration lays it all out. Yoonhwan walked to the edge of the tower and stood there. Then his body disappeared off to the clouds. And Jaehwan stopped as he opened the gate to the ninety-ninth floor. He used his right hand to wipe off his face, waited until he stopped shivering, until he could breathe calmly again. But he did not look back. He walked up toward the ninety-ninth floor alone.",
+      "panels": [
+        "panels/p0120.png",
+        "panels/p0121.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow push-in",
+      "caption": "Alone",
+      "cta": false,
+      "emphasis": false
+    },
+    {
+      "narration": "And that's the thesis of chapter two. Victory in this tower doesn't mean everyone survives. Sometimes it means choosing who gets to keep climbing. Yoonhwan gave Jaehwan the fake stone, took the real injuries, and walked himself off the edge so his friend wouldn't have to carry the weight. The Smile Knight lost his smile because he knew exactly what he was doing. And Jaehwan, the strongest person Yoonhwan ever knew, had to accept that gift and keep moving forward. That's the price. That's what it costs. If this story is hitting you as hard as it's hitting me, drop a like, subscribe, and I'll catch you in the next one. Because trust me, Jaehwan's climb is only going to get darker from here.",
+      "panels": [
+        "panels/p0107.png",
+        "panels/p0118.png",
+        "panels/p0148.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom in",
+      "caption": "The Price of Victory",
+      "cta": true,
+      "emphasis": false
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+# Video review — ambed.mp4
+48 fault(s): 30 high, 12 medium
+
+- [HIGH] 0:26 scene 0 weak_hook: Multiple cropped panels with small speech bubbles and large typography card overlay, not depicting the narrated action
+- [HIGH] 0:26 scene 0 irrelevant_panel: Multiple cropped panels with small speech bubbles and large typography card overlay, not depicting the narrated action
+- [HIGH] 0:39 scene 1 irrelevant_panel: Watermark visible in top right corner; frame shows title card instead of narrated action
+- [HIGH] 0:39 scene 1 watermark: Watermark visible in top right corner; frame shows title card instead of narrated action
+- [HIGH] 0:44 scene 1 irrelevant_panel: Title card 'DID IT ALL GO WRONG?' while narration describes Jaehwan's physical state; watermark present
+- [HIGH] 0:44 scene 1 watermark: Title card 'DID IT ALL GO WRONG?' while narration describes Jaehwan's physical state; watermark present
+- [HIGH] 0:50 scene 2 irrelevant_panel: Shows manga panels with sound effects but not the devastated city or Room of Flames described in narration.
+- [HIGH] 0:57 scene 2 irrelevant_panel: Same panels repeated, does not depict the devastated cityscape or Room of Flames setting.
+- [HIGH] 1:04 scene 2 irrelevant_panel: Same panels again, still not showing the devastation or Room of Flames environment.
+- [HIGH] 1:10 scene 2 irrelevant_panel: Large stylized text/logo only, does not depict devastated city or Room of Flames action.
+- [HIGH] 1:34 scene 3 irrelevant_panel: Shows different scene with dialogue about deaths and injuries, not the action described
+- [HIGH] 2:55 scene 6 irrelevant_panel: Face is cropped at top, cutting off eyes and expression that narration describes.
+- [HIGH] 3:10 scene 7 irrelevant_panel: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [HIGH] 3:17 scene 7 irrelevant_panel: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [HIGH] 3:24 scene 7 irrelevant_panel: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [HIGH] 3:32 scene 8 irrelevant_panel: Scene depicts aftermath/bodies but not Jaehwan standing or the hooded figure as described
+- [HIGH] 4:01 scene 9 watermark: Watermark visible in top-right corner.
+- [HIGH] 4:41 scene 10 irrelevant_panel: Text card with narration quote, not depicting the manga scene
+- [HIGH] 5:24 scene 11 irrelevant_panel: Shows dialogue panel but narration describes action/creature, not this moment
+- [HIGH] 5:33 scene 11 irrelevant_panel: Shows dialogue panel but narration describes action/creature, not this moment
+- [HIGH] 5:47 scene 12 irrelevant_panel: Shows only stylized sound effect text, not the action described
+- [HIGH] 5:53 scene 12 irrelevant_panel: Shows only stylized sound effect text in red, not depicting narrated scene
+- [HIGH] 6:01 scene 13 missing_payoff: quoted line never shown: "Yoonhwan!!!"
+- [HIGH] 6:08 scene 13 watermark: FLAMESCANS.ORG watermark visible in bottom right corner
+- [HIGH] 6:42 scene 14 irrelevant_panel: Shows stylized text/logo effect, not the actual strike action described in narration.
+- [HIGH] 7:19 scene 15 watermark: FLAMESCANS.ORG watermark visible in bottom right corner
+- [HIGH] 8:30 scene 17 missing_payoff: quoted line never shown: "Let's go, Yoonhwan!"
+- [HIGH] 9:44 scene 19 irrelevant_panel: Title card showing character name, not depicting the narrative content
+- [HIGH] 10:13 scene 20 watermark: FLAMESCANS.ORG watermark visible in bottom left corner.
+- [HIGH] 11:05 scene 22 missing_payoff: quoted line never shown: "It's really such a relief that you're in this world, Jaehwan."
+- [MEDIUM] 0:26 scene 0 cropped_content: Multiple cropped panels with small speech bubbles and large typography card overlay, not depicting the narrated action
+- [MEDIUM] 0:26 scene 0 phone_readability: Multiple cropped panels with small speech bubbles and large typography card overlay, not depicting the narrated action
+- [MEDIUM] 2:23 scene 5 phone_readability: System description text in orange box is too small to read comfortably on phone
+- [MEDIUM] 2:55 scene 6 cropped_content: Face is cropped at top, cutting off eyes and expression that narration describes.
+- [MEDIUM] 3:10 scene 7 cropped_content: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [MEDIUM] 3:10 scene 7 empty_screen: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [MEDIUM] 3:17 scene 7 cropped_content: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [MEDIUM] 3:17 scene 7 empty_screen: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [MEDIUM] 3:24 scene 7 cropped_content: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [MEDIUM] 3:24 scene 7 empty_screen: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [MEDIUM] 4:25 scene 9 phone_readability: Speech bubble text is too small to read comfortably on phone.
+- [MEDIUM] 10:28 scene 20 cropped_content: Speech bubble at top is cut off mid-word showing only 'TTICED.' instead of full text.
+- [LOW] 0:00 scene 24 panel_reuse: p0107.png appears in 3 scenes ([0, 18, 24]) — repetition reads as lazy
+- [LOW] 0:00 scene 24 panel_reuse: p0122.png appears in 3 scenes ([20, 21, 24]) — repetition reads as lazy
+- [LOW] 3:10 scene 7 unreadable_text: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [LOW] 3:17 scene 7 unreadable_text: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [LOW] 3:24 scene 7 unreadable_text: Frame shows only partial sound effect text, cropped and mostly black, not depicting the described action scene.
+- [LOW] 10:28 scene 20 unreadable_text: Speech bubble at top is cut off mid-word showing only 'TTICED.' instead of full text.
+
+## Human spot-checks (timestamps computed for this cut)
+
+- [ ] HOOK 0:00-0:27: does the panel cycle feel dynamic (not a cheap 3-panel loop)? Would it stop a scroller?
+- [ ] MUSIC SEAM at 3:26 (Suspense -> Emotional, Heroes -> A Better Future): hard cut or key clash?
+- [ ] MUSIC SEAM at 7:11 (Emotional -> Dramatic, A Better Future -> Cinematic): hard cut or key clash?
+- [ ] MUSIC SEAM at 10:07 (Dramatic -> Epic, Cinematic -> Glorious): hard cut or key clash?
+- [ ] TTS: pronunciation of recurring names (Jaehwan, Yoonhwan) and whether quoted dialogue is distinguishable from essay narration
+- [ ] SPOILER: hook panels ['panels/p0107.png', 'panels/p0017.png', 'panels/p0040.png'] / thumbnails ['panels/p0107.png', 'panels/p0040.png'] — do any pre-burn the chapter's climax image?
+- [ ] BRANDING (final cut only): title card ~0:08 and subscribe pop-up placement/size/taste
+- [ ] LEGAL: panel density vs commentary still within the channel's fair-use framing; check source watermarks

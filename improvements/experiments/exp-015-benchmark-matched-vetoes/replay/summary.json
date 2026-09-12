@@ -1,0 +1,62 @@
+{
+  "C1a cropped_content 4->5 veto gone": {
+    "ok": true,
+    "detail": "(none)"
+  },
+  "C1b verdict driven by score only (delta -12 => PASS, zero vetoes)": {
+    "ok": true,
+    "detail": "verdict=PASS delta=-12"
+  },
+  "C1c suppression annotated with frame-hash proof (never silent)": {
+    "ok": true,
+    "detail": "[{\"scene\": 20, \"t\": 636.1, \"votes\": \"2/3\", \"severity\": \"medium\", \"frame_hash_exempt\": false, \"frame_hash_proof\": null}, {\"scene\": 3, \"t\": 94.8, \"votes\": \"3/3\", \"severity\": \"medium\", \"frame_hash_exempt"
+  },
+  "C2a default arithmetic still vetoes (control)": {
+    "ok": true,
+    "detail": "new fault types introduced: ['phone_readability', 'weak_hook'] | fault types worsened (base\u2192now): {'cropped_content': (3, 5), 'irrelevant_panel': (8, 9), 'weak_hook': (0, 1), 'phone_readability': (0, 1), 'missing_payoff': (1, 2)}"
+  },
+  "C2b matched arithmetic: zero vetoes": {
+    "ok": true,
+    "detail": "(none)"
+  },
+  "C2c every old veto type annotated as suppressed": {
+    "ok": true,
+    "detail": "suppressed=['cropped_content', 'irrelevant_panel', 'missing_payoff', 'phone_readability', 'weak_hook']"
+  },
+  "C2d verdict from score only (delta +21 => FAIL on score, no veto)": {
+    "ok": true,
+    "detail": "verdict=FAIL delta=21"
+  },
+  "C3a cropped_content regression still vetoes": {
+    "ok": true,
+    "detail": "fault types worsened (base\u2192now, matched-pair net): {'cropped_content': (4, 7), 'irrelevant_panel': (12, 15), 'watermark': (4, 6)}"
+  },
+  "C3b verdict FAIL": {
+    "ok": true,
+    "detail": "verdict=FAIL delta=23"
+  },
+  "C4a real new faults on changed frames still veto": {
+    "ok": true,
+    "detail": "fault types worsened (base\u2192now, matched-pair net): {'unreadable_text': (1, 3)}"
+  },
+  "C4b verdict FAIL": {
+    "ok": true,
+    "detail": "verdict=FAIL"
+  },
+  "C4c scene-0 (p0017 ghost site) pairs NOT hash-exempt (pixels changed)": {
+    "ok": true,
+    "detail": "[{\"scene\": 0, \"t\": 26.4, \"votes\": \"2/3\", \"severity\": \"low\", \"frame_hash_exempt\": false, \"frame_hash_proof\": null}]"
+  },
+  "C5a default arithmetic vetoes on same-video churn (control)": {
+    "ok": true,
+    "detail": "new fault types introduced: ['empty_screen', 'weak_hook'] | fault types worsened (base\u2192now): {'cropped_content': (5, 6), 'irrelevant_panel': (12, 13), 'weak_hook': (0, 1), 'empty_screen': (0, 3), 'phone_readability': (2, 3)}"
+  },
+  "C5b matched arithmetic: ZERO vetoes on identical video": {
+    "ok": true,
+    "detail": "(none)"
+  },
+  "C5c consensus normalized across 3-pass vs 5-pass arms": {
+    "ok": true,
+    "detail": "pass_counts={'baseline': 3, 'experiment': 5} fraction=0.6667"
+  }
+}

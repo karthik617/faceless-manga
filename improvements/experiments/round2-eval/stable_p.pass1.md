@@ -1,0 +1,61 @@
+# Video review — ambed.mp4
+47 fault(s): 27 high, 13 medium
+
+- [HIGH] 0:26 scene 0 irrelevant_panel: Panels are cropped and dialogue text is too small to read on mobile.
+- [HIGH] 0:39 scene 1 watermark: Watermark visible in top right corner
+- [HIGH] 0:44 scene 1 irrelevant_panel: Title card overlay while narration describes character action
+- [HIGH] 0:44 scene 1 watermark: Title card overlay while narration describes character action
+- [HIGH] 0:50 scene 2 irrelevant_panel: Shows a character close-up with sound effects but does not depict the devastated city, 98th floor Room of Flames, or the swooping monster described in narration.
+- [HIGH] 0:57 scene 2 irrelevant_panel: Same close-up scene with sound effects, still does not show the devastated city setting or monster swooping down as narrated.
+- [HIGH] 1:04 scene 2 irrelevant_panel: Identical to previous frames, shows character detail only, not the cityscape devastation or Room of Flames setting described.
+- [HIGH] 1:10 scene 2 irrelevant_panel: Shows stylized Korean text only, does not depict any of the narrated elements: city, flames, monster, or Jaehwan's struggle.
+- [HIGH] 1:34 scene 3 irrelevant_panel: Frame shows different scene discussing casualties, not the action described in narration
+- [HIGH] 1:35 scene 4 missing_payoff: quoted line never shown: "Fortunately, it seems no one did. And the ones who were injured can recover if they rest."
+- [HIGH] 2:55 scene 6 irrelevant_panel: Face is cropped at top, showing only chin and neck area
+- [HIGH] 3:10 scene 7 irrelevant_panel: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [HIGH] 3:17 scene 7 irrelevant_panel: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [HIGH] 3:24 scene 7 irrelevant_panel: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [HIGH] 4:01 scene 9 watermark: Scanlation watermark visible in top right corner
+- [HIGH] 4:41 scene 10 irrelevant_panel: Shows only text card with quote, not depicting the scene imagery described
+- [HIGH] 5:06 scene 11 irrelevant_panel: Abstract motion lines, not depicting the described creature or character action.
+- [HIGH] 5:47 scene 12 irrelevant_panel: Shows only large stylized sound effect text, not the described action or characters
+- [HIGH] 5:53 scene 12 irrelevant_panel: Shows only isolated sound effect typography with blood splatter, not depicting the described scene
+- [HIGH] 6:01 scene 13 missing_payoff: quoted line never shown: "Yoonhwan!!!"
+- [HIGH] 6:08 scene 13 watermark: Watermark 'FLAMESCANS.ORG' visible in bottom right corner.
+- [HIGH] 6:42 scene 14 irrelevant_panel: Stylized sound effect typography dominates frame, not depicting actual striking fists or creature.
+- [HIGH] 7:19 scene 15 watermark: FLAMESCANS.ORG watermark visible in bottom right corner
+- [HIGH] 8:30 scene 17 missing_payoff: quoted line never shown: "Let's go, Yoonhwan!"
+- [HIGH] 9:44 scene 19 irrelevant_panel: Title card with name only, not depicting narrated scene content
+- [HIGH] 10:13 scene 20 watermark: FLAMESCANS.ORG watermark visible in bottom left corner.
+- [HIGH] 11:05 scene 22 missing_payoff: quoted line never shown: "It's really such a relief that you're in this world, Jaehwan."
+- [MEDIUM] 0:26 scene 0 cropped_content: Panels are cropped and dialogue text is too small to read on mobile.
+- [MEDIUM] 0:26 scene 0 phone_readability: Panels are cropped and dialogue text is too small to read on mobile.
+- [MEDIUM] 2:23 scene 5 phone_readability: System description text in orange box is too small to read comfortably on phone
+- [MEDIUM] 2:55 scene 6 cropped_content: Face is cropped at top, showing only chin and neck area
+- [MEDIUM] 3:10 scene 7 cropped_content: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [MEDIUM] 3:10 scene 7 empty_screen: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [MEDIUM] 3:17 scene 7 cropped_content: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [MEDIUM] 3:17 scene 7 empty_screen: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [MEDIUM] 3:24 scene 7 cropped_content: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [MEDIUM] 3:24 scene 7 empty_screen: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [MEDIUM] 7:10 scene 14 cropped_content: Character's face and head are cut off at top of frame.
+- [MEDIUM] 10:28 scene 20 cropped_content: Top text box is cut off mid-sentence at frame top edge.
+- [MEDIUM] 10:35 scene 20 cropped_content: Title text 'THIS STONE...' is cut off at top edge.
+- [LOW] 0:00 scene 24 panel_reuse: p0107.png appears in 3 scenes ([0, 18, 24]) — repetition reads as lazy
+- [LOW] 0:00 scene 24 panel_reuse: p0122.png appears in 3 scenes ([20, 21, 24]) — repetition reads as lazy
+- [LOW] 3:10 scene 7 unreadable_text: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [LOW] 3:17 scene 7 unreadable_text: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [LOW] 3:24 scene 7 unreadable_text: Frame shows only partial stylized text cropped at top and bottom, not depicting the described action scene
+- [LOW] 10:28 scene 20 unreadable_text: Top text box is cut off mid-sentence at frame top edge.
+- [LOW] 10:35 scene 20 unreadable_text: Title text 'THIS STONE...' is cut off at top edge.
+
+## Human spot-checks (timestamps computed for this cut)
+
+- [ ] HOOK 0:00-0:27: does the panel cycle feel dynamic (not a cheap 3-panel loop)? Would it stop a scroller?
+- [ ] MUSIC SEAM at 3:26 (Suspense -> Emotional, Heroes -> A Better Future): hard cut or key clash?
+- [ ] MUSIC SEAM at 7:11 (Emotional -> Dramatic, A Better Future -> Cinematic): hard cut or key clash?
+- [ ] MUSIC SEAM at 10:07 (Dramatic -> Epic, Cinematic -> Glorious): hard cut or key clash?
+- [ ] TTS: pronunciation of recurring names (Jaehwan, Yoonhwan) and whether quoted dialogue is distinguishable from essay narration
+- [ ] SPOILER: hook panels ['panels/p0107.png', 'panels/p0017.png', 'panels/p0040.png'] / thumbnails ['panels/p0107.png', 'panels/p0040.png'] — do any pre-burn the chapter's climax image?
+- [ ] BRANDING (final cut only): title card ~0:08 and subscribe pop-up placement/size/taste
+- [ ] LEGAL: panel density vs commentary still within the channel's fair-use framing; check source watermarks

@@ -1,0 +1,25 @@
+/home/kmyadav/faceless-manga/venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+Reviewing base.mp4: 782s, 25 scenes (4 parallel reviewers)
+  deterministic scan: 0 fault span(s)
+  static-visual scan: 1 span(s)
+  script/timeline scan: 1 fault(s)
+  vision review: 41 total fault(s) (29 high, 11 medium)
+  report: improvements/experiments/round2-eval/stable_base_full.pass1.md
+/home/kmyadav/faceless-manga/venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+Reviewing base.mp4: 782s, 25 scenes (4 parallel reviewers)
+  deterministic scan: 0 fault span(s)
+  static-visual scan: 1 span(s)
+  script/timeline scan: 1 fault(s)
+  vision review: 47 total fault(s) (31 high, 11 medium)
+  report: improvements/experiments/round2-eval/stable_base_full.pass2.md
+/home/kmyadav/faceless-manga/venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+Reviewing base.mp4: 782s, 25 scenes (4 parallel reviewers)
+  deterministic scan: 0 fault span(s)
+  static-visual scan: 1 span(s)
+  script/timeline scan: 1 fault(s)
+  vision review: 41 total fault(s) (26 high, 9 medium)
+  report: improvements/experiments/round2-eval/stable_base_full.pass3.md
+[review_stable] 32 confirmed (22h/7m/3l), 1 unconfirmed-high -> improvements/experiments/round2-eval/stable_base_full.json/.md

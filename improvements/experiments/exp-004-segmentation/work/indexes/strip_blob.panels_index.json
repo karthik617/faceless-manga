@@ -1,0 +1,1015 @@
+[
+  {
+    "panel": "p0001.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      249,
+      690,
+      1358
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0002.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      2129,
+      690,
+      639
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0003.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      3073,
+      690,
+      895
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0004.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      4552,
+      690,
+      1130
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0005.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      5682,
+      690,
+      1556
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0006.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      7822,
+      690,
+      1522
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0007.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      9735,
+      690,
+      785
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0008.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      10953,
+      690,
+      1791
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0009.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      13276,
+      690,
+      358
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0010.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      14190,
+      690,
+      1332
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0011.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      15974,
+      690,
+      1847
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0012.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      18918,
+      690,
+      1118
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0013.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      21062,
+      690,
+      1116
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0014.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      22970,
+      690,
+      1629
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0015.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      25342,
+      690,
+      1087
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0016.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      27499,
+      690,
+      1036
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0017.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      28847,
+      690,
+      225
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0018.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      29301,
+      690,
+      263
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0019.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      29600,
+      690,
+      681
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0020.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      30519,
+      690,
+      714
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0021.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      32423,
+      690,
+      1346
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0022.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      33769,
+      690,
+      2544
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0023.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      36547,
+      690,
+      1057
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0024.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      37872,
+      690,
+      1207
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0025.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      39407,
+      690,
+      364
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0026.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      39942,
+      690,
+      329
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0027.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      40914,
+      690,
+      668
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0028.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      42195,
+      690,
+      390
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0029.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      42687,
+      690,
+      578
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0030.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      43796,
+      690,
+      2227
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0031.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      46077,
+      690,
+      1028
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0032.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      47238,
+      690,
+      780
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0033.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      48514,
+      690,
+      627
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0034.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      49426,
+      690,
+      666
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0035.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      50833,
+      690,
+      631
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0036.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      51965,
+      690,
+      260
+    ],
+    "mode": "webtoon",
+    "note": "beat"
+  },
+  {
+    "panel": "p0037.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      52502,
+      690,
+      957
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0038.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      53984,
+      690,
+      1039
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0039.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      55474,
+      690,
+      770
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0040.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      56540,
+      690,
+      1252
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0041.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      58318,
+      690,
+      2378
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0042.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      60959,
+      690,
+      223
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0043.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      61227,
+      690,
+      856
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0044.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      62290,
+      690,
+      1122
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0045.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      63882,
+      690,
+      852
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0046.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      65123,
+      690,
+      773
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0047.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      66175,
+      690,
+      1015
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0048.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      67492,
+      690,
+      1140
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0049.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      68703,
+      690,
+      367
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0050.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      69373,
+      690,
+      365
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0051.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      69908,
+      690,
+      1158
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0052.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      71261,
+      690,
+      1522
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0053.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      73026,
+      690,
+      281
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0054.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      73570,
+      690,
+      1751
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0055.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      75905,
+      690,
+      1266
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0056.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      77576,
+      690,
+      834
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0057.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      78874,
+      690,
+      764
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0058.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      79735,
+      690,
+      260
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0059.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      80382,
+      690,
+      1066
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0060.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      81566,
+      690,
+      1981
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0061.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      83907,
+      690,
+      1470
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0062.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      85720,
+      690,
+      790
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0063.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      87018,
+      690,
+      2168
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0064.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      89221,
+      690,
+      2273
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0065.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      91990,
+      690,
+      934
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0066.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      94013,
+      690,
+      525
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0067.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      95163,
+      690,
+      510
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0068.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      96071,
+      690,
+      461
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0069.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      96859,
+      690,
+      342
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0070.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      97375,
+      690,
+      948
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0071.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      99141,
+      690,
+      949
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0072.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      100688,
+      690,
+      1164
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0073.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      102804,
+      690,
+      400
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0074.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      103278,
+      690,
+      418
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0075.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      104110,
+      690,
+      2590
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0076.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      107082,
+      690,
+      912
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0077.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      108427,
+      690,
+      636
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0078.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      109502,
+      690,
+      491
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0079.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      110607,
+      690,
+      380
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0080.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      111239,
+      690,
+      1179
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0081.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      112874,
+      690,
+      643
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0082.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      113748,
+      690,
+      334
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0083.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      114126,
+      690,
+      2188
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0084.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      117485,
+      690,
+      905
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0085.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      118989,
+      690,
+      1369
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0086.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      120786,
+      690,
+      1083
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0087.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      122278,
+      690,
+      483
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0088.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      123296,
+      690,
+      2046
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0089.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      125342,
+      690,
+      1551
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0090.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      127760,
+      690,
+      958
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0091.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      128819,
+      690,
+      425
+    ],
+    "mode": "webtoon"
+  },
+  {
+    "panel": "p0092.png",
+    "page": "strip",
+    "bbox": [
+      0,
+      129399,
+      690,
+      386
+    ],
+    "mode": "webtoon"
+  }
+]

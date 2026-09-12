@@ -1,0 +1,287 @@
+[
+  {
+    "scene": 1,
+    "t": 36.2,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card text overlay while narration describes character action in rubble"
+  },
+  {
+    "scene": 1,
+    "t": 40.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card with FLAMESCANS.ORG watermark, not depicting scene action"
+  },
+  {
+    "scene": 1,
+    "t": 40.5,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Title card with FLAMESCANS.ORG watermark, not depicting scene action"
+  },
+  {
+    "scene": 1,
+    "t": 44.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same title card with FLAMESCANS.ORG watermark, not depicting scene action"
+  },
+  {
+    "scene": 1,
+    "t": 44.8,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Same title card with FLAMESCANS.ORG watermark, not depicting scene action"
+  },
+  {
+    "scene": 2,
+    "t": 70.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized text/logo cropped at edges, not the described action scene"
+  },
+  {
+    "scene": 6,
+    "t": 157.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows unrelated dialogue bubble and character, not Jaehwan examining a blade as narrated."
+  },
+  {
+    "scene": 6,
+    "t": 175.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Face and mouth area visibly cut off at bottom edge of frame."
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only partial stylized text/SFX against mostly black screen, not depicting the action described"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same as previous frame - only partial stylized text visible, not showing the narrated scene"
+  },
+  {
+    "scene": 7,
+    "t": 204.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same as previous frames - only partial stylized text visible, not depicting the action described"
+  },
+  {
+    "scene": 8,
+    "t": 212.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows battle scene with armored figures, but narration describes aftermath with severed head and hooded figure."
+  },
+  {
+    "scene": 11,
+    "t": 324.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows speech bubble with dialogue not matching narration describing action imagery"
+  },
+  {
+    "scene": 11,
+    "t": 333.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows speech bubble with dialogue not matching narration describing action imagery"
+  },
+  {
+    "scene": 12,
+    "t": 347.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound-effect text, not the action described"
+  },
+  {
+    "scene": 12,
+    "t": 354.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized red sound-effect text on white background, not the described action scene"
+  },
+  {
+    "scene": 12,
+    "t": 361.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Duplicate of previous frame showing only red sound-effect text, not wounded character or rubble"
+  },
+  {
+    "scene": 13,
+    "t": 363.1,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Yoonhwan!!!\""
+  },
+  {
+    "scene": 13,
+    "t": 369.9,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner."
+  },
+  {
+    "scene": 14,
+    "t": 422.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows partial stylized text/logo cut off at top, not depicting the described action"
+  },
+  {
+    "scene": 15,
+    "t": 441.3,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner"
+  },
+  {
+    "scene": 17,
+    "t": 512.3,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Let's go, Yoonhwan!\""
+  },
+  {
+    "scene": 20,
+    "t": 613.8,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom left corner."
+  },
+  {
+    "scene": 20,
+    "t": 636.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Only shows isolated dialogue bubble, does not depict the bloodied stone or Yoonhwan holding it as described."
+  },
+  {
+    "scene": 21,
+    "t": 637.6,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?\""
+  },
+  {
+    "scene": 22,
+    "t": 665.8,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"It's really such a relief that you're in this world, Jaehwan.\""
+  },
+  {
+    "scene": 23,
+    "t": 716.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows transition animation/graphic element not depicting the described manga scene"
+  },
+  {
+    "scene": 2,
+    "t": 70.9,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Shows only stylized text/logo cropped at edges, not the described action scene"
+  },
+  {
+    "scene": 5,
+    "t": 143.2,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "System description text in orange box is too small to read comfortably on phone"
+  },
+  {
+    "scene": 6,
+    "t": 175.6,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Face and mouth area visibly cut off at bottom edge of frame."
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows only partial stylized text/SFX against mostly black screen, not depicting the action described"
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Frame shows only partial stylized text/SFX against mostly black screen, not depicting the action described"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Same as previous frame - only partial stylized text visible, not showing the narrated scene"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Same as previous frame - only partial stylized text visible, not showing the narrated scene"
+  },
+  {
+    "scene": 7,
+    "t": 204.9,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Same as previous frames - only partial stylized text visible, not depicting the action described"
+  },
+  {
+    "scene": 7,
+    "t": 204.9,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Same as previous frames - only partial stylized text visible, not depicting the action described"
+  },
+  {
+    "scene": 14,
+    "t": 422.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows partial stylized text/logo cut off at top, not depicting the described action"
+  },
+  {
+    "scene": 20,
+    "t": 636.1,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Only shows isolated dialogue bubble, does not depict the bloodied stone or Yoonhwan holding it as described."
+  },
+  {
+    "scene": 24,
+    "t": 0.0,
+    "type": "panel_reuse",
+    "severity": "low",
+    "detail": "p0107.png appears in 3 scenes ([0, 18, 24]) \u2014 repetition reads as lazy"
+  },
+  {
+    "t": 0.0,
+    "type": "sfx_absent",
+    "severity": "low",
+    "detail": "script tags 19 sfx_events but no SFX layer was rendered (missing Freesound key or no CC0 matches)"
+  },
+  {
+    "t": 0.0,
+    "type": "ambience_absent",
+    "severity": "low",
+    "detail": "12 scenes request ambience but no ambience layer was rendered"
+  }
+]

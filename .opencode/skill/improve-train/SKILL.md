@@ -41,6 +41,14 @@ benchmark is pinned in `improvements/benchmark/config.json`.
    are ALWAYS `pipeline/review_stable.py` (majority-of-3; single-pass noise
    ±12 faults, gap-011); score globally AND with `--scenes-changed` when the
    touched scene set is known. NEVER run `--apply-fixes` during measurement.
+   **Matched-veto scoring is mandatory (gap-015, adopted standard):** every
+   arm is ALSO scored with `--matched-vetoes` (+ `--hash-video` /
+   `--hash-baseline-video` when both mp4s exist, or `--hash-sidecar`;
+   netting-only otherwise). Both arithmetics go in the report; the
+   matched-veto result decides whether a type-count FAIL is reviewer noise
+   or a real regression — a matched-veto FAIL is final. Binding archival
+   rule: any eval that hashes videos must also `--write-hash-sidecar
+   <exp-dir>/replay/sidecars/<pair>.hash_sidecar.json`.
 6. **Human gate.** Present per gap: verdict, weighted score delta, per-fault-
    type table, sample frames, wall-time, caveats. Ask via `question`:
    adopt / reject / iterate.

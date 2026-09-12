@@ -1,0 +1,296 @@
+[
+  {
+    "scene": 1,
+    "t": 36.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card 'JUST WHERE...' does not depict the narrated scene of Jaehwan in rubble."
+  },
+  {
+    "scene": 1,
+    "t": 40.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card 'DID IT ALL GO WRONG?' with FLAMESCANS.ORG watermark visible."
+  },
+  {
+    "scene": 1,
+    "t": 40.5,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Title card 'DID IT ALL GO WRONG?' with FLAMESCANS.ORG watermark visible."
+  },
+  {
+    "scene": 1,
+    "t": 44.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Repeated title card with FLAMESCANS.ORG watermark, not depicting narrated action."
+  },
+  {
+    "scene": 1,
+    "t": 44.8,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Repeated title card with FLAMESCANS.ORG watermark, not depicting narrated action."
+  },
+  {
+    "scene": 2,
+    "t": 51.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows a small inset panel with speech bubble, not the devastated city or Room of Flames described in narration."
+  },
+  {
+    "scene": 2,
+    "t": 57.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same frame repeated, does not depict the devastation, 98th floor, or monster swooping down."
+  },
+  {
+    "scene": 2,
+    "t": 64.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same frame again, still not showing the Room of Flames or action described."
+  },
+  {
+    "scene": 2,
+    "t": 70.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound effect text cropped at edges, not the monster, character, or scene described."
+  },
+  {
+    "scene": 3,
+    "t": 94.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only a silhouette of a weapon/necklace against white background, no action or characters."
+  },
+  {
+    "scene": 6,
+    "t": 157.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows character speaking with speech bubble, but narration describes him examining a blade silently."
+  },
+  {
+    "scene": 6,
+    "t": 175.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Face is visibly cropped at top, cutting off eyes and forehead mid-content."
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only cropped sound-effect text with mostly black empty space, does not depict the described action"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same as previous frame - only partial sound-effect text visible with mostly empty black screen"
+  },
+  {
+    "scene": 7,
+    "t": 204.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Identical to frames 1 and 2 - only cropped sound-effect text with empty black space"
+  },
+  {
+    "scene": 8,
+    "t": 212.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Scene shows armored figures in battle, not the monster's severed head or hooded figure described in narration."
+  },
+  {
+    "scene": 11,
+    "t": 324.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows dialogue panel with text, not the action described in narration"
+  },
+  {
+    "scene": 11,
+    "t": 333.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows dialogue panel with text, not the action described in narration"
+  },
+  {
+    "scene": 12,
+    "t": 347.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound-effect text, not the action described in narration"
+  },
+  {
+    "scene": 12,
+    "t": 354.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound-effect text, not the explosion or energy orb described"
+  },
+  {
+    "scene": 12,
+    "t": 361.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound-effect text, not Jaehwan wounded in rubble"
+  },
+  {
+    "scene": 13,
+    "t": 363.1,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Yoonhwan!!!\""
+  },
+  {
+    "scene": 13,
+    "t": 369.9,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner"
+  },
+  {
+    "scene": 14,
+    "t": 404.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows stylized sound effect text not the action being described"
+  },
+  {
+    "scene": 15,
+    "t": 441.2,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner."
+  },
+  {
+    "scene": 17,
+    "t": 512.1,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Let's go, Yoonhwan!\""
+  },
+  {
+    "scene": 19,
+    "t": 585.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card with character name, not depicting the narrated scene"
+  },
+  {
+    "scene": 20,
+    "t": 613.7,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Scanlation watermark 'FLAMESCANS.ORG' visible in bottom left corner."
+  },
+  {
+    "scene": 21,
+    "t": 637.4,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?\""
+  },
+  {
+    "scene": 22,
+    "t": 665.6,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"It's really such a relief that you're in this world, Jaehwan.\""
+  },
+  {
+    "scene": 23,
+    "t": 697.7,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Is this a... a snowfield?\""
+  },
+  {
+    "scene": 23,
+    "t": 716.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Purple knife/cleaver overlay blocks most of the frame, not depicting narrated action"
+  },
+  {
+    "scene": 2,
+    "t": 70.9,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Shows only stylized sound effect text cropped at edges, not the monster, character, or scene described."
+  },
+  {
+    "scene": 3,
+    "t": 94.8,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Frame shows only a silhouette of a weapon/necklace against white background, no action or characters."
+  },
+  {
+    "scene": 6,
+    "t": 175.6,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Face is visibly cropped at top, cutting off eyes and forehead mid-content."
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows only cropped sound-effect text with mostly black empty space, does not depict the described action"
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Frame shows only cropped sound-effect text with mostly black empty space, does not depict the described action"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Same as previous frame - only partial sound-effect text visible with mostly empty black screen"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Same as previous frame - only partial sound-effect text visible with mostly empty black screen"
+  },
+  {
+    "scene": 7,
+    "t": 204.9,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Identical to frames 1 and 2 - only cropped sound-effect text with empty black space"
+  },
+  {
+    "scene": 7,
+    "t": 204.9,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Identical to frames 1 and 2 - only cropped sound-effect text with empty black space"
+  },
+  {
+    "scene": 24,
+    "t": 0.0,
+    "type": "panel_reuse",
+    "severity": "low",
+    "detail": "p0107.png appears in 3 scenes ([0, 18, 24]) \u2014 repetition reads as lazy"
+  }
+]

@@ -552,10 +552,13 @@ def build_short(project: Path, slug: str, out: Path, target: float,
     else:
         agraph = (f"[2:a]afade=t=out:st={fade_st:.2f}:d=0.7,"
                   "loudnorm=I=-14:TP=-2:LRA=11[aout]")
+    # NO fade-in: frame 0 is the Shorts feed preview — fading from black made
+    # every short's preview a black frame (review_short bad_first_frame HIGH).
+    # The short must punch in at full brightness on frame 0.
     vgraph = (
         "[0:v][1:v]overlay=0:0,"
         f"ass={ass},"
-        f"fade=t=in:st=0:d=0.25,fade=t=out:st={fade_st:.2f}:d=0.7[vout]")
+        f"fade=t=out:st={fade_st:.2f}:d=0.7[vout]")
     cmd = (["ffmpeg", "-y"] + inputs +
            ["-filter_complex", f"{vgraph};{agraph}",
             "-map", "[vout]", "-map", "[aout]",

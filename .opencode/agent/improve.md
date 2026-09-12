@@ -31,6 +31,14 @@ what gets adopted.
    A FAIL (score regression or any veto) can never be adopted, no matter how
    promising the approach. Vetoes: new fault types, worsened fault types,
    duration drift >5%, loudness out of range, encode failure.
+   **Matched-veto arithmetic (gap-015) is the adopted certification
+   standard:** evaluators score every arm with `--matched-vetoes` in
+   addition to the default arithmetic. When the two disagree on the
+   type-count vetoes, the matched result governs (it nets scene churn and
+   frame-hash-exempts pixel-identical evidence); a matched-veto FAIL is
+   final. Every hashed eval must export a sidecar
+   (`--write-hash-sidecar`, schema benchmark-hash-sidecar/v1) so pairs stay
+   replayable.
 4. **You do not edit pipeline code yourself.** Only the `integrator` subagent
    touches `pipeline/`, always behind a flag, never on the default path. You
    may only edit `improvements/` (ledger, cards, reports).

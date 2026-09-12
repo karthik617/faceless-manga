@@ -1,0 +1,65 @@
+# Video review — ambed.mp4
+51 fault(s): 37 high, 13 medium
+
+- [HIGH] 0:05 scene 0 watermark: FLAMESCANS.ORG watermark visible at bottom right.
+- [HIGH] 0:12 scene 0 watermark: FLAMESCANS.ORG watermark visible at bottom right.
+- [HIGH] 0:19 scene 0 watermark: FLAMESCANS.ORG watermark visible at bottom right.
+- [HIGH] 0:26 scene 0 weak_hook: Comic panels with speech bubbles cut off at edges, text too small to read on phone.
+- [HIGH] 0:26 scene 0 irrelevant_panel: Comic panels with speech bubbles cut off at edges, text too small to read on phone.
+- [HIGH] 0:35 scene 1 irrelevant_panel: Title card with 'JUST WHERE...' not depicting the described action
+- [HIGH] 0:39 scene 1 irrelevant_panel: Title card with 'DID IT ALL GO WRONG?' and visible watermark
+- [HIGH] 0:39 scene 1 watermark: Title card with 'DID IT ALL GO WRONG?' and visible watermark
+- [HIGH] 0:44 scene 1 irrelevant_panel: Same title card repeated with watermark visible
+- [HIGH] 0:44 scene 1 watermark: Same title card repeated with watermark visible
+- [HIGH] 0:50 scene 2 irrelevant_panel: Speech bubble with sound effect, not depicting the narrated scene of city devastation or character action.
+- [HIGH] 0:57 scene 2 irrelevant_panel: Same speech bubble sound effect, does not show the described city, monster, or Jaehwan.
+- [HIGH] 1:04 scene 2 irrelevant_panel: Identical speech bubble frame, completely unrelated to narrated devastation and action scene.
+- [HIGH] 1:10 scene 2 irrelevant_panel: Stylized text/logo cropped at edges, not depicting the Room of Flames, character, or monster described.
+- [HIGH] 1:34 scene 3 irrelevant_panel: Frame shows only a cropped silhouette of weapon/tag, no action or characters visible
+- [HIGH] 2:55 scene 6 irrelevant_panel: Face and content cropped at top, does not show the shocked expression described.
+- [HIGH] 3:02 scene 7 irrelevant_panel: Title card showing location name, not the action being narrated
+- [HIGH] 3:10 scene 7 irrelevant_panel: Mostly black screen with cropped orange text/graphic at top
+- [HIGH] 3:17 scene 7 irrelevant_panel: Same as previous frame, mostly empty with cropped element
+- [HIGH] 3:24 scene 7 irrelevant_panel: Repeats empty black screen with cropped orange element
+- [HIGH] 3:32 scene 8 irrelevant_panel: Shows unrelated battle scene, not the described aftermath with severed head in flames.
+- [HIGH] 4:41 scene 10 irrelevant_panel: Shows only the text question without depicting the scene described in narration
+- [HIGH] 5:24 scene 11 irrelevant_panel: Shows dialogue panel with speech bubble, not the action described in narration
+- [HIGH] 5:33 scene 11 irrelevant_panel: Shows dialogue panel with speech bubble, not the action described in narration
+- [HIGH] 5:47 scene 12 irrelevant_panel: Shows only large stylized sound effect text, not depicting the described action
+- [HIGH] 6:01 scene 13 missing_payoff: quoted line never shown: "Yoonhwan!!!"
+- [HIGH] 6:08 scene 13 watermark: FLAMESCANS.ORG watermark visible on the frame.
+- [HIGH] 7:19 scene 15 watermark: FLAMESCANS.ORG watermark visible in bottom right corner
+- [HIGH] 8:30 scene 17 missing_payoff: quoted line never shown: "Let's go, Yoonhwan!"
+- [HIGH] 9:44 scene 19 irrelevant_panel: Title card showing only character name, not depicting narrated scene
+- [HIGH] 10:13 scene 20 irrelevant_panel: Shows tally marks on wall with FLAMESCANS.ORG watermark, not the narrated scene.
+- [HIGH] 10:13 scene 20 watermark: Shows tally marks on wall with FLAMESCANS.ORG watermark, not the narrated scene.
+- [HIGH] 10:37 scene 21 missing_payoff: quoted line never shown: "Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?"
+- [HIGH] 11:05 scene 22 missing_payoff: quoted line never shown: "It's really such a relief that you're in this world, Jaehwan."
+- [HIGH] 11:28 scene 22 watermark: FLAMESCANS.ORG watermark visible in top right corner
+- [HIGH] 12:28 scene 24 irrelevant_panel: Shows character apologizing, not depicting narrated scene about stone or tower edge
+- [HIGH] 12:49 scene 24 irrelevant_panel: Same apologizing dialogue repeated, not matching narration content
+- [MEDIUM] 0:26 scene 0 cropped_content: Comic panels with speech bubbles cut off at edges, text too small to read on phone.
+- [MEDIUM] 0:26 scene 0 phone_readability: Comic panels with speech bubbles cut off at edges, text too small to read on phone.
+- [MEDIUM] 1:10 scene 2 cropped_content: Stylized text/logo cropped at edges, not depicting the Room of Flames, character, or monster described.
+- [MEDIUM] 1:34 scene 3 cropped_content: Frame shows only a cropped silhouette of weapon/tag, no action or characters visible
+- [MEDIUM] 2:55 scene 6 cropped_content: Face and content cropped at top, does not show the shocked expression described.
+- [MEDIUM] 3:10 scene 7 cropped_content: Mostly black screen with cropped orange text/graphic at top
+- [MEDIUM] 3:10 scene 7 empty_screen: Mostly black screen with cropped orange text/graphic at top
+- [MEDIUM] 3:17 scene 7 cropped_content: Same as previous frame, mostly empty with cropped element
+- [MEDIUM] 3:17 scene 7 empty_screen: Same as previous frame, mostly empty with cropped element
+- [MEDIUM] 3:24 scene 7 cropped_content: Repeats empty black screen with cropped orange element
+- [MEDIUM] 3:24 scene 7 empty_screen: Repeats empty black screen with cropped orange element
+- [MEDIUM] 7:09 scene 14 cropped_content: Character's face and head are cut off at the top of frame.
+- [MEDIUM] 10:28 scene 20 cropped_content: Shows dialogue 'Jaehwan, you punk... so you noticed' but speech bubble is cut off at top.
+- [LOW] 0:00 scene 24 panel_reuse: p0107.png appears in 3 scenes ([0, 18, 24]) — repetition reads as lazy
+
+## Human spot-checks (timestamps computed for this cut)
+
+- [ ] HOOK 0:00-0:27: does the panel cycle feel dynamic (not a cheap 3-panel loop)? Would it stop a scroller?
+- [ ] MUSIC SEAM at 3:26 (Suspense -> Emotional, Heroes -> A Better Future): hard cut or key clash?
+- [ ] MUSIC SEAM at 7:11 (Emotional -> Dramatic, A Better Future -> Cinematic): hard cut or key clash?
+- [ ] MUSIC SEAM at 10:07 (Dramatic -> Epic, Cinematic -> Glorious): hard cut or key clash?
+- [ ] TTS: pronunciation of recurring names (Jaehwan, Yoonhwan) and whether quoted dialogue is distinguishable from essay narration
+- [ ] SPOILER: hook panels ['panels/p0107.png', 'panels/p0017.png', 'panels/p0040.png'] / thumbnails ['panels/p0107.png', 'panels/p0040.png'] — do any pre-burn the chapter's climax image?
+- [ ] BRANDING (final cut only): title card ~0:08 and subscribe pop-up placement/size/taste
+- [ ] LEGAL: panel density vs commentary still within the channel's fair-use framing; check source watermarks

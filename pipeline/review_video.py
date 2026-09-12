@@ -520,6 +520,14 @@ def main():
                 print(f"    {c}")
             print("  -> re-render affected scenes "
                   "(panel_render.py --redo-scene N) and re-review.")
+            # record the fixes in the report itself so the md is a complete
+            # audit trail (what was flagged AND what was done about it)
+            with open(f"{out_base}.md", "a") as fh:
+                fh.write("\n## Fixes auto-applied this round\n\n")
+                for c in changes:
+                    fh.write(f"- {c}\n")
+                fh.write("\nAffected scenes will be re-rendered and "
+                         "re-reviewed to confirm the fixes hold.\n")
 
     sys.exit(2 if high else 0)
 

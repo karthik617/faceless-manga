@@ -81,8 +81,17 @@ def step_segment(args, proj):
     if has_images(panels) and args.from_step not in ("segment",):
         print("  [cached] panels/ already populated")
         return
+    # Split guard (adopted from exp-004, gap-004): yolo text-box veto + v2
+    # art-ink ceiling + gutter-edge SFX snapping on forced webtoon cuts, plus
+    # the auto-mode majority vote (a cover page can no longer disable tile
+    # stitching for a whole webtoon chapter -- the root cause of the golden
+    # ch2 cropped_content faults). ON by default; the module CLI keeps
+    # "none" as its own default (gap-002 convention: orchestrator passes the
+    # flag). Opt-out: --split-guard none (byte-identical legacy splits).
+    # yolo degrades to blob then to legacy cuts on any failure, never crashes.
     run_step([PY, str(PIPE / "segment_panels.py"), "--raw", str(proj / "raw"),
-              "--out", str(panels), "--mode", args.mode])
+              "--out", str(panels), "--mode", args.mode,
+              "--split-guard", args.split_guard])
 
 
 def step_clean(args, proj):
@@ -95,6 +104,18 @@ def step_clean(args, proj):
     tier = args.clean_bubbles if args.clean_bubbles in ("cv", "gemini") else "cv"
     run_step([PY, str(PIPE / "clean_bubbles.py"), "--panels", str(proj / "panels"),
               "--out", str(out), "--tier", tier])
+
+
+def step_clean_watermarks(args, proj):
+    # exp-003 prototype: scanlation watermark detect+remove. Opt-in only
+    # (--clean-watermarks); composes with bubble cleanup by writing into the
+    # same panels_clean/. clean_watermarks.py caches per chapter
+    # (watermark_template.json + watermark_log.json) so re-runs are no-ops,
+    # and it exits 0 on internal failure so it can never break the pipeline.
+    if not args.clean_watermarks:
+        return
+    run_step([PY, str(PIPE / "clean_watermarks.py"),
+              "--panels", str(proj / "panels")])
 
 
 def step_script(args, proj, slug):
@@ -113,7 +134,18 @@ def step_script(args, proj, slug):
     # Disable with --no-verify-panels or MANGA_VERIFY_PANELS=0.
     if not getattr(args, "no_verify_panels", False) and \
             os.environ.get("MANGA_VERIFY_PANELS") != "0":
-        run_step([PY, str(PIPE / "verify_panels.py"), str(out_json)])
+        cmd = [PY, str(PIPE / "verify_panels.py"), str(out_json)]
+        # Quote-payoff pass (adopted from exp-005: golden ch2 missing_payoff
+        # 5->0 on scene 21, zero LLM calls, zero new deps). Tier 1.5 inside
+        # verify_panels; the module keeps --payoff opt-in (same convention as
+        # panel_render's seq default, gap-002) and the orchestrator passes it
+        # by default here. Disable just this tier with --no-payoff-check or
+        # MANGA_VERIFY_PAYOFF=0; --no-verify-panels above disables the whole
+        # verifier, payoff included.
+        if not getattr(args, "no_payoff_check", False) and \
+                os.environ.get("MANGA_VERIFY_PAYOFF") != "0":
+            cmd.append("--payoff")
+        run_step(cmd)
     if not args.yes:
         input(f"\nReview/edit {out_json} (narration + scene panels), then press "
               f"Enter to render (Ctrl-C to stop)... ")
@@ -165,6 +197,9 @@ def _render_cmd(args, proj, slug, redo=(), stop_after=None):
         cmd.append("--no-branding")
     if args.layout != "seq":
         cmd += ["--layout", args.layout]
+    if args.text_aware:
+        # exp-009 opt-in only: default invocations stay byte-identical
+        cmd.append("--text-aware")
     for n in redo:
         cmd += ["--redo-scene", str(n)]
     if stop_after:
@@ -222,32 +257,155 @@ def step_review(args, proj, slug):
         if src is None:
             sys.exit("render did not produce a review intermediate")
 
+    import json as _json
+    passed = False
+    rounds_log = []           # (round, faults_summary, fixes/action) history
     for round_i in range(args.review_rounds):
         before = out_json.read_text()
         r = subprocess.run([PY, str(PIPE / "review_video.py"), str(out_json),
                             "--video", str(src),
                             "--workdir", str(proj / "_work"),
                             "--apply-fixes"])
+        # archive this round's report before the next round overwrites it,
+        # so review.md history survives the loop (review_r1.md, review_r2.md…)
+        for ext in (".json", ".md"):
+            rp = proj / f"review{ext}"
+            if rp.exists():
+                (proj / f"review_r{round_i + 1}{ext}").write_text(
+                    rp.read_text())
+        n_high = n_med = 0
+        rj = proj / "review.json"
+        if rj.exists():
+            _faults = _json.loads(rj.read_text())
+            n_high = sum(1 for f in _faults if f.get("severity") == "high")
+            n_med = sum(1 for f in _faults if f.get("severity") == "medium")
         if r.returncode == 0:
             print("  review: PASS")
+            rounds_log.append((round_i + 1, n_high, n_med, "PASS"))
+            passed = True
             break
         after = out_json.read_text()
         if after == before:
             print("  review: faults remain but no auto-fix applies; "
                   "see review.md — manual pass needed")
+            rounds_log.append((round_i + 1, n_high, n_med,
+                               "faults remain — no auto-fix applies"))
             break
         # figure out which scenes changed and re-render only those (cheap:
         # cached clips + copy-concat + copy-mix, still pre-branding)
-        import json as _json
         b, a = _json.loads(before), _json.loads(after)
         redo = [i + 1 for i, (sb, sa) in
                 enumerate(zip(b["scenes"], a["scenes"])) if sb != sa]
         print(f"  review round {round_i+1}: re-rendering scenes {redo}")
+        rounds_log.append((round_i + 1, n_high, n_med,
+                           f"fixes applied — re-rendered scenes {redo}"))
         run_step(_render_cmd(args, proj, slug, redo=redo,
                              stop_after="review-cut"))
         src = _review_src(proj) or src
     else:
         print("  review: max rounds reached; check review.md before publishing")
+
+    # append the round history to review.md: the report then reads as
+    # flagged -> fixed -> re-checked, and states whether the last pass is clean
+    rmd = proj / "review.md"
+    if rmd.exists() and rounds_log:
+        with open(rmd, "a") as fh:
+            fh.write("\n## Fix-loop history\n\n")
+            fh.write("| Round | High | Medium | Action |\n|---|---|---|---|\n")
+            for rnd, nh, nm, action in rounds_log:
+                fh.write(f"| {rnd} | {nh} | {nm} | {action} |\n")
+            if passed:
+                fh.write("\nFinal round re-reviewed CLEAN — earlier-round "
+                         "faults confirmed fixed, no new faults introduced. "
+                         "Proceeding to encode.\n")
+            else:
+                fh.write("\nFaults REMAIN after the fix loop (see the list "
+                         "above). Per-round snapshots: review_r*.md.\n")
+
+    # ---- STAGE 5.6: automated triage of surviving HIGH faults ----
+    # replicates the manual adjudication pass (panel images + fault-time
+    # frame + narration -> DROP contentless panels / DISMISS reviewer false
+    # positives). On drops it re-renders the changed scenes and re-reviews
+    # once to confirm the fixes held and nothing new was introduced.
+    if not passed and not args.no_triage:
+        rj = proj / "review.json"
+        n_high = 0
+        if rj.exists():
+            n_high = sum(1 for f in _json.loads(rj.read_text())
+                         if f.get("severity") == "high")
+        if n_high:
+            print(f"  triage: adjudicating {n_high} surviving HIGH fault(s)...")
+            r = subprocess.run(
+                [PY, str(PIPE / "review_triage.py"), str(out_json),
+                 "--video", str(src), "--workdir", str(proj / "_work")],
+                capture_output=True, text=True)
+            print(r.stdout, end="")
+            if r.stderr.strip():
+                print(r.stderr[-800:], end="")
+            redo = []
+            for line in r.stdout.splitlines():
+                if line.startswith("TRIAGE_REDO_SCENES="):
+                    redo = [int(x) for x in
+                            line.split("=", 1)[1].split(",") if x]
+            if redo:
+                print(f"  triage: re-rendering scenes {redo} and "
+                      f"re-reviewing to confirm...")
+                run_step(_render_cmd(args, proj, slug, redo=redo,
+                                     stop_after="review-cut"))
+                src = _review_src(proj) or src
+                r2 = subprocess.run(
+                    [PY, str(PIPE / "review_video.py"), str(out_json),
+                     "--video", str(src),
+                     "--workdir", str(proj / "_work")])
+                # archive the post-triage confirmation pass
+                for ext in (".json", ".md"):
+                    rp = proj / f"review{ext}"
+                    if rp.exists():
+                        (proj / f"review_posttriage{ext}").write_text(
+                            rp.read_text())
+                if r2.returncode == 0:
+                    passed = True
+                else:
+                    # confirmation still shows HIGHs: triage them once more
+                    # (drops may have shifted pans; classic variance flags) —
+                    # dismiss/drop what it can, no further re-render round
+                    subprocess.run(
+                        [PY, str(PIPE / "review_triage.py"), str(out_json),
+                         "--video", str(src),
+                         "--workdir", str(proj / "_work")])
+            if not passed and rj.exists():
+                left = sum(1 for f in _json.loads(rj.read_text())
+                           if f.get("severity") == "high")
+                if left == 0:
+                    print("  triage: all surviving HIGH faults resolved "
+                          "(dropped or dismissed) — proceeding to encode")
+                    passed = True
+                    with open(proj / "review.md", "a") as fh:
+                        fh.write("\nAutomated triage resolved every "
+                                 "surviving HIGH fault — proceeding to "
+                                 "encode.\n")
+
+    # ---- encode gate: don't spend the expensive finalize on a cut that
+    # still carries HIGH faults — a manual pass (or --encode-anyway) decides.
+    if not passed and not getattr(args, "encode_anyway", False):
+        remaining_high = 0
+        rj = proj / "review.json"
+        if rj.exists():
+            remaining_high = sum(
+                1 for f in _json.loads(rj.read_text())
+                if f.get("severity") == "high")
+        if remaining_high:
+            print(f"  review: {remaining_high} HIGH fault(s) remain — "
+                  "STOPPING before the delivery encode.")
+            print("  fix manually (edit the script JSON, delete affected "
+                  "_work/cNNN.mp4) then re-run: --from review")
+            print("  or force the encode: --encode-anyway")
+            # remove stale final-guard reports from a previous successful
+            # run: they no longer describe any existing delivered file and
+            # would skew review_final-vs-review deltas (gap-analyst)
+            for ext in (".json", ".md"):
+                (proj / f"review_final{ext}").unlink(missing_ok=True)
+            return
 
     # ---- finalize: branding overlays + the single delivery encode ----
     print("  finalizing (branding + delivery encode)...")
@@ -517,12 +675,25 @@ def main():
     ap.add_argument("--series", help="series name (required unless --project)")
     ap.add_argument("--chapter", help="chapter number/label")
     ap.add_argument("--mode", choices=["auto", "manga", "webtoon"], default="auto")
+    ap.add_argument("--split-guard", choices=["none", "blob", "yolo"],
+                    default="yolo",
+                    help="webtoon forced-cut guard (adopted from exp-004): "
+                         "veto cut rows through detected text/dense art, snap "
+                         "gutter edges off SFX tips, keep beat panels, and "
+                         "majority-vote the auto mode so a cover page cannot "
+                         "disable tile stitching. Default yolo (manga109 "
+                         "text detector, ~10MB ONNX cached on first use; "
+                         "falls back to blob then legacy cuts on any error). "
+                         "Opt-out: --split-guard none = pre-exp-004 "
+                         "byte-identical segmentation.")
     ap.add_argument("--channel", default=None,
                     help="channel name for the scriptwriter prompt "
                          "(default: the name in channel_state.json)")
     ap.add_argument("--clean-bubbles", nargs="?", const="cv",
                     choices=["cv", "gemini"], default=None,
                     help="enable bubble cleanup (default tier cv)")
+    ap.add_argument("--clean-watermarks", action="store_true",
+                    help="enable scanlation watermark removal (exp-003)")
     ap.add_argument("--project", help="existing output/<slug> dir (resume)")
     ap.add_argument("--from", dest="from_step", choices=STEPS,
                     help="resume from this step")
@@ -532,7 +703,15 @@ def main():
     ap.add_argument("--no-review", action="store_true",
                     help="skip the automated vision-QC review step")
     ap.add_argument("--review-rounds", type=int, default=3,
-                    help="max review->fix->re-render loops (default 2)")
+                    help="max review->fix->re-render loops (default 3)")
+    ap.add_argument("--encode-anyway", action="store_true",
+                    help="run the final delivery encode even when HIGH "
+                         "review faults remain after the fix loop (default: "
+                         "stop and wait for a manual pass)")
+    ap.add_argument("--no-triage", action="store_true",
+                    help="skip the automated HIGH-fault triage (stage 5.6: "
+                         "vision adjudication that drops contentless panels "
+                         "and dismisses reviewer false positives)")
     ap.add_argument("--music-mood", default=None,
                     help="force the background-music mood/search term (e.g. "
                          "Epic, Cinematic, Sad) instead of deriving it from the "
@@ -545,6 +724,11 @@ def main():
                          "to default after the ch3 production trial (0 HIGH "
                          "faults on smart scenes; improvements/ledger.json "
                          "gap-002).")
+    ap.add_argument("--text-aware", action="store_true",
+                    help="pass --text-aware to panel_render (exp-009 phone-"
+                         "readability framing: measured text-line boxes "
+                         "drive crops and smart-layout cell sizing). Off by "
+                         "default.")
     ap.add_argument("--freesound-key", default=None,
                     help="Freesound API token for auto-fetching content SFX "
                          "(door slams, gasps, etc.) tagged in the script. Falls "
@@ -555,7 +739,15 @@ def main():
     ap.add_argument("--no-verify-panels", action="store_true",
                     help="skip the panel<->narration relevance verifier that "
                          "runs after the script step (verify_panels.py; also "
-                         "MANGA_VERIFY_PANELS=0)")
+                         "MANGA_VERIFY_PANELS=0). Disables ALL verifier tiers, "
+                         "including the quote-payoff pass.")
+    ap.add_argument("--no-payoff-check", action="store_true",
+                    help="skip only the quote-payoff tier (tier 1.5) of the "
+                         "script verifier: the OCR cross-check that every "
+                         "narration quote lands on a kept panel (exp-005; on "
+                         "by default; also MANGA_VERIFY_PAYOFF=0). Other "
+                         "verifier tiers still run unless --no-verify-panels "
+                         "is given.")
     ap.add_argument("--no-short", action="store_true",
                     help="skip cutting the 9:16 Short from the long video")
     ap.add_argument("--short-duration", type=float, default=60.0,
@@ -656,6 +848,8 @@ def main():
     if start <= STEPS.index("clean"):
         if args.clean_bubbles:
             print("\n=== CLEAN BUBBLES ==="); step_clean(args, proj)
+        if args.clean_watermarks:
+            print("\n=== CLEAN WATERMARKS ==="); step_clean_watermarks(args, proj)
     if start <= STEPS.index("script"):
         print("\n=== SCRIPT ===");    step_script(args, proj, slug)
     if start <= STEPS.index("render"):
@@ -674,6 +868,15 @@ def main():
         print("\n=== PACKAGE ===");   step_package(args, proj, slug)
 
     # record this chapter as recapped so the channel advances to the next one
+    # — but only when a deliverable exists (the review encode gate may have
+    # stopped before finalize; the channel must not advance past a chapter
+    # that has no video)
+    delivered = (proj / f"{slug}.mp4")
+    if not (delivered.exists() and delivered.stat().st_size > 0):
+        if used_channel:
+            print("  [channel] no delivered mp4 (encode gate?) — NOT marking "
+                  "chapter done; re-run --from review after fixing")
+        used_channel = False
     if used_channel and args.chapter not in (None, "?"):
         try:
             import channel as chan

@@ -1,0 +1,3 @@
+[benchmark] FAIL  score 126 -> 149 (delta +23)
+[benchmark] VETO: fault types worsened (base→now, matched-pair net): {'cropped_content': (4, 7), 'irrelevant_panel': (12, 15), 'watermark': (4, 6)}
+[benchmark] wrote /home/kmyadav/faceless-manga/improvements/experiments/exp-015-benchmark-matched-vetoes/replay/c3_exp009_v1/metrics.json

@@ -1,0 +1,54 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": [
+    3,
+    12,
+    16,
+    17,
+    22
+  ],
+  "score": {
+    "baseline": 20,
+    "experiment": 24,
+    "delta": 4,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 4,
+      "medium": 0,
+      "low": 0
+    },
+    "experiment": {
+      "high": 4,
+      "medium": 2,
+      "low": 0
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "irrelevant_panel": 2,
+      "missing_payoff": 2
+    },
+    "experiment": {
+      "cropped_content": 2,
+      "irrelevant_panel": 1,
+      "missing_payoff": 3
+    }
+  },
+  "vetoes": [
+    "new fault types introduced: ['cropped_content']",
+    "fault types worsened (base\u2192now): {'cropped_content': (0, 2), 'missing_payoff': (2, 3)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/round2-eval/stable_base.json",
+    "review": "/tmp/opencode/exp017-eval/run/stable_b.json",
+    "video": null
+  }
+}

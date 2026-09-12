@@ -22,9 +22,19 @@ is the researcher's job — you define problems measurably.
 1. `output/*/review.json` + `review.md` — cluster faults by type × stage ×
    severity. Weight: high=5, medium=2, low=1. Note repeat offenders across
    chapters (systemic) vs one-offs (noise).
+   IGNORE `review_r*.{md,json}` per-round snapshots — they contain faults
+   that later fix rounds already resolved; only the final `review.json` /
+   `review.md` fault list is current. Likewise, the "## Fix-loop history"
+   table and "## Fixes auto-applied" sections in review.md record per-round
+   counts and actions, NOT current faults — never quote their numbers as the
+   chapter's surviving fault load (the `- [HIGH|MEDIUM|LOW] m:ss scene N
+   type: detail` lines are the fault list).
 2. `review_final.md` vs `review.md` deltas — what the existing
    `--apply-fixes` loop fixed vs what needed the "manual pass" (those
-   leftovers are the interesting gaps: the loop's ceiling).
+   leftovers are the interesting gaps: the loop's ceiling). Caveat: when the
+   encode gate stopped a run before finalize (HIGH faults remained),
+   `review_final.*` is missing or stale from an earlier run — check its mtime
+   against `review.md` before trusting the delta.
 3. Human spot-check sections in review.md — items no automation covers yet
    (music seams, TTS pronunciation, spoiler burn, branding taste, legal).
 4. Code weaknesses: grep `pipeline/` for TODO/FIXME/HACK/workaround comments

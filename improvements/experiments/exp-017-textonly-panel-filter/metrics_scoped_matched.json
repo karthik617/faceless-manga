@@ -1,0 +1,128 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": [
+    3,
+    12,
+    16,
+    17,
+    22
+  ],
+  "score": {
+    "baseline": 20,
+    "experiment": 24,
+    "delta": 4,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 4,
+      "medium": 0,
+      "low": 0
+    },
+    "experiment": {
+      "high": 4,
+      "medium": 2,
+      "low": 0
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "irrelevant_panel": 2,
+      "missing_payoff": 2
+    },
+    "experiment": {
+      "cropped_content": 2,
+      "irrelevant_panel": 1,
+      "missing_payoff": 3
+    }
+  },
+  "vetoes": [
+    "new fault types introduced: ['cropped_content']",
+    "fault types worsened (base\u2192now, matched-pair net): {'cropped_content': (0, 2), 'missing_payoff': (2, 3)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/round2-eval/stable_base.json",
+    "review": "/tmp/opencode/exp017-eval/run/stable_b.json",
+    "video": null
+  },
+  "matched_vetoes": {
+    "pass_counts": {
+      "baseline": 3,
+      "experiment": 3
+    },
+    "consensus_fraction": 0.6667,
+    "consensus_dropped": {
+      "baseline": [],
+      "experiment": []
+    },
+    "frame_hash": {
+      "enabled": true,
+      "window_s": 3.0,
+      "video": "/tmp/opencode/exp017-eval/run/work_b/ambed.mp4",
+      "baseline_video": "improvements/experiments/round2-eval/_work_base/ambed.mp4"
+    },
+    "annotated_vetoes": [
+      {
+        "type": "cropped_content",
+        "count": {
+          "baseline": 0,
+          "experiment": 2
+        },
+        "pairs_added": [
+          {
+            "scene": 17,
+            "t": 526.1,
+            "votes": "3/3",
+            "severity": "medium",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 3,
+            "t": 94.6,
+            "votes": "3/3",
+            "severity": "medium",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "794bfdd277ce19e70b9a5ab0aebea87c",
+              "t": 94.6,
+              "baseline_window": [
+                91.6,
+                97.6
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 1,
+        "suppressed": false
+      },
+      {
+        "type": "missing_payoff",
+        "count": {
+          "baseline": 2,
+          "experiment": 3
+        },
+        "pairs_added": [
+          {
+            "scene": 16,
+            "t": 472.4,
+            "votes": "3/3",
+            "severity": "high",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 1,
+        "suppressed": false
+      }
+    ]
+  }
+}

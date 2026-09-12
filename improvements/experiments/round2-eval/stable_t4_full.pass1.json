@@ -1,0 +1,289 @@
+[
+  {
+    "scene": 1,
+    "t": 44.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card with thematic text does not depict the described scene action"
+  },
+  {
+    "scene": 2,
+    "t": 51.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows a small center panel with character and sound effects, not depicting the described devastated city or Room of Flames setting."
+  },
+  {
+    "scene": 2,
+    "t": 57.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same static composition, does not show the devastated city, 98th floor Room of Flames, or monster with glowing yellow eyes swooping down."
+  },
+  {
+    "scene": 2,
+    "t": 64.2,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Identical frame showing character in small center panel, does not depict the narrated scene of cracked streets, shattered towers, or swooping shadowy monster."
+  },
+  {
+    "scene": 2,
+    "t": 70.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same static frame throughout, fails to visually match narration describing devastation, Room of Flames environment, or monster attack."
+  },
+  {
+    "scene": 6,
+    "t": 175.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Character's face is cropped at top, cutting off head/eyes during crucial shocked expression."
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 7,
+    "t": 204.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 8,
+    "t": 212.2,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows the beast and armored figures but does not depict the severed head in flames or Jaehwan standing victorious as narration describes."
+  },
+  {
+    "scene": 9,
+    "t": 242.0,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Scanlation watermark visible in top corner."
+  },
+  {
+    "scene": 11,
+    "t": 324.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows speech bubble with dialogue not matching the narration's description of action imagery"
+  },
+  {
+    "scene": 11,
+    "t": 333.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows speech bubble with dialogue not matching the narration's description of action imagery"
+  },
+  {
+    "scene": 12,
+    "t": 347.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only large stylized sound effect text, not the described action or characters"
+  },
+  {
+    "scene": 12,
+    "t": 354.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound effect text in red, not the described characters or action"
+  },
+  {
+    "scene": 12,
+    "t": 361.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound effect text in red, not Jaehwan wounded among rubble"
+  },
+  {
+    "scene": 13,
+    "t": 363.0,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Yoonhwan!!!\""
+  },
+  {
+    "scene": 13,
+    "t": 369.8,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Watermark 'FLAMESCANS.ORG' visible in bottom right corner."
+  },
+  {
+    "scene": 14,
+    "t": 404.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows stylized text/logo effect instead of the described fist strikes and creature action"
+  },
+  {
+    "scene": 15,
+    "t": 441.2,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner"
+  },
+  {
+    "scene": 17,
+    "t": 512.3,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Let's go, Yoonhwan!\""
+  },
+  {
+    "scene": 19,
+    "t": 585.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card showing character name, not depicting the narrated scene"
+  },
+  {
+    "scene": 20,
+    "t": 613.9,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom left corner."
+  },
+  {
+    "scene": 20,
+    "t": 636.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Text is cropped at top and sides, not showing the stone as described."
+  },
+  {
+    "scene": 21,
+    "t": 637.6,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?\""
+  },
+  {
+    "scene": 22,
+    "t": 665.8,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"It's really such a relief that you're in this world, Jaehwan.\""
+  },
+  {
+    "scene": 24,
+    "t": 779.2,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "PanelBreak watermark/logo visible in bottom left corner"
+  },
+  {
+    "scene": 6,
+    "t": 175.6,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Character's face is cropped at top, cutting off head/eyes during crucial shocked expression."
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 7,
+    "t": 204.8,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 7,
+    "t": 204.8,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 17,
+    "t": 518.7,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Top of creature's head is cut off at frame edge."
+  },
+  {
+    "scene": 20,
+    "t": 636.1,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Text is cropped at top and sides, not showing the stone as described."
+  },
+  {
+    "scene": 24,
+    "t": 0.0,
+    "type": "panel_reuse",
+    "severity": "low",
+    "detail": "p0107.png appears in 3 scenes ([0, 18, 24]) \u2014 repetition reads as lazy"
+  },
+  {
+    "scene": 7,
+    "t": 190.1,
+    "type": "unreadable_text",
+    "severity": "low",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 7,
+    "t": 197.5,
+    "type": "unreadable_text",
+    "severity": "low",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 7,
+    "t": 204.8,
+    "type": "unreadable_text",
+    "severity": "low",
+    "detail": "Frame shows only partial sound effect text on mostly black screen, not depicting the described action scene"
+  },
+  {
+    "scene": 20,
+    "t": 636.1,
+    "type": "unreadable_text",
+    "severity": "low",
+    "detail": "Text is cropped at top and sides, not showing the stone as described."
+  }
+]

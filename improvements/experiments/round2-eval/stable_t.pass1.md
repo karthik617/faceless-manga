@@ -1,0 +1,71 @@
+# Video review — ambed.mp4
+57 fault(s): 41 high, 11 medium
+
+- [HIGH] 0:05 scene 0 watermark: Watermark 'FLAMESCANS.ORG' visible at bottom right.
+- [HIGH] 0:12 scene 0 watermark: Watermark 'FLAMESCANS.ORG' visible at bottom right.
+- [HIGH] 0:19 scene 0 watermark: Watermark 'FLAMESCANS.ORG' visible at bottom right.
+- [HIGH] 0:26 scene 0 weak_hook: Manga panels with dialogue bubbles cropped at edges, small text, not depicting described action.
+- [HIGH] 0:26 scene 0 irrelevant_panel: Manga panels with dialogue bubbles cropped at edges, small text, not depicting described action.
+- [HIGH] 0:35 scene 1 irrelevant_panel: Title card showing 'JUST WHERE...' instead of depicting the scene described
+- [HIGH] 0:39 scene 1 irrelevant_panel: Title card with 'DID IT ALL GO WRONG?' and visible FLAMESCANS.ORG watermark
+- [HIGH] 0:39 scene 1 watermark: Title card with 'DID IT ALL GO WRONG?' and visible FLAMESCANS.ORG watermark
+- [HIGH] 0:44 scene 1 irrelevant_panel: Same title card repeated with FLAMESCANS.ORG watermark
+- [HIGH] 0:44 scene 1 watermark: Same title card repeated with FLAMESCANS.ORG watermark
+- [HIGH] 0:50 scene 2 irrelevant_panel: Speech bubble with 'KUAHH!!' is unrelated to narration about city devastation and 98th floor.
+- [HIGH] 0:57 scene 2 irrelevant_panel: Same speech bubble, does not depict the described scene of cracked streets and shattered towers.
+- [HIGH] 1:04 scene 2 irrelevant_panel: Repeated speech bubble frame, still not showing the Room of Flames or Jaehwan climbing.
+- [HIGH] 1:10 scene 2 irrelevant_panel: Stylized logo/title art does not depict the monster or character action described in narration.
+- [HIGH] 1:34 scene 3 irrelevant_panel: Shows only a pendant/weapon on chain, not the action or character described in narration.
+- [HIGH] 2:55 scene 6 irrelevant_panel: Face is cropped at top, only shows chin and neck area.
+- [HIGH] 3:02 scene 7 irrelevant_panel: Title card showing location name while narration describes action scene
+- [HIGH] 3:10 scene 7 irrelevant_panel: Frame shows only partial sound effect text cropped at top and mostly black empty space
+- [HIGH] 3:17 scene 7 irrelevant_panel: Same as previous frame with cropped sound effect and empty black space
+- [HIGH] 3:24 scene 7 irrelevant_panel: Identical to previous frames showing only cropped sound effect text and black void
+- [HIGH] 3:32 scene 8 irrelevant_panel: Shows monster/armored figures in debris, not the severed head or hooded figure described
+- [HIGH] 4:01 scene 9 irrelevant_panel: Shows only a sound effect 'UGH' overlay, not the described action of Jaehwan screaming with blood on face.
+- [HIGH] 4:41 scene 10 irrelevant_panel: Shows title card with text 'WAS IT ALL TO FACE A DOG'S DEATH LIKE THIS?' rather than depicting the described scene
+- [HIGH] 5:06 scene 11 irrelevant_panel: Abstract motion lines and colors, not depicting the described creature or character action
+- [HIGH] 5:47 scene 12 irrelevant_panel: Shows only stylized sound-effect text, not the characters or action described
+- [HIGH] 5:53 scene 12 irrelevant_panel: Shows only abstract red energy/blood splatter effect without characters or context
+- [HIGH] 6:01 scene 13 missing_payoff: quoted line never shown: "Yoonhwan!!!"
+- [HIGH] 6:08 scene 13 watermark: FLAMESCANS.ORG watermark visible on the image.
+- [HIGH] 6:42 scene 14 irrelevant_panel: Shows stylized sound effect text instead of the described action scene with fists and debris.
+- [HIGH] 7:19 scene 15 watermark: FLAMESCANS.ORG watermark visible in bottom right corner.
+- [HIGH] 8:30 scene 17 missing_payoff: quoted line never shown: "Let's go, Yoonhwan!"
+- [HIGH] 9:44 scene 19 irrelevant_panel: Title card with character name, not depicting the scene described in narration
+- [HIGH] 10:13 scene 20 irrelevant_panel: Scanlation watermark visible and frame shows unrelated background art, not the described scene.
+- [HIGH] 10:13 scene 20 watermark: Scanlation watermark visible and frame shows unrelated background art, not the described scene.
+- [HIGH] 10:28 scene 20 irrelevant_panel: Speech bubble and face cropped at top, text partially cut off, wrong character speaking.
+- [HIGH] 10:35 scene 20 irrelevant_panel: Shows only stone with unrelated dialogue, does not depict bloodied stone or Yoonhwan as described.
+- [HIGH] 10:37 scene 21 missing_payoff: quoted line never shown: "Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?"
+- [HIGH] 11:05 scene 22 missing_payoff: quoted line never shown: "It's really such a relief that you're in this world, Jaehwan."
+- [HIGH] 11:28 scene 22 watermark: FLAMESCANS.ORG watermark visible in top right corner
+- [HIGH] 12:28 scene 24 irrelevant_panel: Shows character apologizing, not depicting the narration about text panels and the stone.
+- [HIGH] 12:49 scene 24 irrelevant_panel: Same apology scene repeating, not depicting the tower edge or disappearing into clouds.
+- [MEDIUM] 0:26 scene 0 cropped_content: Manga panels with dialogue bubbles cropped at edges, small text, not depicting described action.
+- [MEDIUM] 0:26 scene 0 phone_readability: Manga panels with dialogue bubbles cropped at edges, small text, not depicting described action.
+- [MEDIUM] 2:55 scene 6 cropped_content: Face is cropped at top, only shows chin and neck area.
+- [MEDIUM] 3:10 scene 7 cropped_content: Frame shows only partial sound effect text cropped at top and mostly black empty space
+- [MEDIUM] 3:10 scene 7 empty_screen: Frame shows only partial sound effect text cropped at top and mostly black empty space
+- [MEDIUM] 3:17 scene 7 cropped_content: Same as previous frame with cropped sound effect and empty black space
+- [MEDIUM] 3:17 scene 7 empty_screen: Same as previous frame with cropped sound effect and empty black space
+- [MEDIUM] 3:24 scene 7 cropped_content: Identical to previous frames showing only cropped sound effect text and black void
+- [MEDIUM] 3:24 scene 7 empty_screen: Identical to previous frames showing only cropped sound effect text and black void
+- [MEDIUM] 7:09 scene 14 cropped_content: Character's face and body are cut off at the bottom of the frame mid-content.
+- [MEDIUM] 10:28 scene 20 cropped_content: Speech bubble and face cropped at top, text partially cut off, wrong character speaking.
+- [LOW] 0:00 scene 24 panel_reuse: p0107.png appears in 3 scenes ([0, 18, 24]) — repetition reads as lazy
+- [LOW] 3:10 scene 7 unreadable_text: Frame shows only partial sound effect text cropped at top and mostly black empty space
+- [LOW] 3:17 scene 7 unreadable_text: Same as previous frame with cropped sound effect and empty black space
+- [LOW] 3:24 scene 7 unreadable_text: Identical to previous frames showing only cropped sound effect text and black void
+- [LOW] 10:28 scene 20 unreadable_text: Speech bubble and face cropped at top, text partially cut off, wrong character speaking.
+
+## Human spot-checks (timestamps computed for this cut)
+
+- [ ] HOOK 0:00-0:27: does the panel cycle feel dynamic (not a cheap 3-panel loop)? Would it stop a scroller?
+- [ ] MUSIC SEAM at 3:26 (Suspense -> Emotional, Heroes -> A Better Future): hard cut or key clash?
+- [ ] MUSIC SEAM at 7:11 (Emotional -> Dramatic, A Better Future -> Cinematic): hard cut or key clash?
+- [ ] MUSIC SEAM at 10:07 (Dramatic -> Epic, Cinematic -> Glorious): hard cut or key clash?
+- [ ] TTS: pronunciation of recurring names (Jaehwan, Yoonhwan) and whether quoted dialogue is distinguishable from essay narration
+- [ ] SPOILER: hook panels ['panels/p0107.png', 'panels/p0017.png', 'panels/p0040.png'] / thumbnails ['panels/p0107.png', 'panels/p0040.png'] — do any pre-burn the chapter's climax image?
+- [ ] BRANDING (final cut only): title card ~0:08 and subscribe pop-up placement/size/taste
+- [ ] LEGAL: panel density vs commentary still within the channel's fair-use framing; check source watermarks

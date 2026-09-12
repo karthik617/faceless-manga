@@ -1,0 +1,65 @@
+/home/kmyadav/faceless-manga/venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Rendering 4 scenes -> mini-fault.mp4  (workdir /tmp/opencode/exp014_render/proj/work_on)
+Content-aware Ken Burns (--kenburns smart): loading boxes...
+  text_boxes: p0039.png: 1 line(s) [dbnet]
+  text_boxes: p0040.png: 2 line(s) [dbnet]
+  text_boxes: p0041.png: 1 line(s) [dbnet]
+  text_boxes: p0058.png: 1 line(s) [dbnet]
+  text_boxes: p0059.png: 0 line(s) [dbnet]
+  text_boxes: p0060.png: 0 line(s) [dbnet]
+  text_boxes: p0061.png: 0 line(s) [dbnet]
+  text_boxes: p0066.png: 0 line(s) [dbnet]
+  text_boxes: p0067.png: 4 line(s) [dbnet]
+  text_boxes: p0068.png: 2 line(s) [dbnet]
+  text_boxes: p0101.png: 2 line(s) [dbnet]
+  text_boxes: p0097.png: 4 line(s) [dbnet]
+  text_boxes: p0098.png: 13 line(s) [dbnet]
+  text_boxes: p0099.png: 4 line(s) [dbnet]
+  kb_smart: p0039.png: 0 face(s)
+  kb_smart: p0040.png: 0 face(s)
+  kb_smart: p0041.png: 1 face(s)
+  kb_smart: p0058.png: 0 face(s)
+  kb_smart: p0059.png: 1 face(s)
+  kb_smart: p0060.png: 1 face(s)
+  kb_smart: p0061.png: 0 face(s)
+  kb_smart: p0066.png: 0 face(s)
+  kb_smart: p0067.png: 0 face(s)
+  kb_smart: p0068.png: 0 face(s)
+  kb_smart: p0101.png: 0 face(s)
+  kb_smart: p0097.png: 0 face(s)
+  kb_smart: p0098.png: 0 face(s)
+  kb_smart: p0099.png: 0 face(s)
+[1/4] And then something changes. A reflection appears in Jaehwan'...
+  scene 1: kb anchor on p0039.png (cy 0.569)
+  scene 1: kb anchor on p0040.png (cy 0.537)
+  scene 1: kb p0041.png: scroll: face union does not fit the text-covering band, faces dropped (text containment kept)
+  scene 1: kb scroll on p0041.png (fill 1.0, y 8225->10062 over 3.1s)
+  scene 1: kb anchor on p0040.png (cy 0.537)
+  scene 1: kb p0041.png: scroll: face union does not fit the text-covering band, faces dropped (text containment kept)
+  scene 1: kb scroll on p0041.png (fill 1.0, y 8225->10062 over 3.1s)
+  scene 1: kb anchor on p0040.png (cy 0.537)
+  scene 1: kb p0041.png: scroll: face union does not fit the text-covering band, faces dropped (text containment kept)
+  scene 1: kb scroll on p0041.png (fill 1.0, y 8225->10062 over 3.1s)
+  scene 1: kb anchor on p0040.png (cy 0.537)
+[2/4] A massive explosion of fire and energy erupts from the dark ...
+  scene 2: kb anchor on p0058.png (cy 0.569)
+  scene 2: kb scroll on p0059.png (fill 1.0, y 0->1036 over 3.4s)
+  scene 2: kb anchor on p0060.png (cy 0.463)
+  scene 2: kb anchor on p0060.png (cy 0.463)
+  scene 2: kb anchor on p0060.png (cy 0.463)
+[3/4] 'What's that? That light...?' Jaehwan asks, staring at the p...
+  scene 3: kb p0067.png: scroll: text union 1469px needs fill 0.26 < 0.55 floor
+  scene 3: kb anchor on p0067.png (cy 0.481)
+  scene 3: kb anchor on p0068.png (cy 0.488)
+  scene 3: kb p0101.png: scroll: text union 1977px needs fill 0.20 < 0.55 floor
+  scene 3: kb anchor on p0101.png (cy 0.537)
+[4/4] He reaches the doorway. A silhouette standing in the tall ar...
+  scene 4: kb anchor on p0097.png (cy 0.463)
+  scene 4: kb anchor on p0098.png (cy 0.537)
+  scene 4: kb anchor on p0099.png (cy 0.505)
+kb plans: 19/23 cuts content-aware -> /tmp/opencode/exp014_render/proj/work_on/kb_plans.json
+
+Review cut ready: /tmp/opencode/exp014_render/proj/work_on/all.mp4
+  (stopped before popup/title-card/final encode; re-run without --stop-after to finalize)

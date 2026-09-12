@@ -1,0 +1,25 @@
+/home/kmyadav/faceless-manga/venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+Reviewing ambed.mp4: 781s, 25 scenes (4 parallel reviewers)
+  deterministic scan: 0 fault span(s)
+  static-visual scan: 0 span(s)
+  script/timeline scan: 1 fault(s)
+  vision review: 39 total fault(s) (26 high, 9 medium)
+  report: stable_t4.pass1.md
+/home/kmyadav/faceless-manga/venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+Reviewing ambed.mp4: 781s, 25 scenes (4 parallel reviewers)
+  deterministic scan: 0 fault span(s)
+  static-visual scan: 0 span(s)
+  script/timeline scan: 1 fault(s)
+  vision review: 42 total fault(s) (27 high, 10 medium)
+  report: stable_t4.pass2.md
+/home/kmyadav/faceless-manga/venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+Reviewing ambed.mp4: 781s, 25 scenes (4 parallel reviewers)
+  deterministic scan: 0 fault span(s)
+  static-visual scan: 0 span(s)
+  script/timeline scan: 1 fault(s)
+  vision review: 42 total fault(s) (26 high, 12 medium)
+  report: stable_t4.pass3.md
+[review_stable] 28 confirmed (20h/6m/2l), 0 unconfirmed-high -> stable_t4.json/.md

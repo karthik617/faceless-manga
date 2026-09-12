@@ -1,0 +1,268 @@
+[
+  {
+    "scene": 0,
+    "t": 6.5,
+    "type": "weak_hook",
+    "severity": "high",
+    "detail": "Face cropped at top, shows character yelling 'YOONHWAN!!!' but narration is about climbing floors and the dragon sword - not depicting described content."
+  },
+  {
+    "scene": 0,
+    "t": 6.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Face cropped at top, shows character yelling 'YOONHWAN!!!' but narration is about climbing floors and the dragon sword - not depicting described content."
+  },
+  {
+    "scene": 1,
+    "t": 36.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Only shows the word 'HUFF...' on white background, not depicting the described devastation scene"
+  },
+  {
+    "scene": 1,
+    "t": 51.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card asking 'DID IT ALL GO WRONG?' while narration describes the scene, not depicting actual story content"
+  },
+  {
+    "scene": 4,
+    "t": 97.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only a knife keychain prop, not the action described in narration."
+  },
+  {
+    "scene": 4,
+    "t": 101.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same static knife keychain, does not depict combat action or blood spray."
+  },
+  {
+    "scene": 4,
+    "t": 111.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Returns to static knife keychain instead of depicting the described action."
+  },
+  {
+    "scene": 7,
+    "t": 163.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows two characters chatting, not the sword or Jaehwan noticing anything on the floor."
+  },
+  {
+    "scene": 7,
+    "t": 169.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same two-character scene, does not depict the sword discovery narration describes."
+  },
+  {
+    "scene": 9,
+    "t": 202.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card text unrelated to narration about past tense reflection and tower."
+  },
+  {
+    "scene": 9,
+    "t": 213.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same title card repeated, not depicting narration content."
+  },
+  {
+    "scene": 9,
+    "t": 218.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same title card repeated again, does not match narration."
+  },
+  {
+    "scene": 10,
+    "t": 223.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Sound effects partially cropped and no clear depiction of the described monster or scene"
+  },
+  {
+    "scene": 10,
+    "t": 233.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Only shows sound effects partially cropped, missing the full creature and action being described"
+  },
+  {
+    "scene": 10,
+    "t": 238.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Duplicate of frame 0 with same cropping issues and partial sound effects"
+  },
+  {
+    "scene": 13,
+    "t": 287.0,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"How futile.\""
+  },
+  {
+    "scene": 18,
+    "t": 416.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows stylized sound effect text and partial character art, not the described action scene with Jaehwan's shocked face and blood spray"
+  },
+  {
+    "scene": 20,
+    "t": 472.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Standalone title card showing only the sound effect text, not depicting the described action scene"
+  },
+  {
+    "scene": 20,
+    "t": 479.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same standalone title card repeated, not showing the creature or death scream action"
+  },
+  {
+    "scene": 20,
+    "t": 486.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same title card shown third time, does not depict the death scream scene described"
+  },
+  {
+    "scene": 22,
+    "t": 520.7,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner."
+  },
+  {
+    "scene": 23,
+    "t": 563.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only text bubble with 'DON'T TELL ME...' without depicting the scene action"
+  },
+  {
+    "scene": 24,
+    "t": 571.1,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Ahead.\""
+  },
+  {
+    "scene": 25,
+    "t": 604.4,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Watermark visible at bottom left corner"
+  },
+  {
+    "scene": 29,
+    "t": 699.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows a title card/logo 'JAEHWAN' instead of the scene being narrated"
+  },
+  {
+    "scene": 0,
+    "t": 6.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Face cropped at top, shows character yelling 'YOONHWAN!!!' but narration is about climbing floors and the dragon sword - not depicting described content."
+  },
+  {
+    "scene": 1,
+    "t": 36.7,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Only shows the word 'HUFF...' on white background, not depicting the described devastation scene"
+  },
+  {
+    "scene": 4,
+    "t": 106.6,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Character and blood spray visible but heavily cropped at top and bottom."
+  },
+  {
+    "scene": 7,
+    "t": 157.8,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Info box text on the True Dragon Sword description is too small to read on phone."
+  },
+  {
+    "scene": 7,
+    "t": 174.8,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Description text on the True Dragon Sword is truncated and too small to read."
+  },
+  {
+    "scene": 10,
+    "t": 223.7,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Sound effects partially cropped and no clear depiction of the described monster or scene"
+  },
+  {
+    "scene": 10,
+    "t": 228.7,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Floor label text is very small and hard to read on phone screens"
+  },
+  {
+    "scene": 10,
+    "t": 233.7,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Only shows sound effects partially cropped, missing the full creature and action being described"
+  },
+  {
+    "scene": 10,
+    "t": 238.8,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Duplicate of frame 0 with same cropping issues and partial sound effects"
+  },
+  {
+    "scene": 18,
+    "t": 423.3,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Small text in bottom corner is too small to read on phone screen"
+  },
+  {
+    "scene": 28,
+    "t": 692.9,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Speech bubble is cut off at the top edge of the frame."
+  },
+  {
+    "t": 722.5,
+    "t_end": 734.5,
+    "type": "static_scene",
+    "severity": "medium",
+    "detail": "visuals unchanged for 12s"
+  },
+  {
+    "scene": 7,
+    "t": 174.8,
+    "type": "unreadable_text",
+    "severity": "low",
+    "detail": "Description text on the True Dragon Sword is truncated and too small to read."
+  }
+]

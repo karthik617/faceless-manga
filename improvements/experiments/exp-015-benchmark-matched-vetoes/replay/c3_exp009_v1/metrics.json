@@ -1,0 +1,199 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 126,
+    "experiment": 149,
+    "delta": 23,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 22,
+      "medium": 7,
+      "low": 2
+    },
+    "experiment": {
+      "high": 26,
+      "medium": 9,
+      "low": 1
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "cropped_content": 4,
+      "irrelevant_panel": 12,
+      "phone_readability": 2,
+      "weak_hook": 1,
+      "missing_payoff": 5,
+      "empty_screen": 1,
+      "unreadable_text": 1,
+      "watermark": 4
+    },
+    "experiment": {
+      "panel_reuse": 1,
+      "watermark": 6,
+      "cropped_content": 7,
+      "irrelevant_panel": 15,
+      "phone_readability": 1,
+      "weak_hook": 1,
+      "empty_screen": 1,
+      "missing_payoff": 4
+    }
+  },
+  "vetoes": [
+    "fault types worsened (base\u2192now, matched-pair net): {'cropped_content': (4, 7), 'irrelevant_panel': (12, 15), 'watermark': (4, 6)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/stable_base.json",
+    "review": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/stable_t.json",
+    "video": null
+  },
+  "matched_vetoes": {
+    "pass_counts": {
+      "baseline": 3,
+      "experiment": 3
+    },
+    "consensus_fraction": 0.6667,
+    "consensus_dropped": {
+      "baseline": [],
+      "experiment": []
+    },
+    "frame_hash": {
+      "enabled": true,
+      "window_s": 3.0,
+      "video": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/_work_t/ambed.mp4",
+      "baseline_video": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/_work_base/ambed.mp4"
+    },
+    "annotated_vetoes": [
+      {
+        "type": "cropped_content",
+        "count": {
+          "baseline": 4,
+          "experiment": 7
+        },
+        "pairs_added": [
+          {
+            "scene": 14,
+            "t": 429.9,
+            "votes": "2/3",
+            "severity": "medium",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "38d7b5a6f2242e209cc791a677af206f",
+              "t": 429.9,
+              "baseline_window": [
+                426.9,
+                432.9
+              ]
+            }
+          },
+          {
+            "scene": 20,
+            "t": 628.5,
+            "votes": "2/3",
+            "severity": "medium",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 3,
+            "t": 94.3,
+            "votes": "2/3",
+            "severity": "medium",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 2,
+        "suppressed": false
+      },
+      {
+        "type": "irrelevant_panel",
+        "count": {
+          "baseline": 12,
+          "experiment": 15
+        },
+        "pairs_added": [
+          {
+            "scene": 20,
+            "t": 613.7,
+            "votes": "3/3",
+            "severity": "high",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 24,
+            "t": 748.2,
+            "votes": "3/3",
+            "severity": "high",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 9,
+            "t": 241.6,
+            "votes": "2/3",
+            "severity": "high",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 3,
+        "suppressed": false
+      },
+      {
+        "type": "watermark",
+        "count": {
+          "baseline": 4,
+          "experiment": 6
+        },
+        "pairs_added": [
+          {
+            "scene": 0,
+            "t": 5.6,
+            "votes": "3/3",
+            "severity": "high",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 1,
+            "t": 39.9,
+            "votes": "3/3",
+            "severity": "high",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 22,
+            "t": 688.0,
+            "votes": "3/3",
+            "severity": "high",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          }
+        ],
+        "pairs_removed": [
+          {
+            "scene": 9,
+            "t": 241.6,
+            "votes": "3/3"
+          }
+        ],
+        "net_after_exemptions": 2,
+        "suppressed": false
+      }
+    ]
+  }
+}

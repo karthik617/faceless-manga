@@ -1,0 +1,268 @@
+[
+  {
+    "scene": 1,
+    "t": 44.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Text card overlay does not depict the described scene of Jaehwan in rubble."
+  },
+  {
+    "scene": 2,
+    "t": 51.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows character screaming with sound effects but does not depict the 98th floor Room of Flames setting or monster described in narration."
+  },
+  {
+    "scene": 2,
+    "t": 57.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Same frame as frame 0, does not show the devastated city, Room of Flames, or swooping monster described."
+  },
+  {
+    "scene": 2,
+    "t": 64.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Identical to previous frames, still missing the devastated cityscape and monster action described in narration."
+  },
+  {
+    "scene": 2,
+    "t": 70.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound effect text, does not depict any of the scene elements described in narration."
+  },
+  {
+    "scene": 3,
+    "t": 94.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows aftermath dialogue about deaths/injuries, not the action moment described in narration"
+  },
+  {
+    "scene": 4,
+    "t": 96.0,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Fortunately, it seems no one did. And the ones who were injured can recover if they rest.\""
+  },
+  {
+    "scene": 6,
+    "t": 175.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Face is cropped at top and bottom, cutting off forehead and chin area mid-content."
+  },
+  {
+    "scene": 7,
+    "t": 190.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Mostly black screen with only cropped sound-effect text visible at top"
+  },
+  {
+    "scene": 7,
+    "t": 197.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Mostly black screen with only cropped sound-effect text visible at top"
+  },
+  {
+    "scene": 7,
+    "t": 204.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Mostly black screen with only cropped sound-effect text visible at top"
+  },
+  {
+    "scene": 8,
+    "t": 212.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows armored figures in battle, not the severed monster head or hooded figure described in narration."
+  },
+  {
+    "scene": 11,
+    "t": 324.2,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows dialogue text box, not the action being narrated"
+  },
+  {
+    "scene": 11,
+    "t": 333.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows dialogue text box, not the action being narrated"
+  },
+  {
+    "scene": 12,
+    "t": 347.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound effect text, not the action described"
+  },
+  {
+    "scene": 12,
+    "t": 354.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound effect text on white background, not depicting the explosive action"
+  },
+  {
+    "scene": 12,
+    "t": 361.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only stylized sound effect text, not the wounded character or rubble"
+  },
+  {
+    "scene": 13,
+    "t": 362.9,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Yoonhwan!!!\""
+  },
+  {
+    "scene": 13,
+    "t": 369.7,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner"
+  },
+  {
+    "scene": 15,
+    "t": 441.1,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner"
+  },
+  {
+    "scene": 17,
+    "t": 512.2,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Let's go, Yoonhwan!\""
+  },
+  {
+    "scene": 19,
+    "t": 585.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card with character name, not depicting the narrated scene"
+  },
+  {
+    "scene": 20,
+    "t": 613.8,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom left corner"
+  },
+  {
+    "scene": 20,
+    "t": 636.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows only partial text dialogue bubble with background blur, not depicting the described stone scene"
+  },
+  {
+    "scene": 21,
+    "t": 637.5,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?\""
+  },
+  {
+    "scene": 21,
+    "t": 657.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows response dialogue but not the narrated action of climbing/coughing/blood trailing"
+  },
+  {
+    "scene": 22,
+    "t": 665.7,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"It's really such a relief that you're in this world, Jaehwan.\""
+  },
+  {
+    "scene": 24,
+    "t": 768.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows Jaehwan apologizing while narration describes Yoonhwan's actions with the stone."
+  },
+  {
+    "scene": 3,
+    "t": 94.8,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame shows aftermath dialogue about deaths/injuries, not the action moment described in narration"
+  },
+  {
+    "scene": 6,
+    "t": 175.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Face is cropped at top and bottom, cutting off forehead and chin area mid-content."
+  },
+  {
+    "scene": 7,
+    "t": 190.0,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Mostly black screen with only cropped sound-effect text visible at top"
+  },
+  {
+    "scene": 7,
+    "t": 190.0,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Mostly black screen with only cropped sound-effect text visible at top"
+  },
+  {
+    "scene": 7,
+    "t": 197.4,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Mostly black screen with only cropped sound-effect text visible at top"
+  },
+  {
+    "scene": 7,
+    "t": 197.4,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Mostly black screen with only cropped sound-effect text visible at top"
+  },
+  {
+    "scene": 7,
+    "t": 204.8,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Mostly black screen with only cropped sound-effect text visible at top"
+  },
+  {
+    "scene": 7,
+    "t": 204.8,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Mostly black screen with only cropped sound-effect text visible at top"
+  },
+  {
+    "scene": 20,
+    "t": 636.0,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Shows only partial text dialogue bubble with background blur, not depicting the described stone scene"
+  },
+  {
+    "scene": 24,
+    "t": 0.0,
+    "type": "panel_reuse",
+    "severity": "low",
+    "detail": "p0107.png appears in 3 scenes ([0, 18, 24]) \u2014 repetition reads as lazy"
+  }
+]

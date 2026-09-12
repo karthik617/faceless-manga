@@ -1,0 +1,82 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "score": {
+    "baseline": 105,
+    "experiment": 105,
+    "delta": 0,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 18,
+      "medium": 7,
+      "low": 1
+    },
+    "experiment": {
+      "high": 18,
+      "medium": 7,
+      "low": 1
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "irrelevant_panel": 10,
+      "watermark": 4,
+      "cropped_content": 4,
+      "phone_readability": 2,
+      "empty_screen": 1,
+      "missing_payoff": 4
+    },
+    "experiment": {
+      "panel_reuse": 1,
+      "irrelevant_panel": 10,
+      "watermark": 4,
+      "cropped_content": 5,
+      "phone_readability": 1,
+      "empty_screen": 1,
+      "missing_payoff": 4
+    }
+  },
+  "vetoes": [
+    "fault types worsened (base\u2192now): {'cropped_content': (4, 5)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "/tmp/opencode/exp014_eval/review_off.json",
+    "review": "/tmp/opencode/exp014_eval/review_on.json",
+    "video": null
+  }
+}

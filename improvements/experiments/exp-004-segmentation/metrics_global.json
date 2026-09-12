@@ -1,0 +1,60 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 126,
+    "experiment": 99,
+    "delta": -27,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 22,
+      "medium": 7,
+      "low": 2
+    },
+    "experiment": {
+      "high": 16,
+      "medium": 8,
+      "low": 3
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "cropped_content": 4,
+      "irrelevant_panel": 12,
+      "phone_readability": 2,
+      "weak_hook": 1,
+      "missing_payoff": 5,
+      "empty_screen": 1,
+      "unreadable_text": 1,
+      "watermark": 4
+    },
+    "experiment": {
+      "cropped_content": 5,
+      "irrelevant_panel": 12,
+      "phone_readability": 2,
+      "unreadable_text": 2,
+      "missing_payoff": 2,
+      "review_error": 1,
+      "watermark": 2,
+      "static_scene": 1
+    }
+  },
+  "vetoes": [
+    "new fault types introduced: ['static_scene']",
+    "fault types worsened (base\u2192now): {'cropped_content': (4, 5), 'unreadable_text': (1, 2), 'static_scene': (0, 1)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/round2-eval/stable_base.json",
+    "review": "/tmp/opencode/exp004_bench_v2/review.json",
+    "video": null
+  }
+}

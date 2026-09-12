@@ -1,0 +1,60 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 126,
+    "experiment": 127,
+    "delta": 1,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 22,
+      "medium": 7,
+      "low": 2
+    },
+    "experiment": {
+      "high": 22,
+      "medium": 7,
+      "low": 3
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "cropped_content": 4,
+      "irrelevant_panel": 12,
+      "phone_readability": 2,
+      "weak_hook": 1,
+      "missing_payoff": 5,
+      "empty_screen": 1,
+      "unreadable_text": 1,
+      "watermark": 4
+    },
+    "experiment": {
+      "panel_reuse": 1,
+      "cropped_content": 4,
+      "irrelevant_panel": 12,
+      "phone_readability": 2,
+      "weak_hook": 1,
+      "watermark": 5,
+      "missing_payoff": 4,
+      "empty_screen": 1,
+      "unreadable_text": 2
+    }
+  },
+  "vetoes": [
+    "fault types worsened (base\u2192now): {'watermark': (4, 5), 'unreadable_text': (1, 2)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/round2-eval/stable_base.json",
+    "review": "improvements/experiments/round2-eval/stable_p.json",
+    "video": null
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 107,
+    "experiment": 107,
+    "delta": 0,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 18,
+      "medium": 7,
+      "low": 3
+    },
+    "experiment": {
+      "high": 18,
+      "medium": 7,
+      "low": 3
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "ambience_absent": 1,
+      "sfx_absent": 1,
+      "irrelevant_panel": 10,
+      "watermark": 4,
+      "cropped_content": 4,
+      "phone_readability": 2,
+      "empty_screen": 1,
+      "missing_payoff": 4
+    },
+    "experiment": {
+      "panel_reuse": 1,
+      "ambience_absent": 1,
+      "sfx_absent": 1,
+      "irrelevant_panel": 10,
+      "watermark": 4,
+      "cropped_content": 5,
+      "phone_readability": 1,
+      "empty_screen": 1,
+      "missing_payoff": 4
+    }
+  },
+  "vetoes": [
+    "fault types worsened (base\u2192now): {'cropped_content': (4, 5)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "/tmp/opencode/exp014_eval/review_off.json",
+    "review": "/tmp/opencode/exp014_eval/review_on.json",
+    "video": null
+  },
+  "evaluator": {
+    "date": "2026-09-12",
+    "bench": "stage-scoped A/B on a COPY of the golden project (/tmp/opencode/exp014_eval/proj); golden untouched (verified md5 of script pre/post)",
+    "arms": {
+      "baseline": "flag off (center)",
+      "experiment": "MANGA_KB_SMART=1 (--kenburns smart)"
+    },
+    "render": "panel_render.py --res 1080p --no-music --no-sfx --no-branding --no-title-card --stop-after review-cut",
+    "review": "review_stable.py majority-of-3, both arms, no --apply-fixes",
+    "verdict_default": "FAIL (score 107->107 delta 0; VETO cropped_content 4->5)",
+    "verdict_matched_vetoes": "FAIL (veto suppressed via frame-hash exemption + matched-pair netting, net_after_exemptions=0; but delta 0 = no strict improvement)",
+    "verdict_scoped_all_changed_scenes": "FAIL (105->105 delta 0, same veto) - all 25 scenes had >=1 content-aware cut (framemd5: 25/25 scene clips differ), so scoping cannot isolate noise",
+    "containment_gate": {
+      "fault_scene_recheck": "archived exp-014 kb_plans.json + smoke textboxes re-scored with kb_smart.window_contains_boxes: center 16 violations (0.5s-grid beats; word timings not archived so the exact 47 is not reproducible - grid subset consistent, all on the scene-24/p0101 site as documented) -> smart 0",
+      "golden_full_chapter": "95 violations in BOTH arms (exit 1 both): all on p0002 (scene 2) and p0024 (scene 6) whose text unions (~1800px) exceed any window at fill>=0.55 - planner correctly declines to center fallback; gate criterion NOT met chapter-wide"
+    },
+    "gap014_criterion_3to0": "NOT MEASURABLE as specified: bench scenes 15/21/28 live on the exp-004 v2-resegmented 35-scene bench (deleted from /tmp); those tall merged panels (p0041@2697 etc.) do not exist in the golden 25-scene project. At the mapped timestamps (t359.3/t513.4/t692.9 -> scenes 12/17/22) neither arm shows any cropped_content.",
+    "gap006_criterion_50pct_drop": "NOT MET: golden cropped_content 4 -> 5 (+25%) under 3-pass majority",
+    "no_new_faults_normal_aspect": "MET: the one pixel-real new cropped_content (s14 t422.5) is on a tall panel (p0075, ar 2.9) in scroll mode - the feature its own mode introduced; s3 t94.8 increase is frame-hash exempt (pixel-identical)",
+    "wall_time": {
+      "off_s": 425.91,
+      "on_s": 444.09,
+      "ratio": 1.043,
+      "bound": 1.2,
+      "met": true,
+      "note": "ON run includes cold anime-face detection for 111 panels; text-box sidecar warm both arms"
+    },
+    "duration_drift_pct": 0.009,
+    "scene_count": "25/25 both arms",
+    "scroll_speed_audit": "20 scroll cuts, all <=150 src-px/s cap (25-150), sweeps 117-735 src px; no absurd crawl/sprint",
+    "real_regression": "s14 t422.5 (3/3 both severities-classes cropped_content MEDIUM + irrelevant_panel HIGH): p0075 scroll renders a fit-to-width band of an SFX/art tall panel (its only text box is 76x76px) - the band crops the art that the letterboxed center view showed whole; reviewers read it as partial-text crop (same class as the pre-existing s2 t70.9 flag). Mode-attributable.",
+    "real_improvement": "s6 t175.7 cropped_content 3/3 (face cropped at top) HEALED in smart arm - anchor cy shift on p0026 keeps the face; frame evidence samples/eval/{off,on}_t175.7.png"
+  }
+}

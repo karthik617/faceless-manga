@@ -1,0 +1,117 @@
+{
+  "verdict": "PASS",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 126,
+    "experiment": 114,
+    "delta": -12,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 22,
+      "medium": 7,
+      "low": 2
+    },
+    "experiment": {
+      "high": 20,
+      "medium": 6,
+      "low": 2
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "cropped_content": 4,
+      "irrelevant_panel": 12,
+      "phone_readability": 2,
+      "weak_hook": 1,
+      "missing_payoff": 5,
+      "empty_screen": 1,
+      "unreadable_text": 1,
+      "watermark": 4
+    },
+    "experiment": {
+      "panel_reuse": 1,
+      "irrelevant_panel": 11,
+      "cropped_content": 5,
+      "missing_payoff": 5,
+      "empty_screen": 1,
+      "unreadable_text": 1,
+      "watermark": 4
+    }
+  },
+  "vetoes": [],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/stable_base.json",
+    "review": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/stable_t4.json",
+    "video": null
+  },
+  "matched_vetoes": {
+    "pass_counts": {
+      "baseline": 3,
+      "experiment": 3
+    },
+    "consensus_fraction": 0.6667,
+    "consensus_dropped": {
+      "baseline": [],
+      "experiment": []
+    },
+    "frame_hash": {
+      "enabled": true,
+      "window_s": 3.0,
+      "video": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/_work_t4/ambed.mp4",
+      "baseline_video": "/home/kmyadav/faceless-manga/improvements/experiments/round2-eval/_work_base/ambed.mp4"
+    },
+    "annotated_vetoes": [
+      {
+        "type": "cropped_content",
+        "count": {
+          "baseline": 4,
+          "experiment": 5
+        },
+        "pairs_added": [
+          {
+            "scene": 20,
+            "t": 636.1,
+            "votes": "2/3",
+            "severity": "medium",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 3,
+            "t": 94.8,
+            "votes": "3/3",
+            "severity": "medium",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "794bfdd277ce19e70b9a5ab0aebea87c",
+              "t": 94.8,
+              "baseline_window": [
+                91.8,
+                97.8
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [
+          {
+            "scene": 0,
+            "t": 26.4,
+            "votes": "3/3"
+          }
+        ],
+        "net_after_exemptions": 0,
+        "suppressed": true,
+        "reason": "frame-hash exemption + matched-pair netting"
+      }
+    ]
+  }
+}

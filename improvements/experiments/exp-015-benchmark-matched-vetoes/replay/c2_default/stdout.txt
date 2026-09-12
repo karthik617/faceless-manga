@@ -1,0 +1,4 @@
+[benchmark] FAIL  score 55 -> 76 (delta +21)
+[benchmark] VETO: new fault types introduced: ['phone_readability', 'weak_hook']
+[benchmark] VETO: fault types worsened (base→now): {'cropped_content': (3, 5), 'irrelevant_panel': (8, 9), 'weak_hook': (0, 1), 'phone_readability': (0, 1), 'missing_payoff': (1, 2)}
+[benchmark] wrote /home/kmyadav/faceless-manga/improvements/experiments/exp-015-benchmark-matched-vetoes/replay/c2_default/metrics.json

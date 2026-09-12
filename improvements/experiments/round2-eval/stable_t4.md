@@ -1,0 +1,31 @@
+# Video review (stable, 3 passes) — ambed.mp4
+28 confirmed fault(s): 20 high, 6 medium
+
+- [LOW] 0:00 scene 24 panel_reuse (votes 3/3): p0107.png appears in 3 scenes ([0, 18, 24]) — repetition reads as lazy
+- [HIGH] 0:44 scene 1 irrelevant_panel (votes 3/3): Text card overlay during action narration interrupts visual storytelling
+- [HIGH] 0:51 scene 2 irrelevant_panel (votes 3/3): Shows sound effects and speech bubble overlay, not the devastated city or Room of Flames described.
+- [MEDIUM] 1:10 scene 2 cropped_content (votes 2/3): Shows only stylized text/sound effect cropped at top, not the monster with glowing yellow eyes or action described
+- [MEDIUM] 1:34 scene 3 cropped_content (votes 3/3): Frame shows aftermath dialogue about casualties, not the action scene being narrated
+- [HIGH] 1:34 scene 3 irrelevant_panel (votes 3/3): Frame shows aftermath dialogue about casualties, not the action scene being narrated
+- [HIGH] 1:36 scene 4 missing_payoff (votes 3/3): quoted line never shown: "Fortunately, it seems no one did. And the ones who were injured can recover if they rest."
+- [MEDIUM] 2:55 scene 6 cropped_content (votes 3/3): Character's face is cut off at the top of the frame.
+- [HIGH] 2:55 scene 6 irrelevant_panel (votes 2/3): Face is severely cropped at top, cutting off eyes and forehead mid-content.
+- [MEDIUM] 3:10 scene 7 cropped_content (votes 3/3): Mostly black screen with partial sound effect text cut off at top
+- [MEDIUM] 3:10 scene 7 empty_screen (votes 3/3): Mostly black screen with partial sound effect text cut off at top
+- [HIGH] 3:10 scene 7 irrelevant_panel (votes 3/3): Mostly black screen with partial sound effect text cut off at top
+- [LOW] 3:10 scene 7 unreadable_text (votes 3/3): Mostly black screen with partial sound effect text cut off at top
+- [HIGH] 3:32 scene 8 irrelevant_panel (votes 2/3): Shows a figure with white hair and armored figures in background, does not depict the specific scene elements described in narration.
+- [HIGH] 4:02 scene 9 watermark (votes 2/3): Scanlation watermark visible in top right corner.
+- [HIGH] 5:24 scene 11 irrelevant_panel (votes 3/3): Frame shows dialogue text but narration is describing action/visuals, not this dialogue moment
+- [HIGH] 5:54 scene 12 irrelevant_panel (votes 3/3): Only shows stylized sound effect text, not the action described (explosion, energy orb, blood spray, wounded Jaehwan)
+- [HIGH] 6:03 scene 13 missing_payoff (votes 3/3): quoted line never shown: "Yoonhwan!!!"
+- [HIGH] 6:09 scene 13 watermark (votes 3/3): FLAMESCANS.ORG watermark visible in bottom right corner.
+- [HIGH] 6:44 scene 14 irrelevant_panel (votes 2/3): Shows stylized sound effect text instead of the striking fists action described.
+- [HIGH] 7:21 scene 15 watermark (votes 3/3): FLAMESCANS.ORG watermark visible in bottom right corner.
+- [HIGH] 8:32 scene 17 missing_payoff (votes 3/3): quoted line never shown: "Let's go, Yoonhwan!"
+- [HIGH] 9:45 scene 19 irrelevant_panel (votes 3/3): Title card with character name, not depicting the narrated scene
+- [HIGH] 10:13 scene 20 watermark (votes 3/3): FLAMESCANS.ORG watermark visible in bottom left corner.
+- [MEDIUM] 10:36 scene 20 cropped_content (votes 2/3): Shows only a speech bubble cropped at top and bottom, not the stone or character described.
+- [HIGH] 10:36 scene 20 irrelevant_panel (votes 2/3): Shows only a speech bubble cropped at top and bottom, not the stone or character described.
+- [HIGH] 10:37 scene 21 missing_payoff (votes 3/3): quoted line never shown: "Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?"
+- [HIGH] 11:05 scene 22 missing_payoff (votes 3/3): quoted line never shown: "It's really such a relief that you're in this world, Jaehwan."

@@ -1,0 +1,250 @@
+[
+  {
+    "scene": 0,
+    "t": 6.5,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Close-up of character shouting name, not depicting the 98th floor Room of Flames or the story being narrated.",
+    "votes": "4/5"
+  },
+  {
+    "scene": 0,
+    "t": 6.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Close-up of character shouting name, not depicting the 98th floor Room of Flames or the story being narrated.",
+    "votes": "5/5"
+  },
+  {
+    "scene": 0,
+    "t": 6.5,
+    "type": "weak_hook",
+    "severity": "high",
+    "detail": "Close-up of character shouting name, not depicting the 98th floor Room of Flames or the story being narrated.",
+    "votes": "4/5"
+  },
+  {
+    "scene": 1,
+    "t": 36.7,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Only shows the word 'HUFF...' in a speech bubble, not the devastation scene described",
+    "votes": "4/5"
+  },
+  {
+    "scene": 1,
+    "t": 36.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Only shows the word 'HUFF...' in a speech bubble, not the devastation scene described",
+    "votes": "5/5"
+  },
+  {
+    "scene": 3,
+    "t": 92.3,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only the sound effect 'DIE!!' while narration describes creature being struck.",
+    "votes": "5/5"
+  },
+  {
+    "scene": 4,
+    "t": 97.1,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows a knife pendant/keychain, not depicting the action described in narration.",
+    "votes": "4/5"
+  },
+  {
+    "scene": 4,
+    "t": 106.6,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Action scene is cropped at top and bottom, cutting off character and effects.",
+    "votes": "3/5"
+  },
+  {
+    "scene": 7,
+    "t": 157.8,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Item description text in the orange box is too small to read on phone.",
+    "votes": "5/5"
+  },
+  {
+    "scene": 7,
+    "t": 163.5,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows two characters together, not Jaehwan noticing the sword on the floor.",
+    "votes": "5/5"
+  },
+  {
+    "scene": 9,
+    "t": 202.6,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Title card with motivational text, not depicting narrated scene about Jaehwan or the tower.",
+    "votes": "3/5"
+  },
+  {
+    "scene": 9,
+    "t": 202.6,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Title card with motivational text, not depicting narrated scene about Jaehwan or the tower.",
+    "votes": "5/5"
+  },
+  {
+    "scene": 10,
+    "t": 223.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Sound effects cropped at top and bottom, no creature visible yet.",
+    "votes": "4/5"
+  },
+  {
+    "scene": 10,
+    "t": 238.8,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Dialogue bubbles too small, panel layout fragmented and cropped.",
+    "votes": "3/5"
+  },
+  {
+    "scene": 12,
+    "t": 285.8,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows character screaming in close-up, not the impact/explosion aftermath described in narration.",
+    "votes": "5/5"
+  },
+  {
+    "scene": 13,
+    "t": 287.0,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"How futile.\"",
+    "votes": "5/5"
+  },
+  {
+    "scene": 15,
+    "t": 359.3,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Comic panel borders and speech bubbles are visibly cut off at top and bottom edges.",
+    "votes": "5/5"
+  },
+  {
+    "scene": 16,
+    "t": 386.2,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Speech bubble cut off at top of frame.",
+    "votes": "5/5"
+  },
+  {
+    "scene": 17,
+    "t": 410.6,
+    "type": "phone_readability",
+    "severity": "medium",
+    "detail": "Small text visible in center panel is too small to read comfortably on phone",
+    "votes": "3/5"
+  },
+  {
+    "scene": 18,
+    "t": 416.9,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows stylized sound effect text and unrelated artwork instead of the described action scene",
+    "votes": "5/5"
+  },
+  {
+    "scene": 20,
+    "t": 472.7,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Sound effect typography card, not depicting the described action scene",
+    "votes": "5/5"
+  },
+  {
+    "scene": 21,
+    "t": 513.4,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Frame is visibly cut off at the top edge mid-content.",
+    "votes": "3/5"
+  },
+  {
+    "scene": 22,
+    "t": 520.7,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "FLAMESCANS.ORG watermark visible in bottom right corner",
+    "votes": "5/5"
+  },
+  {
+    "scene": 23,
+    "t": 563.0,
+    "type": "empty_screen",
+    "severity": "medium",
+    "detail": "Frame shows only text overlay 'DON'T TELL ME...' on white background while narration describes action and glowing door",
+    "votes": "3/5"
+  },
+  {
+    "scene": 23,
+    "t": 563.0,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Frame shows only text overlay 'DON'T TELL ME...' on white background while narration describes action and glowing door",
+    "votes": "5/5"
+  },
+  {
+    "scene": 24,
+    "t": 571.1,
+    "type": "missing_payoff",
+    "severity": "high",
+    "detail": "quoted line never shown: \"Ahead.\"",
+    "votes": "5/5"
+  },
+  {
+    "scene": 24,
+    "t": 597.2,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows 'A SNOWFIELD..?' dialogue, not 'Ahead' as narration describes",
+    "votes": "5/5"
+  },
+  {
+    "scene": 25,
+    "t": 604.4,
+    "type": "watermark",
+    "severity": "high",
+    "detail": "Scanlation watermark visible at bottom of left panel (FLAMESCANS.ORG)",
+    "votes": "5/5"
+  },
+  {
+    "scene": 28,
+    "t": 692.9,
+    "type": "cropped_content",
+    "severity": "medium",
+    "detail": "Speech bubble is cut off at the top of the frame.",
+    "votes": "5/5"
+  },
+  {
+    "scene": 29,
+    "t": 699.4,
+    "type": "irrelevant_panel",
+    "severity": "high",
+    "detail": "Shows title card/logo 'JAEHWAN' instead of described scene",
+    "votes": "5/5"
+  },
+  {
+    "t": 720.5,
+    "t_end": 732.5,
+    "type": "static_scene",
+    "severity": "medium",
+    "detail": "visuals unchanged for 12s",
+    "votes": "5/5"
+  }
+]

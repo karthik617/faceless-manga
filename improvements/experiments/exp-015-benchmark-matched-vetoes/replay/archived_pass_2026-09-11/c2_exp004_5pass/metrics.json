@@ -1,0 +1,255 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": [
+    0,
+    1,
+    3,
+    4,
+    10,
+    13,
+    14,
+    15,
+    16,
+    18,
+    19,
+    20,
+    21,
+    23,
+    24,
+    26
+  ],
+  "score": {
+    "baseline": 55,
+    "experiment": 76,
+    "delta": 21,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 9,
+      "medium": 5,
+      "low": 0
+    },
+    "experiment": {
+      "high": 12,
+      "medium": 8,
+      "low": 0
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "empty_screen": 2,
+      "irrelevant_panel": 8,
+      "cropped_content": 3,
+      "missing_payoff": 1
+    },
+    "experiment": {
+      "cropped_content": 5,
+      "irrelevant_panel": 9,
+      "weak_hook": 1,
+      "empty_screen": 2,
+      "phone_readability": 1,
+      "missing_payoff": 2
+    }
+  },
+  "vetoes": [],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "/home/kmyadav/faceless-manga/improvements/experiments/exp-004-segmentation/stable_seg_v1_5pass.json",
+    "review": "/home/kmyadav/faceless-manga/improvements/experiments/exp-004-segmentation/stable_seg_v2_5pass.json",
+    "video": null
+  },
+  "matched_vetoes": {
+    "pass_counts": {
+      "baseline": 5,
+      "experiment": 5
+    },
+    "consensus_fraction": 0.6,
+    "consensus_dropped": {
+      "baseline": [],
+      "experiment": []
+    },
+    "frame_hash": {
+      "enabled": true,
+      "window_s": 3.0,
+      "video": "/tmp/opencode/exp004_bench_v2/proj/_work/sfxed.mp4",
+      "baseline_video": "/tmp/opencode/exp004_bench/proj/_work/sfxed.mp4"
+    },
+    "annotated_vetoes": [
+      {
+        "type": "cropped_content",
+        "count": {
+          "baseline": 3,
+          "experiment": 5
+        },
+        "pairs_added": [
+          {
+            "scene": 0,
+            "t": 6.5,
+            "votes": "4/5",
+            "severity": "medium",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "173af57514a963705dbde731db4f3f3a",
+              "t": 6.5,
+              "baseline_window": [
+                3.5,
+                9.5
+              ]
+            }
+          },
+          {
+            "scene": 21,
+            "t": 513.4,
+            "votes": "3/5",
+            "severity": "medium",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "fd8efb4006f95a93bd078c5d89e85f44",
+              "t": 513.4,
+              "baseline_window": [
+                510.4,
+                516.4
+              ]
+            }
+          },
+          {
+            "scene": 4,
+            "t": 106.6,
+            "votes": "3/5",
+            "severity": "medium",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          }
+        ],
+        "pairs_removed": [
+          {
+            "scene": 3,
+            "t": 92.3,
+            "votes": "3/5"
+          }
+        ],
+        "net_after_exemptions": 0,
+        "suppressed": true,
+        "reason": "frame-hash exemption + matched-pair netting"
+      },
+      {
+        "type": "irrelevant_panel",
+        "count": {
+          "baseline": 8,
+          "experiment": 9
+        },
+        "pairs_added": [
+          {
+            "scene": 0,
+            "t": 6.5,
+            "votes": "5/5",
+            "severity": "high",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "173af57514a963705dbde731db4f3f3a",
+              "t": 6.5,
+              "baseline_window": [
+                3.5,
+                9.5
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 0,
+        "suppressed": true,
+        "reason": "frame-hash exemption + matched-pair netting"
+      },
+      {
+        "type": "missing_payoff",
+        "count": {
+          "baseline": 1,
+          "experiment": 2
+        },
+        "pairs_added": [
+          {
+            "scene": 13,
+            "t": 287.0,
+            "votes": "5/5",
+            "severity": "high",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "ecccf81f5916f7854fafc171b50cfab4",
+              "t": 287.0,
+              "baseline_window": [
+                284.0,
+                290.0
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 0,
+        "suppressed": true,
+        "reason": "frame-hash exemption + matched-pair netting"
+      },
+      {
+        "type": "phone_readability",
+        "count": {
+          "baseline": 0,
+          "experiment": 1
+        },
+        "pairs_added": [
+          {
+            "scene": 10,
+            "t": 238.8,
+            "votes": "3/5",
+            "severity": "medium",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "c6faa9850d269ff6f8e25ed5d013e2d2",
+              "t": 238.8,
+              "baseline_window": [
+                235.8,
+                241.8
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 0,
+        "suppressed": true,
+        "reason": "frame-hash exemption + matched-pair netting"
+      },
+      {
+        "type": "weak_hook",
+        "count": {
+          "baseline": 0,
+          "experiment": 1
+        },
+        "pairs_added": [
+          {
+            "scene": 0,
+            "t": 6.5,
+            "votes": "4/5",
+            "severity": "high",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "173af57514a963705dbde731db4f3f3a",
+              "t": 6.5,
+              "baseline_window": [
+                3.5,
+                9.5
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [],
+        "net_after_exemptions": 0,
+        "suppressed": true,
+        "reason": "frame-hash exemption + matched-pair netting"
+      }
+    ]
+  }
+}

@@ -528,6 +528,412 @@ def _slide_join(subclips, out_path, sub_dur):
     mv.run(cmd)
 
 
+# ---- text-aware framing (gap-009 / exp-009, behind --text-aware) ----
+# Minimum readable line height at 1080p on a phone: BBC subtitle sizing,
+# Material Design 12sp->px, physical mm-at-arm's-length and broadcast minima
+# all converge on a 40-59px band (research §2). 40 is the action trigger;
+# scaled by frame_h/1080 for other resolutions. The emphasis punch-in peaks
+# at 1.16x — a 20px line becomes 23px — so zoom can NEVER close this gap;
+# the fix is framing: crop the blur_bg fit window to the text-bearing region.
+MIN_TEXT_H_1080 = 40
+# exp-009 v4: TRIGGER threshold, split from the 40px TARGET above. v3's
+# round4 eval flagged the p0126 crop (median line already 36px rendered —
+# squint-free on a phone) as an irrelevant-panel-adjacent reframe: cropping
+# text that is merely below COMFORTABLE (40px) trades framing quality for a
+# marginal readability gain. A crop now fires only when the default framing
+# renders the median line below this GENUINELY-UNREADABLE floor; once it
+# fires, the crop still aims for the 40px comfort target. 30px at 1080p ≈
+# 1.9mm cap height on a 6" phone at arm's length — the strained-reading
+# floor of research §2's sizing sources (the 40-59px band is "comfortable",
+# ~0.75x its lower edge is where users stop being able to read without
+# effort). Golden-chapter validation: the reviewer-confirmed unreadable
+# info card (p0024) renders 14.7px, confirmed-fine p0126/p0060/p0003 render
+# 34-38px — 30 separates every confirmed-bad from every confirmed-fine
+# instance with margin on both sides.
+TEXT_TRIGGER_H_1080 = 30
+TEXT_PAD = 24            # panel-px padding beyond every box edge (never
+                         # half-cut a bubble; gap-009 quality guard)
+TEXT_CROP_FLOOR = 0.55   # crop window covers >= this fraction of the panel's
+                         # smaller dimension (cropped_content guard) — unless
+                         # even that can't reach MIN_TEXT_H, then escalate to
+                         # the bare padded text-region union (research §3c)
+TEXT_MIN_ONSCREEN = 1.2  # act only when the panel holds the screen this long
+                         # (hysteresis: a 0.8s hype flash isn't worth a crop)
+
+# ---- exp-009 v2 guards (v1 FAIL fixes; see experiments/exp-009/report.md) --
+# (1) containment under MOTION: the Ken Burns zoompan is center-anchored, so
+# the intersection of the visible windows across the whole pan/zoom path is
+# simply the window at MAX zoom — a centered sub-rect of the crop with dims
+# (cw/z_max, ch/z_max). (The true visible extent is ss/(z*fit) >= dim/z, so
+# dim/z_max is a conservative lower bound.) v1 checked boxes against the
+# STATIC crop only; a box sitting within dim*(1-1/z_max)/2 of a crop edge was
+# progressively cut as the zoom ran (scene 20 t=628.5 half-cut bubble). v2:
+# every box intersecting the crop must fit inside the max-zoom window or the
+# crop is REJECTED (user-approved direction — reject, don't force).
+MOTION_ZMAX = 1.08       # non-emphasis zoompan peak (see render_panel_scene z)
+MOTION_ZMAX_EMPH = 1.16  # emphasis punch-in start zoom
+MOTION_JITTER = 4        # panel px: zoompan rounds x/y per frame; keep boxes
+                         # this far inside the max-zoom window
+# (2) minimum crop size: v1's escalation rung (rect(0), the bare padded text
+# region) had NO floor and accepted 65x62 (p0068) and 160x160 (p0117) crops —
+# useless punch-ins that isolate fragments (irrelevant_panel fault class).
+# Two floors, both must pass or the crop is REJECTED:
+#   - MIN_CROP_PX absolute on each dim: 200px of a 690px-wide webtoon source
+#     is already a 9.6x upscale at 1920; smaller is pixel mush AND a fragment.
+#   - area >= MIN_CROP_AREA_FRAC * min(pw,ph)^2: panel-relative, measured
+#     against the SQUARE of the shorter side (the reading-axis width) rather
+#     than full panel area — 25% of full area on a 1:3 webtoon strip would
+#     demand ~the whole panel and kill every legitimate info-card crop
+#     (the scene-5 win is 12.6% of its 690x1840 panel but 135% of width^2/4).
+#     Both v1 degenerates fail it; all legitimate v1 crops pass.
+MIN_CROP_PX = 200
+MIN_CROP_AREA_FRAC = 0.25
+#   - MIN_TEXT_COVER: the target text must cover at least this fraction of
+#     the crop area. A punch-in justified by one micro-word (p0032: a lone
+#     24x23 box -> 0.4% of its 379^2 crop) frames mostly art/black space —
+#     the v1 "partial SFX + black space" / irrelevant-fragment class. Real
+#     dialogue crops measure 1.2-15% on the v1 log; 1% keeps them all.
+MIN_TEXT_COVER = 0.01
+# a candidate "container" blob spanning more than this fraction of the panel
+# in BOTH dims is the page background, not a bubble
+BUBBLE_MAX_PANEL_FRAC = 0.8
+# (3) watermark-aware: crops re-exposed/magnified recorded watermark regions
+# (v1 watermark faults scenes 0/1/22). Simplest safe rule (user-approved):
+# if clean_watermarks recorded a watermark instance on the panel and we are
+# NOT rendering a cleaned copy (panels_clean/<name>), skip the crop entirely.
+
+
+def _load_watermark_panels(project_dir):
+    """exp-009 v2 guard (3): {panel_name: bbox} for every panel where
+    clean_watermarks.py recorded a watermark instance (method != None) in
+    watermark_log.json. Missing/broken log -> {} (guard inert, crops allowed
+    — same trust level as v1)."""
+    try:
+        log = json.loads((Path(project_dir) / "watermark_log.json").read_text())
+        return {r["panel"]: r.get("bbox") for r in log.get("panels", [])
+                if r.get("method")}
+    except Exception:
+        return {}
+
+
+def _motion_violations(cand, rects, zmax):
+    """exp-009 v2 guard (1): rects (text boxes and/or bubble extents,
+    [x, y, w, h]) that intersect the crop but do NOT fit inside the max-zoom
+    visible window. The zoompan is center-anchored, so the intersection of
+    the visible windows over the whole motion path is the centered
+    (cw/zmax, ch/zmax) sub-rect of the crop (inset by MOTION_JITTER for the
+    per-frame x/y rounding). Anything intersecting the crop but poking out
+    of that window WILL be cut on some frame. Rects fully outside the crop
+    never render at all, so they are exempt (same drop rule as v1)."""
+    cx, cy, cw, ch = cand
+    ccx, ccy = cx + cw / 2.0, cy + ch / 2.0
+    hx = cw / (2.0 * zmax) - MOTION_JITTER
+    hy = ch / (2.0 * zmax) - MOTION_JITTER
+    bad = []
+    for b in rects:
+        bx0, by0, bx1, by1 = b[0], b[1], b[0] + b[2], b[1] + b[3]
+        if bx1 <= cx or bx0 >= cx + cw or by1 <= cy or by0 >= cy + ch:
+            continue   # fully outside the crop: never on screen
+        if (bx0 < ccx - hx or bx1 > ccx + hx
+                or by0 < ccy - hy or by1 > ccy + hy):
+            bad.append(b)
+    return bad
+
+
+def _bubble_extents(panel, clusters, pw, ph):
+    """exp-009 v2 guard (1b): estimated FULL bubble/box outline rect per text
+    cluster, [x, y, w, h] or None when no container blob is found. DBNet
+    boxes cover only the text LINES; the drawn bubble around them extends
+    further, and cutting THAT outline is the reviewer-visible "half-cut
+    bubble" (v1 scene 20 t=628.5: all line boxes contained, bubble sliced).
+    Estimate: threshold for bright(>200)/dark(<90) container blobs (the
+    clean_bubbles.py split) and take the connected component under the
+    cluster; keep it only when it plausibly IS a container (covers >=30% of
+    the cluster rect, not a near-page-sized background blob). Any failure ->
+    None for that cluster (falls back to text-box-only containment — v1
+    behavior, never worse)."""
+    try:
+        import cv2
+        import numpy as np
+        gray = cv2.cvtColor(cv2.imread(str(panel)), cv2.COLOR_BGR2GRAY)
+    except Exception:
+        return [None] * len(clusters)
+    out = []
+    for cl in clusters:
+        x0 = max(min(b[0] for b in cl), 0)
+        y0 = max(min(b[1] for b in cl), 0)
+        x1 = min(max(b[0] + b[2] for b in cl), pw)
+        y1 = min(max(b[1] + b[3] for b in cl), ph)
+        best = None
+        try:
+            for dark in (False, True):
+                if dark:      # black caption box, white text
+                    _, m = cv2.threshold(gray, 90, 255, cv2.THRESH_BINARY_INV)
+                else:         # white bubble, black text
+                    _, m = cv2.threshold(gray, 200, 255, cv2.THRESH_BINARY)
+                k = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7))
+                m = cv2.morphologyEx(m, cv2.MORPH_CLOSE, k)
+                n, lab, stats, _ = cv2.connectedComponentsWithStats(m)
+                roi = lab[y0:y1, x0:x1]
+                vals, counts = np.unique(roi[roi > 0], return_counts=True)
+                if len(vals) == 0:
+                    continue
+                c = int(vals[np.argmax(counts)])
+                if counts.max() / max(roi.size, 1) < 0.3:
+                    continue   # blob doesn't really hold this text
+                bx, by, bw, bh, area = stats[c]
+                if (bw > BUBBLE_MAX_PANEL_FRAC * pw
+                        and bh > BUBBLE_MAX_PANEL_FRAC * ph):
+                    continue   # page background, not a bubble
+                r = [int(bx), int(by), int(bw), int(bh)]
+                if best is None or r[2] * r[3] > best[2] * best[3]:
+                    best = r
+        except Exception:
+            best = None
+        out.append(best)
+    return out
+
+
+def _cluster_boxes(boxes, pad):
+    """Group line boxes into reading units (bubble/info-box blocks): two
+    boxes whose pad-expanded rects overlap belong to the same cluster —
+    the same block-merge heuristic manga text tools use (research §3a).
+    Returns a list of clusters (lists of boxes)."""
+    clusters = [[b] for b in boxes]
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(clusters)):
+            for j in range(i + 1, len(clusters)):
+                hit = False
+                for a in clusters[i]:
+                    for b in clusters[j]:
+                        if (a[0] - pad < b[0] + b[2] + pad
+                                and b[0] - pad < a[0] + a[2] + pad
+                                and a[1] - pad < b[1] + b[3] + pad
+                                and b[1] - pad < a[1] + a[3] + pad):
+                            hit = True
+                            break
+                    if hit:
+                        break
+                if hit:
+                    clusters[i] += clusters.pop(j)
+                    changed = True
+                    break
+            if changed:
+                break
+    return clusters
+
+
+def _text_aware_crop(panel, boxes, w, h, zmax=MOTION_ZMAX_EMPH,
+                     reject_log=None):
+    """(cx, cy, cw, ch) crop rect in panel px, or None when no action is
+    needed/possible.
+
+    exp-009 v2: `zmax` is the peak Ken Burns zoom the render call will apply
+    (1.08 plain / 1.16 emphasis; default = the conservative max). A candidate
+    crop must keep every intersecting box inside the max-zoom visible window
+    — the guaranteed-visible intersection of the whole motion path — else it
+    is repaired (grown by zmax, one attempt) or REJECTED. Crops below the
+    minimum-size floor are REJECTED. `reject_log(reason)` (optional callable)
+    receives a human-readable reason when a wanted crop is rejected, so the
+    render log shows WHY a small-text panel stayed uncropped.
+
+    Framing rule (research §3a): boxes cluster into reading units; the crop
+    frames the cluster with the most sub-threshold lines (the text that needs
+    help), padded TEXT_PAD beyond every edge and floored at TEXT_CROP_FLOOR
+    of the panel's smaller dimension. Never crops THROUGH a box: any box the
+    rect partially intersects is absorbed by growing the rect (gap-009
+    guard: no half-cut bubbles); boxes fully outside simply drop, which is
+    legal because the framed cluster keeps text on screen. If the floored
+    crop still can't reach MIN_TEXT_H, escalate to the bare padded cluster
+    (full-frame the text region, research §3c)."""
+    if not boxes:
+        return None
+    try:
+        from PIL import Image
+        with Image.open(panel) as im:
+            pw, ph = im.size
+    except Exception:
+        return None
+    # clamp: DBNet occasionally reports a box 1-2px past the panel edge; an
+    # unclamped box could never be contained by any legal crop
+    boxes = [[max(b[0], 0), max(b[1], 0),
+              min(b[0] + b[2], pw) - max(b[0], 0),
+              min(b[1] + b[3], ph) - max(b[1], 0)] for b in boxes]
+    boxes = [b for b in boxes if b[2] > 0 and b[3] > 0]
+    if not boxes:
+        return None
+    hs = sorted(b[3] for b in boxes)
+    med_all = hs[len(hs) // 2]
+    min_px = MIN_TEXT_H_1080 * h / 1080.0
+    # exp-009 v4: TRIGGER gate. v1-v3 triggered below the 40px COMFORT
+    # target, which cropped panels whose text was already legible (p0126:
+    # 36px median -> flagged as a pointless reframe in the round4 eval).
+    # A crop now fires only when the default framing renders the median
+    # line genuinely UNREADABLE (< TEXT_TRIGGER_H_1080); once triggered,
+    # the crop still sizes toward the 40px comfort target below.
+    trig_px = TEXT_TRIGGER_H_1080 * h / 1080.0
+    fit0 = min(w / pw, h / ph)
+    if med_all * fit0 >= trig_px:
+        return None   # already readable under the plain blur_bg fit
+    clusters = _cluster_boxes(boxes, TEXT_PAD)
+    # target = the cluster with the most lines that render sub-TRIGGER
+    # today (the text that genuinely needs help); ties break toward more
+    # lines then larger area (a 5-line info card beats a single loose word)
+    def _need(cl):
+        return sum(1 for b in cl if b[3] * fit0 < trig_px)
+    target = max(clusters, key=lambda cl: (
+        _need(cl), len(cl), sum(b[2] * b[3] for b in cl)))
+    if _need(target) == 0:
+        return None   # every small line is noise-scale; nothing to frame
+    t_hs = sorted(b[3] for b in target)
+    med_t = t_hs[len(t_hs) // 2]
+
+    def rect(floor_px):
+        cx0 = min(b[0] for b in target) - TEXT_PAD
+        cy0 = min(b[1] for b in target) - TEXT_PAD
+        cx1 = max(b[0] + b[2] for b in target) + TEXT_PAD
+        cy1 = max(b[1] + b[3] for b in target) + TEXT_PAD
+        if cx1 - cx0 < floor_px:            # grow centered to the floor
+            cc = (cx0 + cx1) / 2.0
+            cx0, cx1 = cc - floor_px / 2.0, cc + floor_px / 2.0
+        if cy1 - cy0 < floor_px:
+            cc = (cy0 + cy1) / 2.0
+            cy0, cy1 = cc - floor_px / 2.0, cc + floor_px / 2.0
+        # shift inside the panel bounds
+        if cx0 < 0:
+            cx1 -= cx0; cx0 = 0
+        if cy0 < 0:
+            cy1 -= cy0; cy0 = 0
+        if cx1 > pw:
+            cx0 -= (cx1 - pw); cx1 = pw
+        if cy1 > ph:
+            cy0 -= (cy1 - ph); cy1 = ph
+        cx0, cy0 = max(cx0, 0), max(cy0, 0)
+        cx1, cy1 = min(cx1, pw), min(cy1, ph)
+        # containment repair: absorb any box the rect PARTIALLY intersects
+        # (grow, never shrink), until stable — a half-visible bubble is the
+        # exact fault this feature exists to prevent
+        for _ in range(len(boxes) + 1):
+            grew = False
+            for b in boxes:
+                bx0, by0, bx1, by1 = b[0], b[1], b[0] + b[2], b[1] + b[3]
+                if bx1 <= cx0 or bx0 >= cx1 or by1 <= cy0 or by0 >= cy1:
+                    continue          # fully outside: allowed to drop
+                nx0 = min(cx0, max(bx0 - TEXT_PAD, 0))
+                ny0 = min(cy0, max(by0 - TEXT_PAD, 0))
+                nx1 = max(cx1, min(bx1 + TEXT_PAD, pw))
+                ny1 = max(cy1, min(by1 + TEXT_PAD, ph))
+                if (nx0, ny0, nx1, ny1) != (cx0, cy0, cx1, cy1):
+                    cx0, cy0, cx1, cy1 = nx0, ny0, nx1, ny1
+                    grew = True
+            if not grew:
+                break
+        return (int(cx0), int(cy0), int(cx1 - cx0), int(cy1 - cy0))
+
+    cand = rect(TEXT_CROP_FLOOR * min(pw, ph))
+    if med_t * min(w / cand[2], h / cand[3]) < min_px:
+        # the floored crop still renders the text too small -> full-frame the
+        # text region itself (best effort: dense tiny text may stay short of
+        # MIN_TEXT_H even here; that's the research's accepted residual)
+        cand = rect(0)
+    if cand[2] >= 0.98 * pw and cand[3] >= 0.98 * ph:
+        return None   # crop ~ whole panel: no point re-encoding the same fit
+
+    def _reject(reason):
+        if reject_log:
+            reject_log(f"{reason} — crop rejected, default framing kept")
+        return None
+
+    # exp-009 v2 guard (2): minimum crop size. Absolute floor kills pixel-mush
+    # fragment punch-ins (v1 accepted 65x62 / 160x160); the panel-relative
+    # floor (vs the shorter side squared — the reading-axis width, see the
+    # constant comment) kills "large enough in px but a sliver of the art"
+    # crops on small panels.
+    if min(cand[2], cand[3]) < MIN_CROP_PX:
+        return _reject(f"min-size {cand[2]}x{cand[3]} < {MIN_CROP_PX}px")
+    if cand[2] * cand[3] < MIN_CROP_AREA_FRAC * min(pw, ph) ** 2:
+        return _reject(f"min-area {cand[2]}x{cand[3]} < "
+                       f"{MIN_CROP_AREA_FRAC:.0%} of {min(pw, ph)}^2")
+    t_area = sum(b[2] * b[3] for b in target)
+    if t_area < MIN_TEXT_COVER * cand[2] * cand[3]:
+        return _reject(f"text-cover {t_area / (cand[2] * cand[3]):.1%} < "
+                       f"{MIN_TEXT_COVER:.0%} (punch-in would frame mostly "
+                       f"non-text)")
+
+    # exp-009 v2 guard (1): containment under MOTION. v1 verified boxes
+    # against the static crop; the Ken Burns zoom then shrank the visible
+    # window past the boxes and cut bubbles mid-motion (report: scene 20
+    # t=628.5 et al). The zoompan is center-anchored, so the guaranteed-
+    # visible region across the whole motion is the centered (cw/zmax,
+    # ch/zmax) window; anything intersecting the crop but outside it WILL be
+    # cut on some frame -> reject (approved direction: never render a
+    # maybe-cut). Checked rects = the text LINE boxes plus the estimated
+    # FULL bubble outline per cluster (v1's frame evidence shows the cut
+    # happens on the drawn bubble, which extends past the line boxes).
+    contain = list(boxes)
+    for ext in _bubble_extents(panel, clusters, pw, ph):
+        if ext:
+            contain.append(ext)
+    bad = _motion_violations(cand, contain, zmax)
+    if bad:
+        # one deterministic repair: scale the rect about its center by zmax
+        # (plus the jitter margin) so the max-zoom window equals the old
+        # static rect, then clamp to the panel. If the panel edge clips the
+        # growth (center shifts, margin lost) the re-check below rejects —
+        # we never render a maybe-cut bubble.
+        gw = cand[2] * zmax + 2 * MOTION_JITTER
+        gh = cand[3] * zmax + 2 * MOTION_JITTER
+        gx = cand[0] + cand[2] / 2.0 - gw / 2.0
+        gy = cand[1] + cand[3] / 2.0 - gh / 2.0
+        if gx < 0:
+            gx = 0
+        if gy < 0:
+            gy = 0
+        if gx + gw > pw:
+            gx = pw - gw
+        if gy + gh > ph:
+            gy = ph - gh
+        if gx < 0 or gy < 0:
+            return _reject(f"containment-under-motion (zmax {zmax}): "
+                           f"crop + zoom margin exceeds the panel")
+        cand = (int(gx), int(gy), int(gw), int(gh))
+        if cand[2] >= 0.98 * pw and cand[3] >= 0.98 * ph:
+            return None   # grew to ~whole panel: default framing already does this
+        bad = _motion_violations(cand, contain, zmax)
+        if bad:
+            return _reject(f"containment-under-motion (zmax {zmax}): "
+                           f"{len(bad)} box(es) exit the rendered window "
+                           f"even after zoom-margin growth, e.g. {bad[0]}")
+    return cand
+
+
+def _ensure_text_boxes(script_path, project_dir, scenes):
+    """Load (generating if stale/missing) the <slug>.textboxes.json sidecar
+    for every panel the script references. Returns {panel_name: boxes} or
+    None on ANY failure — the caller treats None as 'flag off' so a detector
+    problem can never take the render down (graceful-fallback rule)."""
+    try:
+        import text_boxes as tb
+        seen, paths = set(), []
+        for sc in scenes:
+            for rel in sc.get("panels") or ([sc["panel"]] if sc.get("panel")
+                                            else []):
+                p = _resolve_panel(project_dir, rel)
+                if p.name not in seen and Path(p).exists():
+                    seen.add(p.name)
+                    paths.append(p)
+        if not paths:
+            return None
+        sidecar = script_path.with_suffix(".textboxes.json")
+        return tb.ensure_boxes(sidecar, paths)
+    except Exception as e:
+        print(f"WARNING: text-aware framing disabled — text box detection "
+              f"failed ({type(e).__name__}: {e})")
+        return None
+
+
 # broken-panel guard: segmentation sometimes emits fragments (a 145x187 crop
 # of a full page, a sliver of floating text). A panel is unusable when its
 # short side is tiny OR its total area is too small to survive delivery
@@ -582,7 +988,8 @@ def _resolve_panel(project_dir, rel):
 
 def render_panel_scene(panel, audio, out_path, w, h, duration, motion_idx=0,
                        blur_bg=True, emphasis=False, tight_crop=False,
-                       focus=False, glitch=False):
+                       focus=False, glitch=False, crop_rect=None,
+                       frame_plan=None):
     """Single real panel + narration -> clip with blurred-bg letterbox + Ken Burns.
 
     mv.render_scene crops-to-fill, which clips tall webtoon panels. Instead we
@@ -594,6 +1001,22 @@ def render_panel_scene(panel, audio, out_path, w, h, duration, motion_idx=0,
     "hits") for important beats. tight_crop=True fits the panel to a larger
     focal window (fills more of the frame) while keeping a safe margin so faces
     are not lost — a conservative middle ground vs the old crop-to-fill.
+
+    crop_rect=(x, y, w, h) in PANEL pixels (exp-009 --text-aware): a data-
+    driven crop of the fit window framing the panel's text region, applied
+    before the decrease scale so small in-panel text renders phone-legible.
+    Takes precedence over tight_crop (both are crops of the same window; the
+    data-driven one knows where the text actually is). None = unchanged.
+
+    frame_plan (exp-014 --kenburns smart): a kb_smart.plan_frame dict —
+    "anchor" keeps today's composite/zoom but shifts the zoompan y anchor so
+    the max-zoom window contains the panel's text/face boxes; "scroll"
+    replaces the zoom with a webtoon-native top->bottom pan of a
+    fit-to-width window on the supersampled composite (the only sanctioned
+    pan; sideways pans stay removed); "contain" (v2) holds the full
+    letterboxed panel static (z=1) when the text union is provably
+    infeasible for any legal moving window. None = today's path,
+    byte-identical — the flag-off guarantee lives on this default.
     """
     frames = max(int(round(duration * mv.FPS)), 1)
     ss_w, ss_h = w * 2, h * 2
@@ -612,6 +1035,29 @@ def render_panel_scene(panel, audio, out_path, w, h, duration, motion_idx=0,
         else:              # slow zoom out
             z = "if(eq(on,0),1.08,max(zoom-0.0005,1.0))"
     x, y = "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
+    if frame_plan and frame_plan.get("mode") == "contain" and blur_bg \
+            and not crop_rect:
+        # exp-014 v2 "contain": infeasible-geometry tall panel (text union
+        # too large for ANY legal zoom/scroll window — kb_smart proved the
+        # default center zoom would cut text). Same composite, zoompan as a
+        # pure frame duplicator (z=1): the full letterboxed panel is static
+        # on screen, so every text box is visible at every t by
+        # construction. Trading the gentle zoom for guaranteed-complete
+        # text on these panels is the v2 fix for the chapter-wide gate.
+        z = "1"
+    elif frame_plan and frame_plan.get("mode") == "anchor" and blur_bg \
+            and not crop_rect:
+        # exp-014 "anchor": same composite, same zoom envelope, but the
+        # window centers on cy (fraction of composite height) instead of
+        # 0.5, clamped inside the frame. At z=1 the clamp forces center
+        # (the window IS the frame); as z grows the window releases toward
+        # cy — every intermediate window still contains the max-zoom
+        # window at cy (proof: window shrinks monotonically around a
+        # clamped path), so kb_smart's containment check covers all t.
+        cy = frame_plan["cy"]
+        # commas are safe unescaped here: the whole expression is single-
+        # quoted inside the filtergraph (same as the z expressions above)
+        y = f"max(0,min(ih*{cy:.6f}-(ih/zoom/2),ih-ih/zoom))"
 
     # post-zoompan effect suffix:
     #  - glitch (emphasis hit): 2-frame RGB split + white additive flash on the
@@ -628,6 +1074,61 @@ def render_panel_scene(panel, audio, out_path, w, h, duration, motion_idx=0,
     if focus:
         fx += ",vignette=angle=PI/4"
 
+    if blur_bg and frame_plan and frame_plan.get("mode") == "scroll" \
+            and not crop_rect:
+        # exp-014 "scroll": webtoon-native top->bottom pan for h/w > 2.5
+        # panels. The fg is scaled to the plan's supersampled width and a
+        # frame-height window crops it with a smoothstep-eased y sweep from
+        # y0 to y1 (kb_smart guarantees every text box stays inside the
+        # window at every t; speed is capped there). The crop runs at 2x
+        # supersample and the composite downscales to the frame, so the
+        # integer crop-y steps land at half-pixel after downscale — the
+        # same anti-judder trick the zoompan paths use. No zoom rides on
+        # top: the scroll IS the motion (a zoom would shrink the window and
+        # break the containment guarantee).
+        fw, y0, y1 = frame_plan["fw"], frame_plan["y0"], frame_plan["y1"]
+        pw, ph = frame_plan["pw"], frame_plan["ph"]
+        d = max(duration, 1e-3)
+        # wall-time guard (gap-006 <=1.2x bound), two tricks:
+        # (a) the scroll only ever shows the [y0, y1+ss_h] band of the
+        #     scaled fg, so pre-crop the SOURCE panel to that band (+4px
+        #     slack for rounding) before the expensive supersample scale —
+        #     a 690x2697 panel would otherwise scale to 3840x15010;
+        # (b) the input is read WITHOUT -loop and each branch is expanded
+        #     to `frames` by zoompan z=1 (a pure frame duplicator), so the
+        #     scale/gblur chains run ONCE instead of per frame — the same
+        #     reason the default zoompan path is cheap. Only the y-sweep
+        #     crop and the overlay run per frame.
+        g = fw / float(pw)
+        py0 = max(int(y0 / g) - 4, 0)
+        py1 = min(int((y1 + ss_h) / g + 1) + 4, ph)
+        band_h = int(round((py1 - py0) * g / 2.0)) * 2   # even, exact scale
+        off = py0 * g
+        sy0, sy1 = y0 - off, y1 - off
+        # clamp the sweep inside the scaled band (rounding slack)
+        sy1 = min(sy1, band_h - ss_h)
+        sy0 = max(min(sy0, sy1), 0)
+        st = f"min(t/{d:.4f},1)"
+        y_expr = f"{sy0:.1f}+({sy1 - sy0:.1f})*pow({st},2)*(3-2*{st})"
+        vf = (
+            f"[0:v]split=2[bg][fg];"
+            f"[bg]scale={ss_w}:{ss_h}:force_original_aspect_ratio=increase,"
+            f"crop={ss_w}:{ss_h},gblur=sigma=24,eq=brightness=-0.14,"
+            f"zoompan=z='1':d={frames}:s={ss_w}x{ss_h}:fps={mv.FPS}[bgb];"
+            f"[fg]crop={pw}:{py1 - py0}:0:{py0},scale={fw}:{band_h},"
+            f"zoompan=z='1':d={frames}:s={fw}x{band_h}:fps={mv.FPS},"
+            f"crop={fw}:{ss_h}:0:'{y_expr}'[fgc];"
+            f"[bgb][fgc]overlay=(W-w)/2:(H-h)/2,"
+            f"scale={w}:{h}"
+            f"{fx},format=yuv420p[v]"
+        )
+        cmd = ["ffmpeg", "-y", "-i", str(panel), "-i", str(audio),
+               "-filter_complex", vf, "-map", "[v]", "-map", "1:a",
+               "-af", "apad", "-t", f"{duration:.3f}",
+               *mv._INTER_V, *mv._INTER_A, str(out_path)]
+        mv.run(cmd)
+        return
+
     if blur_bg:
         # blurred/darkened fill + full panel fitted centered, supersampled for
         # smooth sub-pixel zoompan, then Ken Burns on the composite.
@@ -635,7 +1136,14 @@ def render_panel_scene(panel, audio, out_path, w, h, duration, motion_idx=0,
         # increase to a slightly-smaller focal box (0.9x the frame) then
         # center-crop it, so tall panels fill more of the frame. The 0.9 factor
         # keeps a safe margin vs the old edge-to-edge crop.
-        if tight_crop:
+        if crop_rect:
+            # text-aware framing: crop the panel to the computed text window
+            # (panel px, pre-scale) so the same decrease fit now spends the
+            # frame on the region that must stay legible.
+            cx, cy, cw, ch = crop_rect
+            fg = (f"[fg]crop={cw}:{ch}:{cx}:{cy},"
+                  f"scale={ss_w}:{ss_h}:force_original_aspect_ratio=decrease[fgc]")
+        elif tight_crop:
             fg = (f"[fg]scale={ss_w}:{ss_h}:force_original_aspect_ratio=increase,"
                   f"crop=iw*0.9:ih*0.9:(iw-iw*0.9)/2:(ih-ih*0.9)*0.35,"
                   f"scale={ss_w}:{ss_h}:force_original_aspect_ratio=decrease[fgc]")
@@ -711,6 +1219,71 @@ def render(script_path, args):
         workdir = Path(tempfile.mkdtemp(prefix="fmanga_"))
     workdir.mkdir(parents=True, exist_ok=True)
     print(f"Rendering {len(scenes)} scenes -> {out_path}  (workdir {workdir})")
+
+    # exp-009 text-aware framing: measured text-line boxes per panel, from
+    # the <slug>.textboxes.json sidecar (generated here on first run). OFF by
+    # default; None (flag off or detection failed) leaves every code path
+    # below byte-identical to today.
+    # exp-014 content-aware Ken Burns (--kenburns smart / MANGA_KB_SMART=1):
+    # per-panel frame plans from kb_smart (OCR text boxes + anime-face boxes,
+    # both sidecar-cached). OFF by default; any failure below downgrades to
+    # None -> every render call keeps the center-anchored path byte-identical
+    # (same graceful-fallback rule as --text-aware).
+    kb_on = (getattr(args, "kenburns", "center") == "smart"
+             or os.environ.get("MANGA_KB_SMART") == "1")
+    kb_tboxes, kb_faces, kbs = None, {}, None
+    kb_log = []   # every framing decision, dumped to <workdir>/kb_plans.json
+                  # for the exp-014 deterministic containment gate
+    if kb_on:
+        print("Content-aware Ken Burns (--kenburns smart): loading boxes...")
+        kb_tboxes = _ensure_text_boxes(script_path, project_dir, scenes)
+        if kb_tboxes is None:
+            print("WARNING: --kenburns smart disabled (text boxes "
+                  "unavailable); center-anchored framing kept")
+            kb_on = False
+        else:
+            try:
+                import kb_smart as kbs
+            except Exception as e:
+                print(f"WARNING: --kenburns smart disabled "
+                      f"({type(e).__name__}: {e})")
+                kb_on, kbs = False, None
+        if kb_on:
+            # anime-face boxes (deepghs/anime_face_detection, MIT — chosen
+            # over manga109's face class by the exp-014 smoke: 0 recall on
+            # colored webtoons). Failure -> text-only planning, which still
+            # fixes the bubble-graze sites.
+            try:
+                seen, fpaths = set(), []
+                for sc in scenes:
+                    for rel in sc.get("panels") or (
+                            [sc["panel"]] if sc.get("panel") else []):
+                        p = _resolve_panel(project_dir, rel)
+                        if p.name not in seen and Path(p).exists():
+                            seen.add(p.name)
+                            fpaths.append(p)
+                kb_faces = kbs.ensure_face_boxes(
+                    script_path.with_suffix(".faceboxes.json"), fpaths)
+            except Exception as e:
+                print(f"WARNING: face detection failed ({type(e).__name__}: "
+                      f"{e}); --kenburns smart continues text-only")
+                kb_faces = {}
+
+    tboxes = None
+    wm_panels = {}
+    if getattr(args, "text_aware", False):
+        print("Text-aware framing: loading/detecting panel text boxes...")
+        tboxes = _ensure_text_boxes(script_path, project_dir, scenes)
+        if tboxes is not None:
+            n = sum(1 for b in tboxes.values() if b)
+            print(f"  text boxes ready: {n}/{len(tboxes)} panels carry text")
+        # exp-009 v2 guard (3): panels with a recorded watermark instance.
+        # A text-aware crop must never re-frame onto a watermark the default
+        # framing kept small/off-center (v1 watermark 4->6 veto).
+        wm_panels = _load_watermark_panels(project_dir)
+        if wm_panels:
+            print(f"  watermark guard: {len(wm_panels)} panel(s) carry a "
+                  f"recorded watermark (crop skipped unless cleaned)")
 
     clips, durations, word_times = [], [], []
     beat_windows = []   # absolute [Pause] beat-drop windows (pre-intro-offset)
@@ -843,8 +1416,15 @@ def render(script_path, args):
             # hype pace, short scene, cells too small) and we fall through to
             # the existing sequential path — the default --layout seq never
             # reaches this block at all, so seq output stays bit-identical.
+            # smart2 (exp-013): magazine-style content-weighted templates.
+            # Accepts 2-panel scenes (hero/rail templates); its planner falls
+            # back to the v1 grid/stack plan internally, and any error falls
+            # through to the sequential path below — --layout smart behavior
+            # and the default seq path are untouched.
             smart_done = False
-            if args.layout == "smart" and not para_done and len(resolved) >= 3:
+            min_smart = 2 if args.layout == "smart2" else 3
+            if (args.layout in ("smart", "smart2") and not para_done
+                    and len(resolved) >= min_smart):
                 try:
                     import layout_smart as ls
                     # OCR sidecar (<slug>.ocr.json, written by the script
@@ -861,27 +1441,141 @@ def render(script_path, args):
                                               json.loads(_ocr_path.read_text())}
                             except Exception:
                                 _smart_ocr = None
-                    plan = ls.plan_layout(scene, resolved, dur, wt,
-                                          frame_w=w, frame_h=h, pace=pace,
-                                          ocr=_smart_ocr)
+                    # exp-009 v3: the PLANNER always sees text_boxes=None —
+                    # the adopted binary 55/45 guard — so the smart-layout
+                    # plan set is byte-identical with --text-aware on or off.
+                    # v2 fed measured boxes here and the size-aware
+                    # _panel_min_h rejected grids the binary guard accepts
+                    # (golden scenes 1/4/9/24 lost their composites ->
+                    # watermark magnified on scene 1, empty_screen on the
+                    # solo pendant panel; round3 eval root cause). Measured
+                    # boxes now drive ONLY the crop/punch-in decisions
+                    # (_tcrop below keeps tboxes).
+                    if args.layout == "smart2":
+                        # exp-013 v2: content-weighted magazine templates;
+                        # plan_layout_v2 already chains to v1's planner when
+                        # no v2 template fits, so a v1-shaped plan can come
+                        # back here and renders via the v1 renderer below.
+                        import layout_smart2 as ls2
+                        plan = ls2.plan_layout_v2(
+                            scene, resolved, dur, wt, frame_w=w, frame_h=h,
+                            pace=pace, ocr=_smart_ocr, text_boxes=None)
+                    else:
+                        plan = ls.plan_layout(scene, resolved, dur, wt,
+                                              frame_w=w, frame_h=h, pace=pace,
+                                              ocr=_smart_ocr,
+                                              text_boxes=None)
                     if plan:
                         chosen = [Path(resolved[j]).name for j in plan.picked]
                         print(f"  scene {i+1}: smart layout "
                               f"({plan.template}, {len(plan.cells)} of "
                               f"{len(resolved)} panels: {', '.join(chosen)})")
-                        ls.render_smart_scene(plan, clip, audio, dur,
-                                              workdir, name=f"c{i:03}")
+                        if (args.layout == "smart2"
+                                and isinstance(plan, ls2.LayoutPlanV2)):
+                            ls2.render_smart_scene_v2(plan, clip, audio, dur,
+                                                      workdir,
+                                                      name=f"c{i:03}")
+                        else:
+                            ls.render_smart_scene(plan, clip, audio, dur,
+                                                  workdir, name=f"c{i:03}")
                         smart_done = True
                 except Exception as e:
                     print(f"  scene {i+1}: smart layout failed "
                           f"({type(e).__name__}: {e}), sequential render")
+            # text-aware framing (exp-009 §3a/c): per-panel data-driven crop
+            # when the blur_bg fit would render its median text line below
+            # MIN_TEXT_H. Only for panels holding the screen long enough to
+            # read (hysteresis) and only under --text-aware (tboxes=None
+            # otherwise -> _tcrop is always None -> paths unchanged).
+            def _tcrop(p, on_screen, emph_cut=False):
+                if tboxes is None or blur is not True:
+                    return None
+                if on_screen < TEXT_MIN_ONSCREEN:
+                    return None
+                name = Path(p).name
+                # exp-009 v2 guard (3): a panel with a recorded watermark is
+                # only croppable when we render the CLEANED copy
+                # (panels_clean/<name>, already preferred by _resolve_panel);
+                # otherwise a tighter frame magnifies/re-exposes the mark.
+                if name in wm_panels and Path(p).parent.name != "panels_clean":
+                    print(f"  scene {i+1}: text-aware crop on {name} skipped "
+                          f"(recorded watermark, no cleaned panel)")
+                    return None
+                # exp-009 v2 guard (1): containment is checked against the
+                # zoom THIS cut will actually run (emphasis punches to 1.16,
+                # plain zoompan peaks at 1.08).
+                zmax = MOTION_ZMAX_EMPH if emph_cut else MOTION_ZMAX
+                r = _text_aware_crop(
+                    p, tboxes.get(name), w, h, zmax=zmax,
+                    reject_log=lambda msg: print(
+                        f"  scene {i+1}: text-aware crop on {name}: {msg}"))
+                if r:
+                    print(f"  scene {i+1}: text-aware crop on "
+                          f"{name} -> {r}")
+                return r
+
+            # exp-014 content-aware Ken Burns plan for one cut. Returns None
+            # (center anchor, byte-identical path) unless --kenburns smart is
+            # on AND the planner finds a strictly-better legal frame. A
+            # text-aware crop_rect wins when both fire (it already carries
+            # its own containment guard); every decision is appended to
+            # kb_log for the exp-014 deterministic containment gate.
+            def _kb(p, cut_idx, cut_off, cut_dur, emph_cut=False,
+                    have_crop=False):
+                if not kb_on or blur is not True:
+                    return None
+                name = Path(p).name
+                # cut_off = offset of this cut WITHIN the scene (seconds) —
+                # word timings are scene-relative, so the gate maps beats to
+                # cuts without re-deriving the scene timeline.
+                rec = {"scene": i, "cut": cut_idx, "panel": name,
+                       "panel_path": str(p),
+                       "cut_off": round(cut_off, 3),
+                       "dur": round(cut_dur, 3),
+                       "zmax": MOTION_ZMAX_EMPH if emph_cut else MOTION_ZMAX,
+                       "frame": [w, h], "plan": None}
+                if have_crop:
+                    rec["plan"] = {"mode": "skip-crop"}
+                    kb_log.append(rec)
+                    return None
+                try:
+                    zmax = MOTION_ZMAX_EMPH if emph_cut else MOTION_ZMAX
+                    plan = kbs.plan_frame(
+                        p, kb_tboxes.get(name), kb_faces.get(name), w, h,
+                        cut_dur, zmax,
+                        log=lambda m: print(f"  scene {i+1}: kb {name}: {m}"))
+                except Exception as e:
+                    print(f"  scene {i+1}: kb plan on {name} failed "
+                          f"({type(e).__name__}: {e}), center anchor kept")
+                    plan = None
+                rec["plan"] = plan
+                kb_log.append(rec)
+                if plan:
+                    if plan["mode"] == "scroll":
+                        print(f"  scene {i+1}: kb scroll on {name} "
+                              f"(fill {plan['fill']}, y {plan['y0']:.0f}->"
+                              f"{plan['y1']:.0f} over {cut_dur:.1f}s)")
+                    elif plan["mode"] == "contain":
+                        print(f"  scene {i+1}: kb contain on {name} "
+                              f"(static full fit; text union infeasible "
+                              f"for any legal moving window)")
+                    else:
+                        print(f"  scene {i+1}: kb anchor on {name} "
+                              f"(cy {plan['cy']:.3f})")
+                return plan
+
             if para_done or smart_done:
                 pass
             elif n_cuts == 1:
+                cr = _tcrop(cuts[0], dur, emph_cut=emph)
                 render_panel_scene(cuts[0], audio, clip, w, h, dur,
                                    motion_idx=i, blur_bg=blur,
                                    emphasis=emph, tight_crop=tight,
-                                   focus=foc, glitch=gl)
+                                   focus=foc, glitch=gl,
+                                   crop_rect=cr,
+                                   frame_plan=_kb(cuts[0], 0, 0.0, dur,
+                                                  emph_cut=emph,
+                                                  have_crop=bool(cr)))
             else:
                 sub_dur = dur / n_cuts
                 _silent = workdir / f"sil{i:03}.mp3"
@@ -893,11 +1587,17 @@ def render(script_path, args):
                     sc = workdir / f"c{i:03}_p{k}.mp4"
                     # only the FIRST cut of an emphasis scene gets the punch-in,
                     # so the "hit" lands on the scene entrance, not every cut.
+                    cr = _tcrop(panel, sub_dur, emph_cut=(emph and k == 0))
                     render_panel_scene(panel, _silent, sc, w, h, sub_dur,
                                        motion_idx=i + k, blur_bg=blur,
                                        emphasis=(emph and k == 0),
                                        tight_crop=tight, focus=foc,
-                                       glitch=(gl and k == 0))
+                                       glitch=(gl and k == 0),
+                                       crop_rect=cr,
+                                       frame_plan=_kb(
+                                           panel, k, k * sub_dur, sub_dur,
+                                           emph_cut=(emph and k == 0),
+                                           have_crop=bool(cr)))
                     subclips.append(sc)
                 # join the cut slices (video). With --slide (default), panels
                 # push in from alternating directions via a short xfade slide;
@@ -923,6 +1623,18 @@ def render(script_path, args):
         clips.append(clip)
         durations.append(dur)
         word_times.append(wt)
+
+    # exp-014: persist the framing decisions so check_containment.py can
+    # verify text-box containment deterministically against the SAME plans
+    # the render used (cached scenes log nothing — their plans are already
+    # baked into the cached clips from the run that produced them).
+    if kb_on:
+        (workdir / "kb_plans.json").write_text(json.dumps(kb_log, indent=1))
+        n_planned = sum(1 for r in kb_log
+                        if r["plan"] and r["plan"].get("mode") in
+                        ("scroll", "anchor"))
+        print(f"kb plans: {n_planned}/{len(kb_log)} cuts content-aware "
+              f"-> {workdir / 'kb_plans.json'}")
 
     # ---- join (no intro/outro videos; branding is a pop-up overlay later) ----
     brand_dir = Path(__file__).parent / "brand"
@@ -1276,12 +1988,39 @@ def main():
                     help="fit panels to a larger focal window (fills more of "
                          "the frame) while keeping a safe margin. Off by "
                          "default (full-panel-over-blur keeps faces safe).")
-    ap.add_argument("--layout", choices=["seq", "smart"], default="seq",
+    ap.add_argument("--text-aware", action="store_true",
+                    help="phone-readability framing (exp-009): detect per-"
+                         "panel text-line boxes (<slug>.textboxes.json "
+                         "sidecar, generated on first run) and (a) crop the "
+                         "blur_bg fit to the text region when its lines "
+                         "would render below 40px@1080p, (b) size smart-"
+                         "layout cells by measured text height. Off by "
+                         "default = today's behavior byte-identical.")
+    ap.add_argument("--kenburns", choices=["center", "smart"],
+                    default="center",
+                    help="'smart' (exp-014, gap-014/gap-006): content-aware "
+                         "Ken Burns framing. Tall panels (h/w > 2.5) get a "
+                         "webtoon-native top->bottom vertical scroll whose "
+                         "window keeps every OCR text box on screen for the "
+                         "whole cut; normal panels get a box-aware vertical "
+                         "anchor shift (OCR text + anime-face boxes, "
+                         "sidecar-cached) instead of the blind center. "
+                         "Center fallback whenever no boxes/low confidence/"
+                         "planner rejects. MANGA_KB_SMART=1 equivalent. "
+                         "Default 'center' = today's behavior "
+                         "byte-identical.")
+    ap.add_argument("--layout", choices=["seq", "smart", "smart2"],
+                    default="seq",
                     help="'smart': scenes with 3+ panels (pace != hype) get a "
                          "narration-synced multi-panel composite (grid "
                          "highlight / accordion stack) instead of sequential "
                          "cuts; falls back to 'seq' per scene when layout "
-                         "guards fail. Default 'seq' = today's behavior.")
+                         "guards fail. 'smart2' (exp-013, experimental): "
+                         "magazine-style content-weighted templates "
+                         "(hero/rail/mag_grid/strips) for 2+ panel scenes "
+                         "with per-cell Ken Burns on the active cell; falls "
+                         "back to smart-v1 plans, then seq. Default 'seq' = "
+                         "today's behavior.")
     ap.add_argument("--no-slide", action="store_true",
                     help="disable directional panel slide-in transitions "
                          "(hard-cut between intra-scene panels instead).")

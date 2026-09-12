@@ -1,0 +1,119 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 107,
+    "experiment": 107,
+    "delta": 0,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 18,
+      "medium": 7,
+      "low": 3
+    },
+    "experiment": {
+      "high": 18,
+      "medium": 7,
+      "low": 3
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "ambience_absent": 1,
+      "sfx_absent": 1,
+      "irrelevant_panel": 10,
+      "watermark": 4,
+      "cropped_content": 4,
+      "phone_readability": 2,
+      "empty_screen": 1,
+      "missing_payoff": 4
+    },
+    "experiment": {
+      "panel_reuse": 1,
+      "ambience_absent": 1,
+      "sfx_absent": 1,
+      "irrelevant_panel": 10,
+      "watermark": 4,
+      "cropped_content": 5,
+      "phone_readability": 1,
+      "empty_screen": 1,
+      "missing_payoff": 4
+    }
+  },
+  "vetoes": [],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "/tmp/opencode/exp014_eval/review_off.json",
+    "review": "/tmp/opencode/exp014_eval/review_on.json",
+    "video": null
+  },
+  "matched_vetoes": {
+    "pass_counts": {
+      "baseline": 3,
+      "experiment": 3
+    },
+    "consensus_fraction": 0.6667,
+    "consensus_dropped": {
+      "baseline": [],
+      "experiment": []
+    },
+    "frame_hash": {
+      "enabled": true,
+      "window_s": 3.0,
+      "video": "/tmp/opencode/exp014_eval/proj/work_on/all.mp4",
+      "baseline_video": "/tmp/opencode/exp014_eval/proj/work_off/all.mp4"
+    },
+    "annotated_vetoes": [
+      {
+        "type": "cropped_content",
+        "count": {
+          "baseline": 4,
+          "experiment": 5
+        },
+        "pairs_added": [
+          {
+            "scene": 14,
+            "t": 422.5,
+            "votes": "3/3",
+            "severity": "medium",
+            "frame_hash_exempt": false,
+            "frame_hash_proof": null
+          },
+          {
+            "scene": 3,
+            "t": 94.8,
+            "votes": "2/3",
+            "severity": "medium",
+            "frame_hash_exempt": true,
+            "frame_hash_proof": {
+              "frame_md5": "507933305fd08ae76a6ea8d505359db8",
+              "t": 94.8,
+              "baseline_window": [
+                91.8,
+                97.8
+              ]
+            }
+          }
+        ],
+        "pairs_removed": [
+          {
+            "scene": 6,
+            "t": 175.7,
+            "votes": "3/3"
+          }
+        ],
+        "net_after_exemptions": 0,
+        "suppressed": true,
+        "reason": "frame-hash exemption + matched-pair netting"
+      }
+    ]
+  }
+}

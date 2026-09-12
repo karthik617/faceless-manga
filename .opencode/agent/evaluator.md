@@ -41,6 +41,20 @@ measure; you do not fix. You are the quality-non-degradation gate.
    `--scenes-changed <i,j,k>` — reviewer noise on untouched scenes must not
    decide the verdict. Report both global and scene-scoped results. Attach
    stage-specific extra metrics via `--extra-metrics`.
+   **Matched-veto scoring (gap-015, adopted standard):** score every arm a
+   second time with `--matched-vetoes`, passing
+   `--hash-video <experiment mp4> --hash-baseline-video <baseline mp4>` when
+   both videos exist (netting-only otherwise). Report BOTH arithmetics; if
+   the default-arithmetic verdict is FAIL purely on the two type-count vetoes
+   but the matched-veto arithmetic shows all increases suppressed
+   (reviewer-noise / frame-hash-exempt in `matched_vetoes.annotated_vetoes`),
+   say so explicitly — the orchestrator uses the matched result to
+   distinguish real regressions from vote noise. A matched-veto FAIL is
+   always final.
+   **Binding archival rule:** whenever you hash videos, ALSO export a sidecar
+   at eval time — `--write-hash-sidecar
+   <exp-dir>/replay/sidecars/<pair>.hash_sidecar.json` — so the pair stays
+   replayable after /tmp eviction (schema benchmark-hash-sidecar/v1).
 5. Sample evidence: extract 4-8 comparison frames (baseline vs experiment at
    the same timestamps, ffmpeg -ss) into `<exp-dir>/samples/`.
 6. Write `<exp-dir>/report.md`:

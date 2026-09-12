@@ -1,0 +1,28 @@
+{
+  "baseline_video": "/tmp/opencode/exp004_bench/proj/_work/sfxed.mp4",
+  "baseline_windows": {
+    "106.600": [],
+    "238.800": [
+      "c6faa9850d269ff6f8e25ed5d013e2d2"
+    ],
+    "287.000": [
+      "ecccf81f5916f7854fafc171b50cfab4"
+    ],
+    "513.400": [
+      "fd8efb4006f95a93bd078c5d89e85f44"
+    ],
+    "6.500": [
+      "173af57514a963705dbde731db4f3f3a"
+    ]
+  },
+  "frames": {
+    "238.800": "c6faa9850d269ff6f8e25ed5d013e2d2",
+    "287.000": "ecccf81f5916f7854fafc171b50cfab4",
+    "513.400": "fd8efb4006f95a93bd078c5d89e85f44",
+    "6.500": "173af57514a963705dbde731db4f3f3a"
+  },
+  "hash_window_s": 3.0,
+  "provenance": "reconstructed from archived frame_hash_proof entries in replay/archived_pass_2026-09-11 (original 15/15 run of 2026-09-11 17:48); source /tmp exp-004 bench videos evicted and unreproducible. Exempt pairs carry their recorded md5s; non-exempt pairs intentionally have no frames[] entry (=> not exempt, same decision as the live run).",
+  "schema": "benchmark-hash-sidecar/v1",
+  "video": "/tmp/opencode/exp004_bench_v2/proj/_work/sfxed.mp4"
+}

@@ -1,0 +1,60 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 107,
+    "experiment": 107,
+    "delta": 0,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 18,
+      "medium": 7,
+      "low": 3
+    },
+    "experiment": {
+      "high": 18,
+      "medium": 7,
+      "low": 3
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "ambience_absent": 1,
+      "sfx_absent": 1,
+      "irrelevant_panel": 10,
+      "watermark": 4,
+      "cropped_content": 4,
+      "phone_readability": 2,
+      "empty_screen": 1,
+      "missing_payoff": 4
+    },
+    "experiment": {
+      "panel_reuse": 1,
+      "ambience_absent": 1,
+      "sfx_absent": 1,
+      "irrelevant_panel": 10,
+      "watermark": 4,
+      "cropped_content": 5,
+      "phone_readability": 1,
+      "empty_screen": 1,
+      "missing_payoff": 4
+    }
+  },
+  "vetoes": [
+    "fault types worsened (base\u2192now): {'cropped_content': (4, 5)}"
+  ],
+  "media": null,
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "/tmp/opencode/exp014_eval/review_off.json",
+    "review": "/tmp/opencode/exp014_eval/review_on.json",
+    "video": null
+  }
+}

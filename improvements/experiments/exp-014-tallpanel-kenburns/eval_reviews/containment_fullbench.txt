@@ -1,0 +1,9 @@
+== full golden chapter (25 scenes, 1080p) ==
+[baseline(center)] tall cuts (h/w>2.5): 27, beat-window checks: 592, violations: 95
+  VIOLATION scene 2 cut 0 panel p0002.png mode=center: 40 beat(s), first at t=0.0s
+  VIOLATION scene 6 cut 2 panel p0024.png mode=center: 55 beat(s), first at t=16.5s
+exit_off=1
+[kb-smart] tall cuts (h/w>2.5): 27, beat-window checks: 592, violations: 95
+  VIOLATION scene 2 cut 0 panel p0002.png mode=center: 40 beat(s), first at t=0.0s
+  VIOLATION scene 6 cut 2 panel p0024.png mode=center: 55 beat(s), first at t=16.5s
+exit_on=1

@@ -21,6 +21,7 @@ Design (see improvements/experiments/exp-002-multipanel-layout/research.md):
 Only used behind panel_render.py's --layout smart flag; the default pipeline
 never imports this module's render path.
 """
+import os
 import re
 import sys
 from dataclasses import dataclass
@@ -34,6 +35,23 @@ FYT_PIPELINE = Path.home() / "faceless-youtube" / "pipeline"
 if str(FYT_PIPELINE) not in sys.path:
     sys.path.insert(0, str(FYT_PIPELINE))
 import make_video as mv
+
+# Opt-in memory guard (Sep 10 ch4 OOM incident): the single-pass smart-layout
+# ffmpeg holds n+1 looped supersampled PNG inputs plus a large overlay/zoompan
+# filtergraph, and its buffer footprint scales with filter threads. Setting
+# FM_FFMPEG_THREADS=N caps -threads / -filter_threads / -filter_complex_threads
+# for THIS encode only (slower, much flatter RAM peak). Unset = byte-identical
+# behavior to before.
+def _thread_cap_args():
+    v = os.environ.get("FM_FFMPEG_THREADS", "").strip()
+    if not v:
+        return []
+    try:
+        n = max(1, int(v))
+    except ValueError:
+        return []
+    n = str(n)
+    return ["-threads", n, "-filter_threads", n, "-filter_complex_threads", n]
 
 # ---- trigger / guard constants (from the gap card + research §5) ----
 MIN_BEAT_SEC = 1.2     # a panel needs this long on screen to be readable
@@ -183,6 +201,49 @@ def _beat_times(narration, word_times, n, duration):
     return cand
 
 
+# minimum readable line height at 1080p on a phone (exp-009 research §2:
+# BBC/Material/broadcast anchors converge on a 40-59px comfort band; 40 is
+# the action trigger). Scaled by frame_h/1080 for other resolutions.
+MIN_TEXT_H_1080 = 40
+
+
+def _panel_min_h(panel, ocr, text_boxes, frame_h, panel_h):
+    """Per-panel required cell height as a fraction of frame height (exp-009
+    §3b): with MEASURED line boxes, a text-bearing panel qualifies for a grid
+    cell only if its projected in-cell text height reaches MIN_TEXT_H — the
+    binary has-text guard let panels whose text was already tiny at native
+    scale pass 55% and still render unreadable (ch3 right-column MEDIUMs).
+
+    text_boxes is {panel_name: [[x,y,w,h],...]} or None. None -> the adopted
+    binary behavior EXACTLY (this function must stay inert without data).
+    Text known present (OCR) but zero measured boxes -> conservative binary
+    guard, never looser than today.
+
+    exp-009 v3: panel_render no longer passes measured boxes here — the
+    size-aware requirement rejected grid plans the binary guard accepts
+    (round3 eval: lost composites caused watermark/empty_screen vetoes), so
+    layout PLANNING uses the binary guard regardless of --text-aware and
+    measured boxes drive only the crop/punch-in path. The size-aware branch
+    below stays for callers that opt in explicitly (layout_smart2 CLI)."""
+    has_text = _panel_has_text(panel, ocr)
+    if text_boxes is None:
+        return GUARD_H_TEXT if has_text else GUARD_H
+    boxes = text_boxes.get(Path(panel).name)
+    if not boxes:
+        return GUARD_H_TEXT if has_text else GUARD_H
+    hs = sorted(b[3] for b in boxes)
+    med = hs[len(hs) // 2]
+    min_px = MIN_TEXT_H_1080 * frame_h / 1080.0
+    # displayed text height = med * dh / panel_h; need >= min_px
+    # -> dh/frame_h >= min_px * panel_h / (med * frame_h)
+    req = min_px * panel_h / (med * frame_h)
+    # req > 1.0 survives the clamp ceiling at 1.0 and can never be met by a
+    # grid cell (cells are always < frame height) -> the template rejects the
+    # panel and the planner returns None -> sequential fallback, where the
+    # text-aware crop path takes over.
+    return min(max(req, GUARD_H), 1.0)
+
+
 def _panel_has_text(panel, ocr):
     """True when the OCR sidecar says this panel carries dialogue or embedded
     narration text (its in-panel text must stay phone-legible). Conservative:
@@ -256,7 +317,8 @@ def _stack_cells(panels, sizes, w, h, min_hs):
 
 
 def plan_layout(scene, panels, duration, word_times,
-                frame_w=1920, frame_h=1080, pace=None, ocr=None):
+                frame_w=1920, frame_h=1080, pace=None, ocr=None,
+                text_boxes=None):
     """Decide whether this scene gets a smart layout and, if so, which one.
 
     `ocr` (optional): the <slug>.ocr.json reads — a {panel_name: read} dict
@@ -264,6 +326,13 @@ def plan_layout(scene, panels, duration, word_times,
     carry dialogue/narration must land >=GUARD_H_TEXT (55%) of frame height,
     pure-action panels may go down to GUARD_H (45%). No OCR = every panel is
     treated as text-bearing (conservative).
+
+    `text_boxes` (optional, exp-009): {panel_name: [[x,y,w,h],...]} measured
+    line boxes from the <slug>.textboxes.json sidecar. When present, the
+    binary text guard upgrades to a size-aware one: a text-bearing panel
+    qualifies for a cell only if its projected in-cell median line height
+    reaches MIN_TEXT_H_1080 (scaled by frame_h). None -> binary guards,
+    byte-identical to the adopted behavior.
 
     Scenes with more than MAX_GRID panels composite a 3-panel selection in
     reading order — first, middle, last (setup / turn / payoff) — recorded in
@@ -304,9 +373,15 @@ def plan_layout(scene, panels, duration, word_times,
                 sizes.append(im.size)
     except Exception:
         return None
-    # text-aware per-panel height guards (round-1 phone_readability fix)
-    min_hs = [GUARD_H_TEXT if _panel_has_text(p, ocr) else GUARD_H
-              for p in panels]
+    # text-aware per-panel height guards (round-1 phone_readability fix).
+    # With measured boxes (exp-009 --text-aware) the guard is size-aware;
+    # without, it's the adopted binary 55/45 split.
+    if text_boxes is None:
+        min_hs = [GUARD_H_TEXT if _panel_has_text(p, ocr) else GUARD_H
+                  for p in panels]
+    else:
+        min_hs = [_panel_min_h(p, ocr, text_boxes, frame_h, ph)
+                  for p, (pw, ph) in zip(panels, sizes)]
     # template selection: grid first (3 panels whose aspects survive the
     # cells), then accordion stack for wide strips, else give up
     cells = _grid_cells(panels, sizes, frame_w, frame_h, min_hs)
@@ -472,7 +547,7 @@ def render_smart_scene(plan, out_path, audio, duration, workdir, name="smart"):
     punch_used = sorted({k for _, _, k in punch_shots})
     punch_in = {k: 1 + n + j for j, k in enumerate(punch_used)}
 
-    cmd = ["ffmpeg", "-y",
+    cmd = ["ffmpeg", "-y", *_thread_cap_args(),
            "-loop", "1", "-framerate", str(mv.FPS),
            "-t", f"{duration:.3f}", "-i", str(base_png)]
     for bp in brights + [punches[k] for k in punch_used]:

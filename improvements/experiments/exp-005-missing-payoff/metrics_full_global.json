@@ -1,0 +1,65 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": null,
+  "score": {
+    "baseline": 127,
+    "experiment": 118,
+    "delta": -9,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 22,
+      "medium": 7,
+      "low": 3
+    },
+    "experiment": {
+      "high": 21,
+      "medium": 6,
+      "low": 1
+    }
+  },
+  "fault_types": {
+    "baseline": {
+      "panel_reuse": 1,
+      "irrelevant_panel": 12,
+      "missing_payoff": 5,
+      "phone_readability": 1,
+      "cropped_content": 4,
+      "empty_screen": 1,
+      "unreadable_text": 2,
+      "watermark": 5,
+      "static_scene": 1
+    },
+    "experiment": {
+      "panel_reuse": 1,
+      "irrelevant_panel": 11,
+      "weak_hook": 1,
+      "missing_payoff": 4,
+      "phone_readability": 1,
+      "cropped_content": 3,
+      "empty_screen": 1,
+      "watermark": 5,
+      "static_scene": 1
+    }
+  },
+  "vetoes": [
+    "new fault types introduced: ['weak_hook']",
+    "fault types worsened (base\u2192now): {'weak_hook': (0, 1)}"
+  ],
+  "media": {
+    "duration_s": 781.637,
+    "baseline_duration_s": 781.517,
+    "loudness_lufs": -13.98
+  },
+  "extra_metrics": {},
+  "inputs": {
+    "baseline": "improvements/experiments/round2-eval/stable_base_full.json",
+    "review": "improvements/experiments/round2-eval/stable_p_full.json",
+    "video": "improvements/experiments/round2-eval/arm_p.mp4"
+  }
+}

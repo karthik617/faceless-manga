@@ -1,0 +1,25 @@
+/home/kmyadav/faceless-manga/venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+	Command being timed: "/home/kmyadav/faceless-manga/venv/bin/python3 /home/kmyadav/faceless-manga/pipeline/panel_render.py the-world-after-the-fall-ch2.json --res 1080p --no-music --no-sfx --no-branding --no-title-card --stop-after review-cut --workdir work_off"
+	User time (seconds): 2504.59
+	System time (seconds): 136.00
+	Percent of CPU this job got: 619%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:05.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2488792
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 244
+	Minor (reclaiming a frame) page faults: 49978466
+	Voluntary context switches: 12530341
+	Involuntary context switches: 478343
+	Swaps: 0
+	File system inputs: 143920
+	File system outputs: 4311584
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

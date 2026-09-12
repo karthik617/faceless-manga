@@ -1,0 +1,59 @@
+{
+  "verdict": "FAIL",
+  "scenes_changed": [
+    18
+  ],
+  "score": {
+    "baseline": 0,
+    "experiment": 0,
+    "delta": 0,
+    "weights": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    }
+  },
+  "severity_counts": {
+    "baseline": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "experiment": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "fault_types": {
+    "baseline": {},
+    "experiment": {}
+  },
+  "vetoes": [],
+  "media": null,
+  "extra_metrics": {
+    "template_distribution_arm_B": {
+      "v2_templates_fired": 0,
+      "v1_grid_fallback_attempted": 1,
+      "v1_grid_render_failed_to_seq": 1,
+      "distinct_v2_templates": 0
+    },
+    "v2_planner_offline_replay": {
+      "V2:hero_left_would_fire_without_panel_substitution": 1,
+      "None": 23,
+      "v1:grid": 1
+    },
+    "wall_time_sec": {
+      "arm_A": 1491.13,
+      "arm_B": 1146.52,
+      "arm_B_cached_scenes": 5,
+      "per_rendered_scene_ratio_B_over_A": 0.961
+    },
+    "frame_parity": "24/25 scenes framemd5-identical A vs B (scene 3 differs only via nondeterministic TTS audio length; visual pixels identical at shared timestamps)"
+  },
+  "inputs": {
+    "baseline": "improvements/experiments/exp-013-smart-layout-v2/run/stable_A.json",
+    "review": "improvements/experiments/exp-013-smart-layout-v2/run/stable_B.json",
+    "video": null
+  }
+}

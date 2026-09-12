@@ -15,6 +15,15 @@ segment  -> panels/         OpenCV: page/strip -> panels in reading order
 clean    -> panels_clean/   (optional) blank speech-bubble text
 script   -> <slug>.json     multimodal OCR + recap LLM (extended scene JSON)
 render   -> <slug>.mp4/.srt real panels + blurred-bg Ken Burns, TTS, captions
+review   -> review.md       human-like vision QC on the pre-branding cut;
+                            auto-fix loop (drop/replace bad panels) + stage-5.6
+                            triage: surviving HIGH faults are adjudicated by a
+                            vision LLM (frame grab + panel images + narration
+                            -> DROP contentless panels / DISMISS reviewer
+                            false positives), changed scenes re-render and
+                            re-review; the delivery encode only runs when no
+                            HIGH faults remain (--encode-anyway to override,
+                            --no-triage to disable the adjudicator)
 extras   -> thumbs/         high-CTR thumbnails from real panels
 short    -> <slug>_short.mp4  9:16 Short cut from the long video's best ~40s hook
 package  -> upload_package.md  asset manifest + titles/description/tags + checklist
@@ -124,9 +133,10 @@ Superset of make_video's schema. Each scene points at real panel files:
 | `pipeline/research_trends.py` | discover | AniList trend ranking (+Jikan fallback); advisory only — use to pick a series to commit |
 | `pipeline/channel.py` | continuity | channel_state.json roster: single-series, in-order chapters, auto-advance when a series ends. Drives `--auto` |
 | `pipeline/download_chapter.py` | download | gallery-dl / mangadex / folder / requests |
-| `pipeline/segment_panels.py` | segment | OpenCV manga (R→L) + webtoon (projection) |
+| `pipeline/segment_panels.py` | segment | OpenCV manga (R→L) + webtoon (projection). Webtoon split guard (gap-004, default via manga.py `--split-guard yolo`): text-box veto on forced cuts, art-ink ceiling, gutter-edge SFX snapping, beat panels kept, auto-mode majority vote (cover pages can't disable tile stitching). Opt-out `--split-guard none` (or `FM_SPLIT_GUARD=none`) = legacy byte-identical splits |
+| `pipeline/yolo_detect.py` | segment | manga109 `text` detector for the split guard: CPU ONNX inference of `deepghs/manga109_yolo` `v2021.12.30_n_yv11` (~10 MB, auto-downloaded to `~/.cache/huggingface`). Deps: onnxruntime (MIT), huggingface-hub (Apache-2.0); inference glue vendored from dghs-imgutils (MIT). Model weights: Ultralytics-trained → AGPL-3.0 per embedded metadata (weights are downloaded at runtime, not redistributed here). Falls back to the pure-OpenCV blob guard on any error |
 | `pipeline/script_from_panels.py` | script | vision read cache + recap prompt → JSON |
-| `pipeline/verify_panels.py` | script | panel↔narration relevance gate (OCR rules + lexical + vision tiers); on by default, `--no-verify-panels` to skip |
+| `pipeline/verify_panels.py` | script | panel↔narration relevance gate (OCR rules + lexical + vision tiers); on by default, `--no-verify-panels` to skip. Includes the tier-1.5 quote-payoff OCR cross-check (every narration quote must land on a kept panel; appends/rescues panels or paraphrases); also on by default, `--no-payoff-check` (or `MANGA_VERIFY_PAYOFF=0`) to skip just that tier |
 | `pipeline/clean_bubbles.py` | clean | CV inpaint (default) or Gemini inpaint |
 | `pipeline/panel_render.py` | render | imports make_video; `render_panel_scene` |
 | `pipeline/layout_smart.py` | render | `--layout smart` (manga.py default): 3-panel grid composites with beat-synced reveals + guided-view punch-ins for multi-panel scenes; `--layout seq` = one panel at a time |

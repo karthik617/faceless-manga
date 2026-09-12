@@ -1,0 +1,1562 @@
+{
+  "title": "the-world-after-the-fall-ch2",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "tts_rate": "+4%",
+  "tts_pitch": "-4Hz",
+  "music": true,
+  "hook_scenes": 1,
+  "music_plan": [
+    {
+      "mood": "Suspense",
+      "from_scene": 0,
+      "track": "Heroes",
+      "artist": "Sunova",
+      "url": "https://freetouse.com/music/sunova/heroes"
+    },
+    {
+      "mood": "Emotional",
+      "from_scene": 8,
+      "track": "A Better Future",
+      "artist": "Bluewave",
+      "url": "https://freetouse.com/music/bluewave/a-better-future"
+    },
+    {
+      "mood": "Dramatic",
+      "from_scene": 15,
+      "track": "Cinematic",
+      "artist": "Aylex",
+      "url": "https://freetouse.com/music/aylex/cinematic"
+    },
+    {
+      "mood": "Epic",
+      "from_scene": 20,
+      "track": "Glorious",
+      "artist": "Aylex",
+      "url": "https://freetouse.com/music/aylex/glorious"
+    }
+  ],
+  "source": {
+    "series": "The World After the Fall",
+    "chapter": "2",
+    "mode": "auto"
+  },
+  "thumbnails": [
+    {
+      "name": "thumb1",
+      "text": [
+        "THE SMILE",
+        "KNIGHT FALLS"
+      ],
+      "highlight": "FALLS",
+      "panel": "panels/p0107.png",
+      "emotion": "sad"
+    },
+    {
+      "name": "thumb2",
+      "text": [
+        "HIS FINAL",
+        "STAND"
+      ],
+      "highlight": "FINAL",
+      "panel": "panels/p0040.png",
+      "emotion": "horror"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Jaehwan and Kim Yoonhwan \u2014 the Smile Knight \u2014 have fought side by side through ninety-eight floors of a brutal, monster-filled tower, burning through pain, loss, and impossible odds to reach the cusp of freedom. They were one floor away from the top. One floor from making it out. But Chapter Two is the story of how a friendship forged in blood can shatter in a single, irreversible moment \u2014 and how one man's sacrifice will force the other to walk forward alone.",
+      "panels": [
+        "panels/p0107.png",
+        "panels/p0017.png",
+        "panels/p0040.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "SHATTER",
+        "SACRIFICE"
+      ],
+      "motion": "slow push-in",
+      "caption": "One Floor From Freedom",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [],
+      "ambience": ""
+    },
+    {
+      "narration": "The chapter opens on Jaehwan lying in the rubble, bloodied and gasping for air. Flames lick at the broken stone around him. He's coughing, disoriented, trying to piece together what just happened. And then the narration asks the question that will haunt him for the rest of this climb: where did it all go wrong?",
+      "panels": [
+        "panels/p0002.png",
+        "panels/p0003.png",
+        "panels/p0004.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom out",
+      "caption": "Where Did It Go Wrong?",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "cough",
+          "word": "coughing"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "The city above is nothing but devastation. Cracked streets, shattered towers, smoke rising into a dead sky. This is the 98th floor \u2014 the Room of Flames \u2014 and it lives up to its name. Jaehwan claws his way up, gripping a dark blade, screaming through the pain. A shadowy monster with glowing yellow eyes swoops down toward him, and you can hear the desperation in his voice: 'This way, you monster!'",
+      "panels": [
+        "panels/p0005.png",
+        "panels/p0006.png",
+        "panels/p0007.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "DEVASTATION"
+      ],
+      "motion": "pan up",
+      "caption": "The Room of Flames",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "whoosh",
+          "word": "swoops"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "Steel clashes against flesh. A man on the ground \u2014 bloodied, exhausted \u2014 shouts Jaehwan's name: 'Jaehwan! Now!!' Jaehwan doesn't hesitate. He leaps into the air, cape flowing behind him, gritting his teeth in determination. 'Don't worry!' he yells. 'Now just\u2014' His hand grips his weapon, every muscle coiled. And then the narration screams it: DIE!!",
+      "panels": [
+        "panels/p0008.png",
+        "panels/p0009.png",
+        "panels/p0010.png",
+        "panels/p0012.png",
+        "panels/p0014.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "CLASH",
+        "DIE"
+      ],
+      "motion": "fast punch-in",
+      "caption": "Strike Now",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "sword slash",
+          "word": "DIE"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "A cross-shaped pendant hangs in the air for a split second. Then blood sprays. The masked figure in dark clothing is struck, violently, and falls amid the crimson mist. Someone asks, voice shaking: 'How many died?' The answer comes back: 'Fortunately, it seems no one did. And the ones who were injured can recover if they rest.' Relief washes over the group. They've survived another floor.",
+      "panels": [
+        "panels/p0015.png",
+        "panels/p0016.png",
+        "panels/p0017.png",
+        "panels/p0018.png",
+        "panels/p0019.png",
+        "panels/p0020.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "BLOOD"
+      ],
+      "motion": "slow push-in",
+      "caption": "They All Survived",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "blood spray",
+          "word": "sprays"
+        }
+      ],
+      "ambience": ""
+    },
+    {
+      "narration": "The brown-haired survivor, standing among the group, says what they're all thinking: 'If we continue like this, we might be able to reach the last floor.' Blue healing energy wraps around a blonde teammate. They smile, giving the OK sign. Hope, for a fleeting moment, feels real. And then Jaehwan notices something on the ground \u2014 a black sword, lying there like it's been waiting. The system description appears: a sword that has been on the 85th floor for a thousand days and nights, holding the energy of the sun and moon. The True Dragon Sword.",
+      "panels": [
+        "panels/p0021.png",
+        "panels/p0022.png",
+        "panels/p0024.png"
+      ],
+      "pace": "quiet",
+      "keywords": [
+        "HOPE",
+        "SWORD"
+      ],
+      "motion": "slow zoom in",
+      "caption": "A Legendary Weapon",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [],
+      "ambience": ""
+    },
+    {
+      "narration": "Jaehwan picks it up, examining the blade. It's the first time a weapon this powerful has appeared. The narration tells us what he's thinking: 'Just like Yoonhwan said, we just might be able to reach the last floor.' His face hardens with confidence. He believed everything was going to go smoothly. But then we cut to his face again \u2014 eyes wide, expression frozen in shock. Something has gone terribly, terribly wrong.",
+      "panels": [
+        "panels/p0025.png",
+        "panels/p0026.png",
+        "panels/p0027.png",
+        "panels/p0029.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "WRONG"
+      ],
+      "motion": "fast punch-in",
+      "caption": "Everything Changes",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [],
+      "ambience": ""
+    },
+    {
+      "narration": "Now we see him torn and bleeding, clothes ripped apart, standing against a roaring inferno. The 98th floor. The Room of Flames. A massive dark creature emerges from the fire, its red eyes glowing like twin suns, its fanged mouth opening wide enough to swallow a man whole. It breathes a torrent of flame down at a tiny human figure below. Jaehwan runs, evading, slashing through falling debris. He's moving on pure survival instinct now.",
+      "panels": [
+        "panels/p0030.png",
+        "panels/p0031.png",
+        "panels/p0032.png",
+        "panels/p0033.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "INFERNO",
+        "CREATURE"
+      ],
+      "motion": "fast zoom out",
+      "caption": "The 98th Floor",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "roar",
+          "word": "roaring"
+        },
+        {
+          "cue": "fire breath",
+          "word": "breathes"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "The monster's severed head lies in the flames. Jaehwan stands, panting \u2014 'Huff... huu... huff...' \u2014 bloodied and exhausted. He did it. He killed the beast. But the victory is hollow. A hooded figure lies among the debris, coughing. Jaehwan's face twists in anguish, teeth gritted, eyes burning. Something inside him is breaking. And then the impact: a violent crash, motion lines exploding outward. He's hit. Hard.",
+      "panels": [
+        "panels/p0035.png",
+        "panels/p0036.png",
+        "panels/p0037.png",
+        "panels/p0038.png",
+        "panels/p0039.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "VICTORY",
+        "CRASH"
+      ],
+      "motion": "fast punch-in",
+      "caption": "But at What Cost?",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "crash impact",
+          "word": "crash"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "Jaehwan screams, mouth wide, blood visible on his face. The sound that rips out of him is raw, primal. The narration shifts, and the voice is no longer his \u2014 it's reflective, almost mournful: 'How futile.' Blue ice crystals begin to fall through the air. Two figures stand below, triumphant, hands raised in victory. This is a memory. This is what they used to be \u2014 all the victories they shared together, all the time they spent climbing this nightmare tower.",
+      "panels": [
+        "panels/p0040.png",
+        "panels/p0042.png",
+        "panels/p0043.png"
+      ],
+      "pace": "quiet",
+      "keywords": [
+        "FUTILE"
+      ],
+      "motion": "slow zoom out",
+      "caption": "All the Victories Shared",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "scream",
+          "word": "screams"
+        }
+      ],
+      "ambience": ""
+    },
+    {
+      "narration": "A blonde-haired fighter smiles, surrounded by those same blue ice shards. His expression is warm, genuine \u2014 the kind of smile that keeps people alive in a place like this. The crystals dissolve into the white void. And then we see the dark-haired man \u2014 Jaehwan \u2014 looking down, tears streaming, face frozen in despair. Above him looms a menacing creature with red glowing eyes and jagged teeth. The narration asks the cruelest question: 'Was it all to face a dog's death like this?'",
+      "panels": [
+        "panels/p0044.png",
+        "panels/p0045.png",
+        "panels/p0046.png",
+        "panels/p0047.png",
+        "panels/p0048.png"
+      ],
+      "pace": "quiet",
+      "keywords": [
+        "DESPAIR"
+      ],
+      "motion": "slow push-in",
+      "caption": "A Dog's Death",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [],
+      "ambience": ""
+    },
+    {
+      "narration": "The creature's red eye dominates the frame, glowing with malice, a dragon-like silhouette behind it. Motion lines slash across the screen in red and cyan. Then we see him \u2014 the young man with spiky hair, gripping his sword with both hands, energy crackling around him in purple and cyan waves. He attacks downward through explosive debris and flames, speed lines screaming. A dark winged creature shatters into pieces, surrounded by fire, the panel composition forming a dramatic X. And someone shouts through the chaos: 'Jaehwan! Snap out of it!!'",
+      "panels": [
+        "panels/p0049.png",
+        "panels/p0050.png",
+        "panels/p0051.png",
+        "panels/p0052.png",
+        "panels/p0054.png",
+        "panels/p0055.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "SHATTERS",
+        "SNAP"
+      ],
+      "motion": "fast punch-in",
+      "caption": "Fight Back",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "explosion",
+          "word": "explosive"
+        },
+        {
+          "cue": "shatter",
+          "word": "shatters"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "It's Yoonhwan. The dark-haired warrior surrounded by flames, calling out to his friend. Jaehwan spins through the air, motion lines tracing his path. He's disoriented, barely holding on. Yoonhwan's voice cuts through again: 'Are you going to leave me to beat this monster alone?!' An explosion. Debris flies. A glowing red energy orb shoots through the motion-blurred chaos. Blood sprays. Jaehwan lies wounded among the rubble.",
+      "panels": [
+        "panels/p0056.png",
+        "panels/p0057.png",
+        "panels/p0060.png",
+        "panels/p0061.png",
+        "panels/p0062.png",
+        "panels/p0063.png",
+        "panels/p0064.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "ALONE",
+        "BLOOD"
+      ],
+      "motion": "fast zoom in",
+      "caption": "One Last Push",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "explosion",
+          "word": "explosion"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "A dark armored gauntlet is shown in detail, blood dripping from its claws. The drops fall through the air in slow motion. Then the figure stands \u2014 dark armor with spiky hair, surrounded by falling blood petals, red calligraphy above. His torso is covered in black plated armor with glowing red veins, a sword at his side. This is Jaehwan, transformed by fury and desperation. His face appears in extreme close-up \u2014 gritted teeth, one eye wide, every vein visible. He screams: 'Yoonhwan!!!'",
+      "panels": [
+        "panels/p0065.png",
+        "panels/p0066.png",
+        "panels/p0067.png",
+        "panels/p0068.png",
+        "panels/p0069.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "YOONHWAN"
+      ],
+      "motion": "fast punch-in",
+      "caption": "Rage Unleashed",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "scream",
+          "word": "screams"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "Impact. Motion blur. Debris. Two fists strike in rapid succession \u2014 thump, thump. A monstrous creature with dark scales and glowing features lunges forward. A close-up shows its face \u2014 glowing red eyes, black streaks, pure menace. The sound effect roars across the screen: KUOOOH. An explosive impact engulfs the frame, radial motion lines and energy blasting outward. The monster writhes, its body covered in glowing orange segments, armor cracking. Jaehwan's face is locked in pain, blood on his cheeks, rocks falling around him.",
+      "panels": [
+        "panels/p0070.png",
+        "panels/p0071.png",
+        "panels/p0072.png",
+        "panels/p0073.png",
+        "panels/p0074.png",
+        "panels/p0075.png",
+        "panels/p0097.png",
+        "panels/p0077.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "IMPACT",
+        "KUOOOH"
+      ],
+      "motion": "fast punch-in",
+      "caption": "The Final Blow",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "thump thump",
+          "word": "thump"
+        },
+        {
+          "cue": "monster roar",
+          "word": "roars"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "Jaehwan's boot slams down onto the wooden floor, scattering debris and leaves. He crouches low, pressing his hand against the planks, motion lines showing he's about to explode forward. He charges, dark armor with red accents, attacking in a dynamic blur. From a low angle we see him standing among the falling debris. His face appears in close-up \u2014 wide-eyed, glowing with shock. Then the monster reveals itself fully: dark segmented armor with glowing orange cracks, radiating a bright white aura. A small caped figure stands at the bottom of the massive creature as a beam of light cuts through the darkness.",
+      "panels": [
+        "panels/p0079.png",
+        "panels/p0080.png",
+        "panels/p0081.png",
+        "panels/p0082.png",
+        "panels/p0083.png",
+        "panels/p0084.png",
+        "panels/p0085.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "CHARGE"
+      ],
+      "motion": "fast zoom out",
+      "caption": "The Light Breaks Through",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "boot slam",
+          "word": "slams"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "Someone asks: 'What's that? That light...?' A glowing orange molten figure is wrapped in spiraling white energy against the rocky terrain. The realization hits: 'Don't tell me...' And then the explosion. Debris and molten material fly outward in all directions, motion lines screaming across the panel. A face appears \u2014 intense, one glowing eye visible through wild hair, shock and alarm written across every feature. The dark creature lunges with a glowing red eye, speed lines radiating. A bright beam of light shoots downward, illuminating everything in its path.",
+      "panels": [
+        "panels/p0086.png",
+        "panels/p0087.png",
+        "panels/p0089.png",
+        "panels/p0090.png",
+        "panels/p0091.png",
+        "panels/p0092.png",
+        "panels/p0093.png"
+      ],
+      "pace": "hype",
+      "keywords": [
+        "EXPLOSION",
+        "LIGHT"
+      ],
+      "motion": "fast punch-in",
+      "caption": "The Moment Everything Ends",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [
+        {
+          "cue": "massive explosion",
+          "word": "explosion"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "The light cascades down over the creature's head and body. Dark feathered forms fill the frame. Then we see the aftermath: the massive creature with glowing orange segments lies still in the darkness, embers falling like snow. It coughs \u2014 once, twice, three times \u2014 body writhes with glowing energy concentrated in its core. The orange glow spreads across the cracked ground beneath it. And then Jaehwan, bloodied, grits his teeth. Large wings or appendages stretch behind him. He yells: 'Let's go, Yoonhwan!'",
+      "panels": [
+        "panels/p0097.png",
+        "panels/p0098.png",
+        "panels/p0099.png",
+        "panels/p0100.png",
+        "panels/p0101.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "AFTERMATH"
+      ],
+      "motion": "slow zoom in",
+      "caption": "Let's Go",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "cough",
+          "word": "coughs"
+        }
+      ],
+      "ambience": "fire crackle"
+    },
+    {
+      "narration": "A close-up shows a cracked stone surface, blood dripping from it, red light glowing from within the fractures. A cloaked figure kneels in the destroyed area, surrounded by debris and floating embers, a massive shadow looming behind them. A cracked mask or helmet is shown, blood streaks running down its surface. And then \u2014 a single wide eye stares through dark hair, glowing with intensity. The bloodied person with light hair and glowing eyes looks down, tears and blood on their face. They speak, voice breaking: 'I'm sorry, Jaehwan...'",
+      "panels": [
+        "panels/p0103.png",
+        "panels/p0104.png",
+        "panels/p0105.png",
+        "panels/p0106.png",
+        "panels/p0107.png"
+      ],
+      "pace": "quiet",
+      "keywords": [
+        "SORRY"
+      ],
+      "motion": "slow push-in",
+      "caption": "I'm Sorry",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [],
+      "ambience": ""
+    },
+    {
+      "narration": "This is the moment the essay has been building toward. The narration slows, becomes reverent. Kim Yoonhwan. In this desolate and brutal tower, he never lost his smile. The Walkers gave him a nickname: the Smile Knight. We see him with his companions, smiling brightly as leaves fall around him. He was the heart of their team, the one who kept hope alive when everything else told them to give up. And in this chapter, for the first time, the Smile Knight lost his smile.",
+      "panels": [
+        "panels/p0108.png",
+        "panels/p0109.png",
+        "panels/p0110.png",
+        "panels/p0111.png",
+        "panels/p0112.png",
+        "panels/p0115.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom out",
+      "caption": "The Smile Knight",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [],
+      "ambience": ""
+    },
+    {
+      "narration": "Jaehwan, silhouetted, turns his head slightly. His voice is low, hard: 'Go. Get lost. Before I change my mind.' He stands facing away, looking toward the bright horizon. Yoonhwan has a cracked mask, blood streaking down. And we finally understand: Yoonhwan is holding a bloodied white stone \u2014 not a Stone of Regression. It's a fake. He switched them. Jaehwan noticed immediately. That's why he's telling him to leave. Because if Yoonhwan stays, Jaehwan knows he won't be able to let him go.",
+      "panels": [
+        "panels/p0116.png",
+        "panels/p0117.png",
+        "panels/p0118.png",
+        "panels/p0122.png",
+        "panels/p0123.png"
+      ],
+      "pace": "quiet",
+      "keywords": [
+        "SWITCHED"
+      ],
+      "motion": "slow push-in",
+      "caption": "He Switched the Stone",
+      "cta": false,
+      "emphasis": true,
+      "sfx_events": [],
+      "ambience": ""
+    },
+    {
+      "narration": "Yoonhwan speaks, voice soft, almost to himself: 'Jaehwan, you punk... so you noticed. This stone... looks kind of dirty, doesn't it?' A foot steps onto stairs, leaving a trail of blood behind. The narration continues: 'Jaehwan... you are a much stronger person than I had thought. Thanks to you, I'm sure.' He climbs, coughing, blood trailing with every step. The words come slower now, weighted with finality: 'You'll definitely be able to climb to the top of this tower. If it's you.'",
+      "panels": [
+        "panels/p0124.png",
+        "panels/p0125.png",
+        "panels/p0126.png",
+        "panels/p0122.png",
+        "panels/p0123.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow pan up",
+      "caption": "You'll Make It",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "footstep",
+          "word": "steps"
+        }
+      ],
+      "ambience": ""
+    },
+    {
+      "narration": "A figure in dark armor lies collapsed on the ground. Yoonhwan stands in a tall tower archway, warm light behind him, so small against the vast structure. A close-up of his face from below, jaw set. Another angle, profile view. The words echo: 'It's really such a relief that you're in this world, Jaehwan.' A white speech bubble appears with his name. The arched doorway glows with intense golden light. Bright light floods across the wooden floor as leaves scatter. Sharp angular light cuts across the dark scene.",
+      "panels": [
+        "panels/p0127.png",
+        "panels/p0128.png",
+        "panels/p0129.png",
+        "panels/p0130.png",
+        "panels/p0132.png",
+        "panels/p0133.png",
+        "panels/p0134.png",
+        "panels/p0135.png"
+      ],
+      "pace": "quiet",
+      "keywords": [
+        "JAEHWAN"
+      ],
+      "motion": "slow push-in",
+      "caption": "It's a Relief",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [],
+      "ambience": ""
+    },
+    {
+      "narration": "The cloaked figure is thrown backward against a wall, hands raised, illuminated by intense light. A gloved hand grips the wooden planks, bracelet visible on the wrist. Multiple masked figures loom over someone lying on the ground, blood droplets visible. A speech bubble: 'Let's go.' Then another: 'Ahead.' A bright blue blade slashes through the air, dark silhouette on the left. Blue energy fills the frame. A character's shocked face looks upward. Blue light streams downward between dark surfaces. And then \u2014 a vast white snowy landscape is revealed, particles falling from above. Someone asks: 'Is this a... a snowfield?'",
+      "panels": [
+        "panels/p0136.png",
+        "panels/p0137.png",
+        "panels/p0138.png",
+        "panels/p0143.png",
+        "panels/p0145.png",
+        "panels/p0146.png",
+        "panels/p0147.png",
+        "panels/p0148.png"
+      ],
+      "pace": "normal",
+      "keywords": [
+        "AHEAD",
+        "SNOWFIELD"
+      ],
+      "motion": "slow zoom out",
+      "caption": "A New World",
+      "cta": false,
+      "emphasis": false,
+      "sfx_events": [
+        {
+          "cue": "sword slash",
+          "word": "slashes"
+        }
+      ],
+      "ambience": ""
+    },
+    {
+      "narration": "The text panels give us the rest. Yoonhwan's best friend would have noticed immediately that the stone wasn't a Stone of Regression. Yoonhwan held it tightly, felt its cold, rough edges \u2014 something he could only feel in this world. He had learned this from Jaehwan. He had learned how to clutch this rough, worthless life and never let it go. Yoonhwan walked to the edge of the tower and stood there. And then his body disappeared into the clouds. Jaehwan stopped at the gate to the 99th floor. He wiped his face with his right hand. He waited until he stopped shivering, until he could breathe calmly again. But he did not look back. He walked up toward the 99th floor. Alone.",
+      "panels": [
+        "panels/p0122.png",
+        "panels/p0107.png",
+        "panels/p0128.png"
+      ],
+      "pace": "quiet",
+      "keywords": [],
+      "motion": "slow zoom in",
+      "caption": "He Walked On Alone",
+      "cta": true,
+      "emphasis": false,
+      "sfx_events": [],
+      "ambience": ""
+    }
+  ],
+  "music_attribution": "Music track: Heroes by Sunova\nSource: https://freetouse.com/music/sunova/heroes\nFree Background Music from freetouse.com (attribution required)\n\nMusic track: A Better Future by Bluewave\nSource: https://freetouse.com/music/bluewave/a-better-future\nFree Background Music from freetouse.com (attribution required)\n\nMusic track: Cinematic by Aylex\nSource: https://freetouse.com/music/aylex/cinematic\nFree Background Music from freetouse.com (attribution required)\n\nMusic track: Glorious by Aylex\nSource: https://freetouse.com/music/aylex/glorious\nFree Background Music from freetouse.com (attribution required)",
+  "_verify": {
+    "verify_log": [
+      {
+        "action": "score",
+        "scene": 0,
+        "panel": "panels/p0107.png",
+        "score": 0.111
+      },
+      {
+        "action": "score",
+        "scene": 0,
+        "panel": "panels/p0017.png",
+        "score": 0.125
+      },
+      {
+        "action": "score",
+        "scene": 0,
+        "panel": "panels/p0040.png",
+        "score": 0.111
+      },
+      {
+        "action": "ambiguous",
+        "scene": 0,
+        "panel": null,
+        "reason": "tier2: best score 0.125 < 0.15"
+      },
+      {
+        "action": "score",
+        "scene": 1,
+        "panel": "panels/p0002.png",
+        "score": 0.273
+      },
+      {
+        "action": "score",
+        "scene": 1,
+        "panel": "panels/p0003.png",
+        "score": 0.333
+      },
+      {
+        "action": "score",
+        "scene": 1,
+        "panel": "panels/p0004.png",
+        "score": 0.817
+      },
+      {
+        "action": "score",
+        "scene": 2,
+        "panel": "panels/p0005.png",
+        "score": 0.25
+      },
+      {
+        "action": "score",
+        "scene": 2,
+        "panel": "panels/p0006.png",
+        "score": 0.2
+      },
+      {
+        "action": "score",
+        "scene": 2,
+        "panel": "panels/p0007.png",
+        "score": 0.571
+      },
+      {
+        "action": "payoff_ok",
+        "scene": 3,
+        "panel": "p0009.png",
+        "reason": "quote on-screen (1.00): \"Jaehwan! Now!!\"",
+        "score": 1.0
+      },
+      {
+        "action": "payoff_ok",
+        "scene": 3,
+        "panel": "p0012.png",
+        "reason": "quote on-screen (1.00): \"Now just\u2014\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 3,
+        "panel": "panels/p0008.png",
+        "score": 0.125
+      },
+      {
+        "action": "score",
+        "scene": 3,
+        "panel": "panels/p0009.png",
+        "score": 0.273
+      },
+      {
+        "action": "score",
+        "scene": 3,
+        "panel": "panels/p0010.png",
+        "score": 0.364
+      },
+      {
+        "action": "score",
+        "scene": 3,
+        "panel": "panels/p0012.png",
+        "score": 0.45
+      },
+      {
+        "action": "score",
+        "scene": 3,
+        "panel": "panels/p0014.png",
+        "score": 0.091
+      },
+      {
+        "action": "payoff_ok",
+        "scene": 4,
+        "panel": "p0018.png",
+        "reason": "quote on-screen (1.00): \"How many died?\"",
+        "score": 1.0
+      },
+      {
+        "action": "payoff_concat",
+        "scene": 4,
+        "panel": "p0019.png+p0020.png",
+        "reason": "quote on-screen (1.00): \"Fortunately, it seems no one did. And the ones who were i...\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 4,
+        "panel": "panels/p0015.png",
+        "score": 0.444
+      },
+      {
+        "action": "score",
+        "scene": 4,
+        "panel": "panels/p0016.png",
+        "score": 0.75
+      },
+      {
+        "action": "score",
+        "scene": 4,
+        "panel": "panels/p0017.png",
+        "score": 0.875
+      },
+      {
+        "action": "score",
+        "scene": 4,
+        "panel": "panels/p0018.png",
+        "score": 0.556
+      },
+      {
+        "action": "score",
+        "scene": 4,
+        "panel": "panels/p0019.png",
+        "score": 0.167
+      },
+      {
+        "action": "score",
+        "scene": 4,
+        "panel": "panels/p0020.png",
+        "score": 0.308
+      },
+      {
+        "action": "payoff_ok",
+        "scene": 5,
+        "panel": "p0021.png",
+        "reason": "quote on-screen (1.00): \"If we continue like this, we might be able to reach the l...\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 5,
+        "panel": "panels/p0021.png",
+        "score": 0.591
+      },
+      {
+        "action": "score",
+        "scene": 5,
+        "panel": "panels/p0022.png",
+        "score": 0.364
+      },
+      {
+        "action": "score",
+        "scene": 5,
+        "panel": "panels/p0024.png",
+        "score": 0.919
+      },
+      {
+        "action": "score",
+        "scene": 6,
+        "panel": "panels/p0025.png",
+        "score": 0.364
+      },
+      {
+        "action": "score",
+        "scene": 6,
+        "panel": "panels/p0026.png",
+        "score": 0.556
+      },
+      {
+        "action": "score",
+        "scene": 6,
+        "panel": "panels/p0027.png",
+        "score": 0.385
+      },
+      {
+        "action": "score",
+        "scene": 6,
+        "panel": "panels/p0029.png",
+        "score": 0.444
+      },
+      {
+        "action": "score",
+        "scene": 7,
+        "panel": "panels/p0030.png",
+        "score": 0.222
+      },
+      {
+        "action": "score",
+        "scene": 7,
+        "panel": "panels/p0031.png",
+        "score": 0.833
+      },
+      {
+        "action": "score",
+        "scene": 7,
+        "panel": "panels/p0032.png",
+        "score": 0.538
+      },
+      {
+        "action": "score",
+        "scene": 7,
+        "panel": "panels/p0033.png",
+        "score": 0.273
+      },
+      {
+        "action": "score",
+        "scene": 8,
+        "panel": "panels/p0035.png",
+        "score": 0.462
+      },
+      {
+        "action": "score",
+        "scene": 8,
+        "panel": "panels/p0036.png",
+        "score": 0.7
+      },
+      {
+        "action": "score",
+        "scene": 8,
+        "panel": "panels/p0037.png",
+        "score": 0.4
+      },
+      {
+        "action": "score",
+        "scene": 8,
+        "panel": "panels/p0038.png",
+        "score": 0.444
+      },
+      {
+        "action": "score",
+        "scene": 8,
+        "panel": "panels/p0039.png",
+        "score": 0.333
+      },
+      {
+        "action": "score",
+        "scene": 9,
+        "panel": "panels/p0040.png",
+        "score": 0.444
+      },
+      {
+        "action": "score",
+        "scene": 9,
+        "panel": "panels/p0042.png",
+        "score": 0.95
+      },
+      {
+        "action": "score",
+        "scene": 9,
+        "panel": "panels/p0043.png",
+        "score": 0.714
+      },
+      {
+        "action": "payoff_ok",
+        "scene": 10,
+        "panel": "p0048.png",
+        "reason": "quote on-screen (1.00): \"Was it all to face a dog's death like this?\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 10,
+        "panel": "panels/p0044.png",
+        "score": 0.545
+      },
+      {
+        "action": "score",
+        "scene": 10,
+        "panel": "panels/p0045.png",
+        "score": 0.455
+      },
+      {
+        "action": "score",
+        "scene": 10,
+        "panel": "panels/p0046.png",
+        "score": 0.571
+      },
+      {
+        "action": "score",
+        "scene": 10,
+        "panel": "panels/p0047.png",
+        "score": 0.8
+      },
+      {
+        "action": "score",
+        "scene": 10,
+        "panel": "panels/p0048.png",
+        "score": 0.455
+      },
+      {
+        "action": "payoff_ok",
+        "scene": 11,
+        "panel": "p0055.png",
+        "reason": "quote on-screen (1.00): \"Jaehwan! Snap out of it!!\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 11,
+        "panel": "panels/p0049.png",
+        "score": 0.667
+      },
+      {
+        "action": "score",
+        "scene": 11,
+        "panel": "panels/p0050.png",
+        "score": 0.667
+      },
+      {
+        "action": "score",
+        "scene": 11,
+        "panel": "panels/p0051.png",
+        "score": 0.625
+      },
+      {
+        "action": "score",
+        "scene": 11,
+        "panel": "panels/p0052.png",
+        "score": 0.8
+      },
+      {
+        "action": "score",
+        "scene": 11,
+        "panel": "panels/p0054.png",
+        "score": 0.8
+      },
+      {
+        "action": "score",
+        "scene": 11,
+        "panel": "panels/p0055.png",
+        "score": 0.385
+      },
+      {
+        "action": "score",
+        "scene": 12,
+        "panel": "panels/p0056.png",
+        "score": 0.556
+      },
+      {
+        "action": "score",
+        "scene": 12,
+        "panel": "panels/p0057.png",
+        "score": 0.25
+      },
+      {
+        "action": "score",
+        "scene": 12,
+        "panel": "panels/p0060.png",
+        "score": 0.688
+      },
+      {
+        "action": "score",
+        "scene": 12,
+        "panel": "panels/p0061.png",
+        "score": 0.333
+      },
+      {
+        "action": "score",
+        "scene": 12,
+        "panel": "panels/p0062.png",
+        "score": 0.8
+      },
+      {
+        "action": "score",
+        "scene": 12,
+        "panel": "panels/p0063.png",
+        "score": 0.2
+      },
+      {
+        "action": "score",
+        "scene": 12,
+        "panel": "panels/p0064.png",
+        "score": 0.875
+      },
+      {
+        "action": "payoff_ok",
+        "scene": 13,
+        "panel": "p0069.png",
+        "reason": "quote on-screen (1.00): \"Yoonhwan!!!\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 13,
+        "panel": "panels/p0065.png",
+        "score": 0.556
+      },
+      {
+        "action": "score",
+        "scene": 13,
+        "panel": "panels/p0066.png",
+        "score": 0.75
+      },
+      {
+        "action": "score",
+        "scene": 13,
+        "panel": "panels/p0067.png",
+        "score": 0.857
+      },
+      {
+        "action": "score",
+        "scene": 13,
+        "panel": "panels/p0068.png",
+        "score": 0.824
+      },
+      {
+        "action": "score",
+        "scene": 13,
+        "panel": "panels/p0069.png",
+        "score": 0.467
+      },
+      {
+        "action": "score",
+        "scene": 14,
+        "panel": "panels/p0070.png",
+        "score": 0.364
+      },
+      {
+        "action": "score",
+        "scene": 14,
+        "panel": "panels/p0071.png",
+        "score": 0.333
+      },
+      {
+        "action": "score",
+        "scene": 14,
+        "panel": "panels/p0072.png",
+        "score": 0.818
+      },
+      {
+        "action": "score",
+        "scene": 14,
+        "panel": "panels/p0073.png",
+        "score": 0.727
+      },
+      {
+        "action": "score",
+        "scene": 14,
+        "panel": "panels/p0074.png",
+        "score": 0.3
+      },
+      {
+        "action": "score",
+        "scene": 14,
+        "panel": "panels/p0075.png",
+        "score": 0.545
+      },
+      {
+        "action": "score",
+        "scene": 14,
+        "panel": "panels/p0097.png",
+        "score": 0.538
+      },
+      {
+        "action": "score",
+        "scene": 14,
+        "panel": "panels/p0077.png",
+        "score": 0.364
+      },
+      {
+        "action": "score",
+        "scene": 15,
+        "panel": "panels/p0079.png",
+        "score": 0.75
+      },
+      {
+        "action": "score",
+        "scene": 15,
+        "panel": "panels/p0080.png",
+        "score": 0.733
+      },
+      {
+        "action": "score",
+        "scene": 15,
+        "panel": "panels/p0081.png",
+        "score": 0.857
+      },
+      {
+        "action": "score",
+        "scene": 15,
+        "panel": "panels/p0082.png",
+        "score": 0.692
+      },
+      {
+        "action": "score",
+        "scene": 15,
+        "panel": "panels/p0083.png",
+        "score": 0.583
+      },
+      {
+        "action": "score",
+        "scene": 15,
+        "panel": "panels/p0084.png",
+        "score": 0.692
+      },
+      {
+        "action": "score",
+        "scene": 15,
+        "panel": "panels/p0085.png",
+        "score": 0.824
+      },
+      {
+        "action": "payoff_concat",
+        "scene": 16,
+        "panel": "p0086.png+p0087.png",
+        "reason": "quote on-screen (1.00): \"What's that? That light...?\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 16,
+        "panel": "panels/p0086.png",
+        "score": 0.0
+      },
+      {
+        "action": "score",
+        "scene": 16,
+        "panel": "panels/p0087.png",
+        "score": 0.923
+      },
+      {
+        "action": "score",
+        "scene": 16,
+        "panel": "panels/p0089.png",
+        "score": 0.667
+      },
+      {
+        "action": "score",
+        "scene": 16,
+        "panel": "panels/p0090.png",
+        "score": 0.667
+      },
+      {
+        "action": "score",
+        "scene": 16,
+        "panel": "panels/p0091.png",
+        "score": 0.917
+      },
+      {
+        "action": "score",
+        "scene": 16,
+        "panel": "panels/p0092.png",
+        "score": 0.8
+      },
+      {
+        "action": "score",
+        "scene": 16,
+        "panel": "panels/p0093.png",
+        "score": 0.5
+      },
+      {
+        "action": "payoff_ok",
+        "scene": 17,
+        "panel": "p0101.png",
+        "reason": "quote on-screen (1.00): \"Let's go, Yoonhwan!\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 17,
+        "panel": "panels/p0097.png",
+        "score": 0.615
+      },
+      {
+        "action": "score",
+        "scene": 17,
+        "panel": "panels/p0098.png",
+        "score": 0.545
+      },
+      {
+        "action": "score",
+        "scene": 17,
+        "panel": "panels/p0099.png",
+        "score": 0.5
+      },
+      {
+        "action": "score",
+        "scene": 17,
+        "panel": "panels/p0100.png",
+        "score": 0.5
+      },
+      {
+        "action": "score",
+        "scene": 17,
+        "panel": "panels/p0101.png",
+        "score": 0.562
+      },
+      {
+        "action": "payoff_ok",
+        "scene": 18,
+        "panel": "p0107.png",
+        "reason": "quote on-screen (1.00): \"I'm sorry, Jaehwan...\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 18,
+        "panel": "panels/p0103.png",
+        "score": 0.786
+      },
+      {
+        "action": "score",
+        "scene": 18,
+        "panel": "panels/p0104.png",
+        "score": 0.647
+      },
+      {
+        "action": "score",
+        "scene": 18,
+        "panel": "panels/p0105.png",
+        "score": 0.889
+      },
+      {
+        "action": "score",
+        "scene": 18,
+        "panel": "panels/p0106.png",
+        "score": 0.667
+      },
+      {
+        "action": "score",
+        "scene": 18,
+        "panel": "panels/p0107.png",
+        "score": 0.778
+      },
+      {
+        "action": "score",
+        "scene": 19,
+        "panel": "panels/p0108.png",
+        "score": 0.0
+      },
+      {
+        "action": "score",
+        "scene": 19,
+        "panel": "panels/p0109.png",
+        "score": 0.222
+      },
+      {
+        "action": "score",
+        "scene": 19,
+        "panel": "panels/p0110.png",
+        "score": 0.871
+      },
+      {
+        "action": "score",
+        "scene": 19,
+        "panel": "panels/p0111.png",
+        "score": 0.4
+      },
+      {
+        "action": "score",
+        "scene": 19,
+        "panel": "panels/p0112.png",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 19,
+        "panel": "panels/p0115.png",
+        "score": 0.333
+      },
+      {
+        "action": "score",
+        "scene": 20,
+        "panel": "panels/p0116.png",
+        "score": 0.571
+      },
+      {
+        "action": "score",
+        "scene": 20,
+        "panel": "panels/p0117.png",
+        "score": 0.286
+      },
+      {
+        "action": "score",
+        "scene": 20,
+        "panel": "panels/p0118.png",
+        "score": 0.857
+      },
+      {
+        "action": "score",
+        "scene": 20,
+        "panel": "panels/p0122.png",
+        "score": 0.357
+      },
+      {
+        "action": "score",
+        "scene": 20,
+        "panel": "panels/p0123.png",
+        "score": 0.214
+      },
+      {
+        "action": "payoff_append",
+        "scene": 21,
+        "panel": "p0122.png+p0123.png",
+        "reason": "quote found in window (1.00), appended ['p0122.png', 'p0123.png']: \"Jaehwan, you punk... so you noticed. This stone... looks ...\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 21,
+        "panel": "panels/p0124.png",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 21,
+        "panel": "panels/p0125.png",
+        "score": 0.583
+      },
+      {
+        "action": "score",
+        "scene": 21,
+        "panel": "panels/p0126.png",
+        "score": 0.588
+      },
+      {
+        "action": "score",
+        "scene": 21,
+        "panel": "panels/p0122.png",
+        "score": 0.143
+      },
+      {
+        "action": "score",
+        "scene": 21,
+        "panel": "panels/p0123.png",
+        "score": 0.357
+      },
+      {
+        "action": "payoff_concat",
+        "scene": 22,
+        "panel": "p0130.png+p0132.png",
+        "reason": "quote on-screen (1.00): \"It's really such a relief that you're in this world, Jaeh...\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 22,
+        "panel": "panels/p0127.png",
+        "score": 0.667
+      },
+      {
+        "action": "score",
+        "scene": 22,
+        "panel": "panels/p0128.png",
+        "score": 0.6
+      },
+      {
+        "action": "score",
+        "scene": 22,
+        "panel": "panels/p0129.png",
+        "score": 0.444
+      },
+      {
+        "action": "score",
+        "scene": 22,
+        "panel": "panels/p0130.png",
+        "score": 0.643
+      },
+      {
+        "action": "score",
+        "scene": 22,
+        "panel": "panels/p0132.png",
+        "score": 0.695
+      },
+      {
+        "action": "score",
+        "scene": 22,
+        "panel": "panels/p0133.png",
+        "score": 0.6
+      },
+      {
+        "action": "score",
+        "scene": 22,
+        "panel": "panels/p0134.png",
+        "score": 0.95
+      },
+      {
+        "action": "score",
+        "scene": 22,
+        "panel": "panels/p0135.png",
+        "score": 0.85
+      },
+      {
+        "action": "payoff_concat",
+        "scene": 23,
+        "panel": "p0147.png+p0148.png",
+        "reason": "quote on-screen (1.00): \"Is this a... a snowfield?\"",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 23,
+        "panel": "panels/p0136.png",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 23,
+        "panel": "panels/p0137.png",
+        "score": 0.667
+      },
+      {
+        "action": "score",
+        "scene": 23,
+        "panel": "panels/p0138.png",
+        "score": 0.968
+      },
+      {
+        "action": "score",
+        "scene": 23,
+        "panel": "panels/p0143.png",
+        "score": 0.583
+      },
+      {
+        "action": "score",
+        "scene": 23,
+        "panel": "panels/p0145.png",
+        "score": 0.556
+      },
+      {
+        "action": "score",
+        "scene": 23,
+        "panel": "panels/p0146.png",
+        "score": 0.444
+      },
+      {
+        "action": "score",
+        "scene": 23,
+        "panel": "panels/p0147.png",
+        "score": 0.5
+      },
+      {
+        "action": "score",
+        "scene": 23,
+        "panel": "panels/p0148.png",
+        "score": 1.0
+      },
+      {
+        "action": "score",
+        "scene": 24,
+        "panel": "panels/p0122.png",
+        "score": 0.214
+      },
+      {
+        "action": "score",
+        "scene": 24,
+        "panel": "panels/p0107.png",
+        "score": 0.111
+      },
+      {
+        "action": "score",
+        "scene": 24,
+        "panel": "panels/p0128.png",
+        "score": 0.067
+      },
+      {
+        "action": "skip-vision",
+        "scene": 0,
+        "panel": null,
+        "reason": "tier3 skipped (--no-vision); keeping tier-1 survivors"
+      }
+    ],
+    "params": {
+      "t_low": 0.15,
+      "vision": false,
+      "payoff": {
+        "ok": 0.75,
+        "absent": 0.45
+      }
+    }
+  }
+}
